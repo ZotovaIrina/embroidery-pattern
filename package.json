@@ -4,7 +4,7 @@
   "author": "Irina Zotova",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./server/bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
