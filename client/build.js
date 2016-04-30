@@ -24,3 +24,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate'])
     }]);
 
 
+;angular.module('embroidery-pattern')
+    .controller('UploadController', ['$scope', function ($scope) {
+        console.log("ok");
+        console.log("ok");
+    }]);

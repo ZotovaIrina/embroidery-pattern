@@ -36,10 +36,33 @@ module.exports = function (grunt) {
                     options: {}
                 }
             },
+            bower_concat: {
+                all: {
+                    dest: 'client/_bower.js',  // Склеенный файл
+                    exclude: [  // Пакеты, которые нужно исключить из сборки
+                    ]
+                }
+            },
+            concat: {
+                options: {
+                    // define a string to put between each file in the concatenated output
+                    separator: ';'
+                },
+                dist: {
+                    // the files to concatenate
+                    src: ['client/js/**/*.js'],
+                    // the location of the resulting JS file
+                    dest: 'client/build.js'
+                }
+            },
             uglify: {
                 js: {
-                    src: ['client/js/build.js'],
+                    src: ['client/build.js'],
                     dest: 'dist/js/build.min.js'
+                },
+                bower: {
+                    src: ['client/_bower.js'],
+                    dest: 'client/_bower.js'
                 }
             },
             cssmin: {
@@ -49,8 +72,14 @@ module.exports = function (grunt) {
                 }
             },
             clean: {
-                build: {
+                dist: {
                     src: ['dist/']
+                },
+                build: {
+                    src: ['client/build.js']
+                },
+                bower: {
+                    src: ['client/_bower.js']
                 }
             },
             copy: {
@@ -91,6 +120,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-bower-concat');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -106,13 +137,21 @@ module.exports = function (grunt) {
     ]);
     grunt.registerTask('devBuild', [
         'jshint',
-        'sass'
+        'sass',
+        'clean:build',
+        'concat'
+    ]);
+    grunt.registerTask('devDependencies', [
+        'clean:bower',
+        'bower_concat',
+        'uglify:bower'
     ]);
     grunt.registerTask('dist', [
+        'devDependencies',
         'devBuild',
-        'clean',
+        'clean:dist',
         'copy',
-        'uglify',
+        'uglify:js',
         'cssmin',
         'filerev',
         'usemin'

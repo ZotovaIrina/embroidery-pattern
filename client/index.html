@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="embroidery-pattern">
 <head>
 
     <meta charset="utf-8"/>
@@ -7,10 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+
+    <!-- build:css css/main.min.css -->
+    <link href="css/main.css" rel="stylesheet">
+    <!-- endbuild -->
+
 </head>
 <body>
-<h1>Hello World!</h1>
-<img src="/public/images/label.png">
+
+<div class="row row-content">
+    <div ui-view="content" class="col-xs-12" id="content"></div>
+
+</div>
+
+
+<!-- build:js build.min.js -->
+<script src="_bower.js"></script>
+<script src="build.js"></script>
+<!-- endbuild -->
 
 </body>
 </html>
