@@ -1,5 +1,5 @@
 
-angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate'])
+angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'ngFileUpload'])
     .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
         $stateProvider

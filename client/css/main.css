@@ -1,4 +1,19 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css");
+form .progress {
+  line-height: 15px;
+}
+
+.progress {
+  display: inline-block;
+  width: 100px;
+  border: 3px groove #CCC;
+}
+
+.progress div {
+  font-size: smaller;
+  background: orange;
+  width: 0;
+}
 
 /*# sourceMappingURL=main.css.map */

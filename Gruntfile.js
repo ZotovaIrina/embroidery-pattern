@@ -27,7 +27,7 @@ module.exports = function (grunt) {
             watch: {                //Сканирует изменения в файлах, если изменение есть, то автоматически запускает browserify
                 scripts: {
                     files: ['client/js/**/*.js'],
-                    tasks: ['jshint'],
+                    tasks: ['jshint', 'clean:build', 'concat'],
                     options: {}
                 },
                 css: {
