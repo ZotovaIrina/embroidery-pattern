@@ -6,7 +6,8 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 var pathConfig = require('./path'),
-    users = require('./routes/users');
+    users = require('./routes/users'),
+    upload = require('./routes/upload.js');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(pathConfig.clientDir));
 app.use('/public', express.static(pathConfig.publicDir));
 
 app.use('/users', users);
+app.use('/upload', upload);
 
 
 // catch 404 and forward to error handler

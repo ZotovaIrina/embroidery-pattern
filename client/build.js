@@ -1,5 +1,6 @@
 
 angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'ngFileUpload'])
+    .constant("baseURL", "http://localhost:3000")
     .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -24,29 +25,35 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
     }]);
 
 
-;
-angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout','$document', function ($scope, Upload, $timeout, $document) {
+;angular.module('embroidery-pattern')
+    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', function ($scope, Upload, $timeout, baseURL) {
         'use strict';
 
+        $scope.widthImage = 0;
+        $scope.heightImage = 0;
+        $scope.maxWidth = 0;
+        $scope.maxheigth = 0;
+        $scope.formShow = true;
 
-        //watch canging in $scope.activeimage in order to disabled OK button
-        $scope.$watch('picFile', function (newValue, oldValue) {
+        $scope.widthChange = function(){
+            console.log("widthChange");
+            $scope.heightImage = $scope.proportion * $scope.widthImage;
+        };
 
-            if(newValue !== undefined) {
-                console.log(newValue, oldValue);
-                var elem = angular.element(document.getElementById('#workImage'));
-                console.log(elem.style);
-                //$scope.widthImage = document.getElementById(picFile).clientWidth;
-                //$scope.heightImage = document.getElementById(picFile).clientheight;
-            }
-        });
+        $scope.heightChange = function(){
+            console.log("heightChange");
+            $scope.widthImage = $scope.heightImage / $scope.proportion;
+        };
 
         $scope.uploadPic = function (file) {
             console.log(file);
             file.upload = Upload.upload({
-                url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-                data: {username: $scope.username, file: file}
+                url: baseURL + '/upload',
+                data: {
+                    widthImage: $scope.widthImage,
+                    heightImage: $scope.heightImage,
+                    file: file
+                }
             });
 
             file.upload.then(function (response) {
@@ -65,24 +72,42 @@ angular.module('embroidery-pattern')
 
 
     }]);;angular.module('embroidery-pattern')
-    .directive('thumbnail', ['$window', function ($window) {
+    .directive('imageProcessing', [function () {
+
         return {
             restrict: 'A',
-            template: '<canvas/>',
-            link: function (scope, element, attributes) {
-                function onLoadFile(event) {
-                    var img = new Image();
-                    img.onload = onLoadImage;
-                    img.src = event.target.result;
-                }
-                function onLoadImage() {
-                    var width = params.width || this.width / this.height * params.height;
-                    var height = params.height || this.height / this.width * params.width;
-                    canvas.attr({width: width, height: height});
-                    canvas[0].getContext('2d').drawImage(this, 0, 0, width, height);
-                }
-                var params = scope.$eval(attributes.thumbnail);
-                var canvas = element.find('canvas');
+            link: function (scope, element, attrs) {
+
+                element.bind("load", function (e) {
+                    console.log("load image");
+                    // success, "onload" catched
+                    // now we can do specific stuff:
+                    console.log(this.naturalHeight);
+                    scope.heightImage = this.naturalHeight;
+                    scope.widthImage = this.naturalWidth;
+                    scope.maxWidth = this.naturalWidth;
+                    scope.maxheigth = this.naturalHeight;
+                    scope.proportion = this.naturalHeight / this.naturalWidth;
+                    console.log(scope.proportion);
+                    scope.$apply();
+                });
+
             }
         };
+
+
     }]);
+
+
+//var image;
+//element.on("load", function () {
+//    angular.element(this).attr("src", baseResourceURL + "/404error.jpg");
+//    angular.element(this).attr("style", "left: 0;");
+//    //modelObject is a scope property of the parent/current scope
+//    image.error = true;
+//    scope.$apply();
+//    console.log(image);
+//});
+//scope.$watch(attrs.errorSrc, function(value){
+//    image = value;
+//});

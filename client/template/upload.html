@@ -1,27 +1,39 @@
 <div>
-    <h1>Upload page</h1>
-    Width:
-    <input type="number" name="widthImage" ng-model="widthImage" size="31" required>
-    <i ng-show="myForm.widthImage.$error.required">pixel *required</i>
-    Height:
-    <input type="number" name="heightImage" ng-model="heightImage" size="31" required>
-    <i ng-show="myForm.widthImage.$error.required">pixel *required</i>
+    <h1 id="header">Upload page</h1>
 
 
     <div>
         <form name="myForm">
             <fieldset>
                 <legend>Upload on form submit</legend>
-                Username:
-                <input type="text"
-                       name="userName"
-                       ng-model="username"
-                       size="39"
-                       required="">
-                <i ng-show="myForm.userName.$error.required">
-                    *required
-                </i>
-                <br>
+
+                <label ng-show="formShow">
+                    Width:
+                    <input type="number"
+                           name="widthImage"
+                           ng-model="widthImage"
+                           size="31"
+                           min="0"
+                           max="{{maxWidth}}"
+                           ng-change="widthChange()"
+                           required>
+                    pixels
+                </label>
+                <i ng-show="myForm.widthImage.$error.required"> *required</i>
+
+                <label ng-show="formShow">
+                    Height:
+                    <input type="number"
+                           name="heightImage"
+                           ng-model="heightImage"
+                           size="31"
+                           min="0"
+                           max="{{maxHeight}}"
+                           ng-change="heightChange()"
+                           required>
+                    pixels
+                </label>
+                <i ng-show="myForm.heightImage.$error.required">*required</i>
                 Profile Picture:
                 <input type="file"
                        ngf-select=""
@@ -39,7 +51,8 @@
                 </button>
                 <img ngf-src="picFile"
                      class="thumb"
-                     id="workImage">
+                     id="picFile"
+                     image-processing>
               <span class="progress"
                     ng-show="picFile.progress >= 0">
                   <div style="width:{{picFile.progress}}%"

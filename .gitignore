@@ -3,3 +3,4 @@ node_modules
 mongo
 .idea
 bower_components
+server/public/images/temp
