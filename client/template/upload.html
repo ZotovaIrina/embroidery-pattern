@@ -9,30 +9,34 @@
 
                 <label ng-show="formShow">
                     Width:
-                    <input type="number"
-                           name="widthImage"
-                           ng-model="widthImage"
-                           size="31"
-                           min="0"
-                           max="{{maxWidth}}"
-                           ng-change="widthChange()"
-                           required>
-                    pixels
                 </label>
+                <slider slider-id="sliderWidth"
+                        ng-model="widthImage"
+                        min="0"
+                        max="maxWidth"
+                        step="10"
+                        precision="5"
+                        orientation="horizontal"
+                        handle="round"
+                        ng-change="widthChange()"
+                        class="col-xs-12 col-sm-3">
+                </slider>
                 <i ng-show="myForm.widthImage.$error.required"> *required</i>
 
                 <label ng-show="formShow">
                     Height:
-                    <input type="number"
-                           name="heightImage"
-                           ng-model="heightImage"
-                           size="31"
-                           min="0"
-                           max="{{maxHeight}}"
-                           ng-change="heightChange()"
-                           required>
-                    pixels
                 </label>
+                <slider slider-id="sliderHeigth"
+                        ng-model="heightImage"
+                        min="0"
+                        max="maxHeigth"
+                        step="10"
+                        precision="5"
+                        orientation="horizontal"
+                        handle="round"
+                        ng-change="heightChange()"
+                        class="col-xs-12 col-sm-3">
+                </slider>
                 <i ng-show="myForm.heightImage.$error.required">*required</i>
                 Profile Picture:
                 <input type="file"

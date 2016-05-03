@@ -13,7 +13,7 @@ angular.module('embroidery-pattern')
                     scope.heightImage = this.naturalHeight;
                     scope.widthImage = this.naturalWidth;
                     scope.maxWidth = this.naturalWidth;
-                    scope.maxheigth = this.naturalHeight;
+                    scope.maxHeigth = this.naturalHeight;
                     scope.proportion = this.naturalHeight / this.naturalWidth;
                     console.log(scope.proportion);
                     scope.$apply();
