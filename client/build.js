@@ -56,9 +56,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             });
 
             file.upload.then(function (response) {
-                $timeout(function () {
-                    file.result = response.data;
-                });
+                console.log("response: ", response);
+                console.log("path: ", response.data.file.path);
             }, function (response) {
                 if (response.status > 0) {
                     $scope.errorMsg = response.status + ': ' + response.data;
@@ -95,3 +94,30 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
     }]);
+;angular.module('embroidery-pattern')
+    .service('textService', ['$http', '$q', function ($http) {
+
+    this.getHtml = function (fileAddress) {
+
+        return $http.get(fileAddress)
+            .then(function (responce) {
+                return responce.data;
+            }, function (err) {
+                return err.data;
+            });
+    };
+
+    this.setImage = function (data) {
+
+        return $http.put(data)
+            .then(function (responce) {
+                return responce.data;
+            })
+            .catch(function (err) {
+                return err;
+            });
+
+    };
+
+
+}]);

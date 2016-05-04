@@ -2,10 +2,10 @@ var express = require('express'),
     router = express.Router(),
     path = require('path'),
     multiparty = require('connect-multiparty'),
-    fs = require('fs'),
 
     pathConfig = require('../path'),
-    resizeImage = require('../middleware/resizeImage.js');
+    resizeImage = require('../middleware/resizeImage.js'),
+    getColors = require('../middleware/getColors.js');
 
 
 router.route('/')
@@ -22,12 +22,13 @@ router.route('/')
         uploadDir: path.join(pathConfig.publicDir, '/images/temp/')
     }),
     resizeImage,
+    getColors,
     function (req, res) {
         console.log("router");
         var file = req.files.file;
         res.json({
             success: true,
-            textMessage: 'Новое фото успешно сохранено',
+            textMessage: 'File upload successfully',
             file: file
         });
     })

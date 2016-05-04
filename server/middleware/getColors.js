@@ -5,29 +5,31 @@ var express = require('express'),
 
     pathConfig = require('../path');
 
-module.exports = function resizeImage(req, res, next) {
+module.exports = function getColors(req, res, next) {
+    console.log("get color");
     var file = req.files.file,
-        srcPath = path.join(file.path),
-        width = req.body.widthImage,
         extension = path.extname(file.originalFilename),
         name = path.basename(file.originalFilename, extension),
-        distName = name + '.gif',
-        distPath = path.join(pathConfig.publicDir, '/images/resize/', distName);
+        srcName = name + '.gif',
+        srcPath = path.join(pathConfig.publicDir, '/images/resize/', srcName);
+    distPath = path.join(pathConfig.publicDir, '/images/color/', srcName);
+    console.log("srcPath ", srcPath, "distPath ", distPath);
+
 
     var args = [
         srcPath,
-        "-resize",
-        width,
+        '-unique-colors',
+        '-scale',
+        ' 1000%',
         distPath
     ];
-
 
     var p = new Promise(function (resolve, reject) {
         im.convert(args, function (err) {
             if (err) {
                 throw err;
             }
-            console.log("Image resize complete");
+            console.log("Image color complete");
             resolve();
         });
     })

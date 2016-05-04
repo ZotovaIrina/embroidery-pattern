@@ -29,9 +29,8 @@ angular.module('embroidery-pattern')
             });
 
             file.upload.then(function (response) {
-                $timeout(function () {
-                    file.result = response.data;
-                });
+                console.log("response: ", response);
+                console.log("path: ", response.data.file.path);
             }, function (response) {
                 if (response.status > 0) {
                     $scope.errorMsg = response.status + ': ' + response.data;
