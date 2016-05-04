@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router(),
+var express = require('express'),
+    router = express.Router(),
     path = require('path'),
-    pathConfig = require('../path'),
     multiparty = require('connect-multiparty'),
-    fs = require('fs');
+    fs = require('fs'),
 
-
+    pathConfig = require('../path'),
+    resizeImage = require('../middleware/resizeImage.js');
 
 
 router.route('/')
@@ -21,13 +21,14 @@ router.route('/')
     multiparty({
         uploadDir: path.join(pathConfig.publicDir, '/images/temp/')
     }),
-
-    function (req, res, next) {
-        console.log('upload post');
-        var folder = pathConfig.publicDir + '/images/temp/';
-        console.log(folder);
+    resizeImage,
+    function (req, res) {
+        console.log("router");
+        var file = req.files.file;
         res.json({
-            success: true
+            success: true,
+            textMessage: 'Новое фото успешно сохранено',
+            file: file
         });
     })
 

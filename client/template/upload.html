@@ -18,8 +18,10 @@
                         precision="5"
                         orientation="horizontal"
                         handle="round"
+                        tooltip="always"
                         ng-change="widthChange()"
-                        class="col-xs-12 col-sm-3">
+                        class="col-xs-12 col-sm-3"
+                        ng-show="formShow">
                 </slider>
                 <i ng-show="myForm.widthImage.$error.required"> *required</i>
 
@@ -34,8 +36,10 @@
                         precision="5"
                         orientation="horizontal"
                         handle="round"
+                        tooltip="always"
                         ng-change="heightChange()"
-                        class="col-xs-12 col-sm-3">
+                        class="col-xs-12 col-sm-3"
+                        ng-show="formShow">
                 </slider>
                 <i ng-show="myForm.heightImage.$error.required">*required</i>
                 Profile Picture:

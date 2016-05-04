@@ -4,3 +4,4 @@ mongo
 .idea
 bower_components
 server/public/images/temp
+server/public/images/resize

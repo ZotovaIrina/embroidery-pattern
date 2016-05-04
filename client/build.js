@@ -26,23 +26,21 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
 ;angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$log', function ($scope, Upload, $timeout, baseURL, $log) {
+    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', function ($scope, Upload, $timeout, baseURL) {
         'use strict';
 
         $scope.widthImage = 0;
         $scope.heightImage = 0;
         $scope.maxWidth = 0;
         $scope.maxHeigth = 0;
-        $scope.formShow = true;
+        $scope.formShow = false;
 
 
         $scope.widthChange = function(){
-            console.log("widthChange");
             $scope.heightImage = parseInt($scope.proportion * $scope.widthImage);
         };
 
         $scope.heightChange = function(){
-            console.log("heightChange");
             $scope.widthImage = parseInt($scope.heightImage / $scope.proportion);
         };
 
@@ -83,13 +81,12 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     console.log("load image");
                     // success, "onload" catched
                     // now we can do specific stuff:
-                    console.log(this.naturalHeight);
                     scope.heightImage = this.naturalHeight;
                     scope.widthImage = this.naturalWidth;
                     scope.maxWidth = this.naturalWidth;
                     scope.maxHeigth = this.naturalHeight;
                     scope.proportion = this.naturalHeight / this.naturalWidth;
-                    console.log(scope.proportion);
+                    scope.formShow = true;
                     scope.$apply();
                 });
 
@@ -98,17 +95,3 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
     }]);
-
-
-//var image;
-//element.on("load", function () {
-//    angular.element(this).attr("src", baseResourceURL + "/404error.jpg");
-//    angular.element(this).attr("style", "left: 0;");
-//    //modelObject is a scope property of the parent/current scope
-//    image.error = true;
-//    scope.$apply();
-//    console.log(image);
-//});
-//scope.$watch(attrs.errorSrc, function(value){
-//    image = value;
-//});
