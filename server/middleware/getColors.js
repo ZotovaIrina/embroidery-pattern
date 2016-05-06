@@ -12,26 +12,24 @@ module.exports = function getColors(req, res, next) {
         name = path.basename(file.originalFilename, extension),
         srcName = name + '.gif',
         srcPath = path.join(pathConfig.publicDir, '/images/resize/', srcName);
-    distPath = path.join(pathConfig.publicDir, '/images/color/', srcName);
-    console.log("srcPath ", srcPath, "distPath ", distPath);
-
 
     var args = [
         srcPath,
         '-unique-colors',
-        '-scale',
-        ' 1000%',
-        distPath
+        '-depth',
+        ' 16',
+        'txt:-'
     ];
 
     var p = new Promise(function (resolve, reject) {
-        im.convert(args, function (err) {
+        var color = im.convert(args, function (err, data) {
             if (err) {
                 throw err;
             }
-            console.log("Image color complete");
+            console.log("Image color complete", data);
             resolve();
         });
+
     })
         .then(next);
 //wait when image will be saved and then next
