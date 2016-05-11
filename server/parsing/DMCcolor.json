@@ -1,6 +1,6 @@
 [
   {
-    "color": "white",
+    "color": "#fefefe",
     "dmccode": "blanc",
     "name": "White"
   },
@@ -10,7 +10,7 @@
     "name": "Ecru"
   },
   {
-    "color": "white",
+    "color": "#ffffff",
     "dmccode": "B5200",
     "name": "Ultra white"
   },
