@@ -5,8 +5,9 @@ var express = require('express'),
 
     pathConfig = require('../path'),
     resizeImage = require('../middleware/resizeImage.js'),
-    getColors = require('../middleware/getColors.js');
-
+    getColors = require('../middleware/getColors.js'),
+    changeColor = require('../middleware/changeColor.js');
+    convert = require('../middleware/convert.js');
 
 router.route('/')
 
@@ -22,9 +23,12 @@ router.route('/')
         uploadDir: path.join(pathConfig.publicDir, '/images/temp/')
     }),
     resizeImage,
+    changeColor,
     getColors,
+    convert,
     function (req, res) {
         console.log("router");
+        //console.log("color", req.body.color);
         var file = req.files.file;
         res.json({
             success: true,

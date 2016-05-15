@@ -1,3 +1,4 @@
+
 var express = require('express'),
     path = require('path'),
     fs = require('fs'),
@@ -25,7 +26,7 @@ module.exports = function resizeImage(req, res, next) {
     var p = new Promise(function (resolve, reject) {
         im.convert(args, function (err) {
             if (err) {
-                throw err;
+                reject(err);
             }
             console.log("Image resize complete");
             resolve();

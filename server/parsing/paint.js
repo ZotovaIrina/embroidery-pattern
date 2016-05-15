@@ -15,7 +15,7 @@ var args = [
     `${colorArray.length}x1`,
     'xc:white',
     ...imPointsArray,
-    './draw_point.gif'
+    './DMCcolormap.gif'
 ];
 
 var p = new Promise(function (resolve, reject) {

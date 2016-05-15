@@ -1,4 +1,4 @@
-//create file with all color in the image
+//change color using color map
 
 
 var express = require('express'),
@@ -9,21 +9,27 @@ var express = require('express'),
     pathConfig = require('../path');
 
 module.exports = function getColors(req, res, next) {
-    console.log("get color");
+    console.log("change color");
     var file = req.files.file,
+        numberOfColor = req.body.numberOfColor,
         extension = path.extname(file.originalFilename),
         name = path.basename(file.originalFilename, extension),
         srcName = name + '.gif',
-        srcPath = path.join(pathConfig.publicDir, '/images/changeColor/', srcName);
+        srcPath = path.join(pathConfig.publicDir, '/images/resize/', srcName),
+        distPath = path.join(pathConfig.publicDir, '/images/changeColor/', srcName),
+        colormap = path.join(pathConfig.serverDir, '/parsing/DMCcolormap.gif');
 
     var args = [
         srcPath,
-        //'-colorspace',
-        //'RGB',
-        '-unique-colors',
-        //'-depth',
-        //' 16',
-        'txt:-'
+        '-colorspace',
+        'RGB',
+        //'-dither',
+        //'none',
+        //'-remap',
+        //colormap,
+        '-colors',
+        numberOfColor,
+        distPath
     ];
 
     var p = new Promise(function (resolve, reject) {
@@ -31,10 +37,10 @@ module.exports = function getColors(req, res, next) {
             if (err) {
                 reject(err);
             }
-            console.log("Image color complete", data);
-            req.body.color = data;
+            console.log("Image change color complete", data);
             resolve();
         });
+
     })
         .then(next);
 //wait when image will be saved and then next

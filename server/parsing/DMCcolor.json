@@ -2,2278 +2,3625 @@
   {
     "color": "#fefefe",
     "dmccode": "blanc",
-    "name": "White"
+    "name": "White",
+    "red": 254,
+    "green": 254,
+    "blue": 254
   },
   {
     "color": "#e9e9d4",
     "dmccode": "Ecru",
-    "name": "Ecru"
+    "name": "Ecru",
+    "red": 233,
+    "green": 233,
+    "blue": 212
   },
   {
     "color": "#ffffff",
     "dmccode": "B5200",
-    "name": "Ultra white"
+    "name": "Ultra white",
+    "red": 255,
+    "green": 255,
+    "blue": 255
   },
   {
     "color": "#9f3845",
     "dmccode": "150",
-    "name": "Dusty Rose - ultra vy dk"
+    "name": "Dusty Rose - ultra vy dk",
+    "red": 159,
+    "green": 56,
+    "blue": 69
   },
   {
     "color": "#f2bcc5",
     "dmccode": "151",
-    "name": "Dusty Rose - vy lt"
+    "name": "Dusty Rose - vy lt",
+    "red": 242,
+    "green": 188,
+    "blue": 197
   },
   {
     "color": "#cfa296",
     "dmccode": "152",
-    "name": "Shell Pink - med lt"
+    "name": "Shell Pink - med lt",
+    "red": 207,
+    "green": 162,
+    "blue": 150
   },
   {
     "color": "#debcd9",
     "dmccode": "153",
-    "name": "Violet - vy lt"
+    "name": "Violet - vy lt",
+    "red": 222,
+    "green": 188,
+    "blue": 217
   },
   {
     "color": "#4d2e3d",
     "dmccode": "154",
-    "name": "Grape - vy dk"
+    "name": "Grape - vy dk",
+    "red": 77,
+    "green": 46,
+    "blue": 61
   },
   {
     "color": "#908bc3",
     "dmccode": "155",
-    "name": "Blue Violet - med dk"
+    "name": "Blue Violet - med dk",
+    "red": 144,
+    "green": 139,
+    "blue": 195
   },
   {
     "color": "#8b9ac5",
     "dmccode": "156",
-    "name": "Blue Violet - med lt"
+    "name": "Blue Violet - med lt",
+    "red": 139,
+    "green": 154,
+    "blue": 197
   },
   {
     "color": "#abc2de",
     "dmccode": "157",
-    "name": "Cornflower Blue - vy lt"
+    "name": "Cornflower Blue - vy lt",
+    "red": 171,
+    "green": 194,
+    "blue": 222
   },
   {
     "color": "#465082",
     "dmccode": "158 ",
-    "name": "Cornflower Blue-med vy dk "
+    "name": "Cornflower Blue-med vy dk ",
+    "red": 70,
+    "green": 80,
+    "blue": 130
   },
   {
     "color": "#a7b4cd",
     "dmccode": "159 ",
-    "name": "Gray Blue-lt "
+    "name": "Gray Blue-lt ",
+    "red": 167,
+    "green": 180,
+    "blue": 205
   },
   {
     "color": "#8290ae",
     "dmccode": "160 ",
-    "name": "Gray Blue-med "
+    "name": "Gray Blue-med ",
+    "red": 130,
+    "green": 144,
+    "blue": 174
   },
   {
     "color": "#667594",
     "dmccode": "161 ",
-    "name": "Gray Blue "
+    "name": "Gray Blue ",
+    "red": 102,
+    "green": 117,
+    "blue": 148
   },
   {
     "color": "#bddbe6",
     "dmccode": "162 ",
-    "name": "Blue-ultra vy lt "
+    "name": "Blue-ultra vy lt ",
+    "red": 189,
+    "green": 219,
+    "blue": 230
   },
   {
     "color": "#569571",
     "dmccode": "163 ",
-    "name": "Celadon Green-med "
+    "name": "Celadon Green-med ",
+    "red": 86,
+    "green": 149,
+    "blue": 113
   },
   {
     "color": "#9fcc8d",
     "dmccode": "164 ",
-    "name": "Forest Green-lt "
+    "name": "Forest Green-lt ",
+    "red": 159,
+    "green": 204,
+    "blue": 141
   },
   {
     "color": "#dad878",
     "dmccode": "165 ",
-    "name": "Moss Green-vylt "
+    "name": "Moss Green-vylt ",
+    "red": 218,
+    "green": 216,
+    "blue": 120
   },
   {
     "color": "#bfbb20",
     "dmccode": "166 ",
-    "name": "Moss Green-med lt "
+    "name": "Moss Green-med lt ",
+    "red": 191,
+    "green": 187,
+    "blue": 32
   },
   {
     "color": "#9f8447",
     "dmccode": "167 ",
-    "name": "Yellow Beige-vy dk "
+    "name": "Yellow Beige-vy dk ",
+    "red": 159,
+    "green": 132,
+    "blue": 71
   },
   {
     "color": "#b4c3c1",
     "dmccode": "168 ",
-    "name": "Pewter-vy lt "
+    "name": "Pewter-vy lt ",
+    "red": 180,
+    "green": 195,
+    "blue": 193
   },
   {
     "color": "#8b9a94",
     "dmccode": "169 ",
-    "name": "Pewter-lt "
+    "name": "Pewter-lt ",
+    "red": 139,
+    "green": 154,
+    "blue": 148
   },
   {
     "color": "#9870ac",
     "dmccode": "208 ",
-    "name": "Lavender-vy dk "
+    "name": "Lavender-vy dk ",
+    "red": 152,
+    "green": 112,
+    "blue": 172
   },
   {
     "color": "#b693b6",
     "dmccode": "209 ",
-    "name": "Lavender-dk "
+    "name": "Lavender-dk ",
+    "red": 182,
+    "green": 147,
+    "blue": 182
   },
   {
     "color": "#c9afdd",
     "dmccode": "210 ",
-    "name": "Lavender-med "
+    "name": "Lavender-med ",
+    "red": 201,
+    "green": 175,
+    "blue": 221
   },
   {
     "color": "#d4c3e4",
     "dmccode": "211 ",
-    "name": "Lavender-lt "
+    "name": "Lavender-lt ",
+    "red": 212,
+    "green": 195,
+    "blue": 228
   },
   {
     "color": "#884238",
     "dmccode": "221 ",
-    "name": "Shel lPink-vy dk "
+    "name": "Shel lPink-vy dk ",
+    "red": 136,
+    "green": 66,
+    "blue": 56
   },
   {
     "color": "#bb817b",
     "dmccode": "223 ",
-    "name": "Shell Pink-lt "
+    "name": "Shell Pink-lt ",
+    "red": 187,
+    "green": 129,
+    "blue": 123
   },
   {
     "color": "#dfb3a6",
     "dmccode": "224 ",
-    "name": "ShellPink-vy lt "
+    "name": "ShellPink-vy lt ",
+    "red": 223,
+    "green": 179,
+    "blue": 166
   },
   {
     "color": "#ecd9cf",
     "dmccode": "225 ",
-    "name": "ShellPink-ultra vy lt "
+    "name": "ShellPink-ultra vy lt ",
+    "red": 236,
+    "green": 217,
+    "blue": 207
   },
   {
     "color": "#784e24",
     "dmccode": "300 ",
-    "name": "Mahogany-vy dk "
+    "name": "Mahogany-vy dk ",
+    "red": 120,
+    "green": 78,
+    "blue": 36
   },
   {
     "color": "#aa6730",
     "dmccode": "301 ",
-    "name": "Mahogany-med "
+    "name": "Mahogany-med ",
+    "red": 170,
+    "green": 103,
+    "blue": 48
   },
   {
     "color": "#9e3332",
     "dmccode": "304 ",
-    "name": "Christmas Red-med "
+    "name": "Christmas Red-med ",
+    "red": 158,
+    "green": 51,
+    "blue": 50
   },
   {
     "color": "#f6e311",
     "dmccode": "307 ",
-    "name": "Lemon "
+    "name": "Lemon ",
+    "red": 246,
+    "green": 227,
+    "blue": 17
   },
   {
     "color": "#b84351",
     "dmccode": "309 ",
-    "name": "Rose-dk "
+    "name": "Rose-dk ",
+    "red": 184,
+    "green": 67,
+    "blue": 81
   },
   {
     "color": "black",
     "dmccode": "310 ",
-    "name": "Black "
+    "name": "Black ",
+    "red": null,
+    "green": 12,
+    "blue": null
   },
   {
     "color": "#30506f",
     "dmccode": "311 ",
-    "name": "Navy Blue-med "
+    "name": "Navy Blue-med ",
+    "red": 48,
+    "green": 80,
+    "blue": 111
   },
   {
     "color": "#386189",
     "dmccode": "312 ",
-    "name": "Navy Blue-lt "
+    "name": "Navy Blue-lt ",
+    "red": 56,
+    "green": 97,
+    "blue": 137
   },
   {
     "color": "#8e5d5c",
     "dmccode": "315 ",
-    "name": "Antique Mauve-med dk "
+    "name": "Antique Mauve-med dk ",
+    "red": 142,
+    "green": 93,
+    "blue": 92
   },
   {
     "color": "#bf889c",
     "dmccode": "316 ",
-    "name": "Antique Mauve-med "
+    "name": "Antique Mauve-med ",
+    "red": 191,
+    "green": 136,
+    "blue": 156
   },
   {
     "color": "#697275",
     "dmccode": "317 ",
-    "name": "Pewter Grey "
+    "name": "Pewter Grey ",
+    "red": 105,
+    "green": 114,
+    "blue": 117
   },
   {
     "color": "#a0a7b0",
     "dmccode": "318 ",
-    "name": "Steel Grey-lt "
+    "name": "Steel Grey-lt ",
+    "red": 160,
+    "green": 167,
+    "blue": 176
   },
   {
     "color": "#35633d",
     "dmccode": "319 ",
-    "name": "Pistachio Green-vy dk "
+    "name": "Pistachio Green-vy dk ",
+    "red": 53,
+    "green": 99,
+    "blue": 61
   },
   {
     "color": "#71a072",
     "dmccode": "320 ",
-    "name": "Pistachio Green-med "
+    "name": "Pistachio Green-med ",
+    "red": 113,
+    "green": 160,
+    "blue": 114
   },
   {
     "color": "#ce1f32",
     "dmccode": "321 ",
-    "name": "Christmas Red "
+    "name": "Christmas Red ",
+    "red": 206,
+    "green": 31,
+    "blue": 50
   },
   {
     "color": "#647e9d",
     "dmccode": "322 ",
-    "name": "NavyBlue-vy lt "
+    "name": "NavyBlue-vy lt ",
+    "red": 100,
+    "green": 126,
+    "blue": 157
   },
   {
     "color": "#a92332",
     "dmccode": "326 ",
-    "name": "Rose-vy dk "
+    "name": "Rose-vy dk ",
+    "red": 169,
+    "green": 35,
+    "blue": 50
   },
   {
     "color": "#723657",
     "dmccode": "327 ",
-    "name": "Violet-vy dk "
+    "name": "Violet-vy dk ",
+    "red": 114,
+    "green": 54,
+    "blue": 87
   },
   {
     "color": "#6c5086",
     "dmccode": "333 ",
-    "name": "BlueViolet-vy dk "
+    "name": "BlueViolet-vy dk ",
+    "red": 108,
+    "green": 80,
+    "blue": 134
   },
   {
     "color": "#4c698c",
     "dmccode": "334 ",
-    "name": "BabyBlue-med "
+    "name": "BabyBlue-med ",
+    "red": 76,
+    "green": 105,
+    "blue": 140
   },
   {
     "color": "#e56d7f",
     "dmccode": "335 ",
-    "name": "Rose "
+    "name": "Rose ",
+    "red": 229,
+    "green": 109,
+    "blue": 127
   },
   {
     "color": "#0c1225",
     "dmccode": "336 ",
-    "name": "Navy Blue "
+    "name": "Navy Blue ",
+    "red": 12,
+    "green": 18,
+    "blue": 37
   },
   {
     "color": "#9389c1",
     "dmccode": "340 ",
-    "name": "Blue Violet-med "
+    "name": "Blue Violet-med ",
+    "red": 147,
+    "green": 137,
+    "blue": 193
   },
   {
     "color": "#a2accd",
     "dmccode": "341 ",
-    "name": "Blue Violet-lt "
+    "name": "Blue Violet-lt ",
+    "red": 162,
+    "green": 172,
+    "blue": 205
   },
   {
     "color": "#bf3e31",
     "dmccode": "347 ",
-    "name": "Salmon - vy dk "
+    "name": "Salmon - vy dk ",
+    "red": 191,
+    "green": 62,
+    "blue": 49
   },
   {
     "color": "#c24731",
     "dmccode": "349 ",
-    "name": "Coral-dk "
+    "name": "Coral-dk ",
+    "red": 194,
+    "green": 71,
+    "blue": 49
   },
   {
     "color": "#e46647",
     "dmccode": "350 ",
-    "name": "Coral-med "
+    "name": "Coral-med ",
+    "red": 228,
+    "green": 102,
+    "blue": 71
   },
   {
     "color": "#f78465",
     "dmccode": "351 ",
-    "name": "Coral "
+    "name": "Coral ",
+    "red": 247,
+    "green": 132,
+    "blue": 101
   },
   {
     "color": "#f69d80",
     "dmccode": "352 ",
-    "name": "Coral-lt "
+    "name": "Coral-lt ",
+    "red": 246,
+    "green": 157,
+    "blue": 128
   },
   {
     "color": "#fdbca1",
     "dmccode": "353 ",
-    "name": "Peach "
+    "name": "Peach ",
+    "red": 253,
+    "green": 188,
+    "blue": 161
   },
   {
     "color": "#9a3b2d",
     "dmccode": "355 ",
-    "name": "TerraCotta-dk "
+    "name": "TerraCotta-dk ",
+    "red": 154,
+    "green": 59,
+    "blue": 45
   },
   {
     "color": "#a06757",
     "dmccode": "356 ",
-    "name": "TerraCotta-med "
+    "name": "TerraCotta-med ",
+    "red": 160,
+    "green": 103,
+    "blue": 87
   },
   {
     "color": "#4c7047",
     "dmccode": "367 ",
-    "name": "PistachioGreen-dk "
+    "name": "PistachioGreen-dk ",
+    "red": 76,
+    "green": 112,
+    "blue": 71
   },
   {
     "color": "#91ab84",
     "dmccode": "368 ",
-    "name": "PistachioGreen-lt "
+    "name": "PistachioGreen-lt ",
+    "red": 145,
+    "green": 171,
+    "blue": 132
   },
   {
     "color": "#ccdcbe",
     "dmccode": "369 ",
-    "name": "PistachioGreen-vy lt "
+    "name": "PistachioGreen-vy lt ",
+    "red": 204,
+    "green": 220,
+    "blue": 190
   },
   {
     "color": "#bbaa55",
     "dmccode": "370 ",
-    "name": "Mustard-med "
+    "name": "Mustard-med ",
+    "red": 187,
+    "green": 170,
+    "blue": 85
   },
   {
     "color": "#a08f4d",
     "dmccode": "371",
-    "name": "Mustard "
+    "name": "Mustard ",
+    "red": 160,
+    "green": 143,
+    "blue": 77
   },
   {
     "color": "#9c8c4a",
     "dmccode": "372 ",
-    "name": "Mustard - lt "
+    "name": "Mustard - lt ",
+    "red": 156,
+    "green": 140,
+    "blue": 74
   },
   {
     "color": "#934d29",
     "dmccode": "400 ",
-    "name": "Mahogany - dk "
+    "name": "Mahogany - dk ",
+    "red": 147,
+    "green": 77,
+    "blue": 41
   },
   {
     "color": "#e8a76d",
     "dmccode": "402 ",
-    "name": "Mahogany - vy lt "
+    "name": "Mahogany - vy lt ",
+    "red": 232,
+    "green": 167,
+    "blue": 109
   },
   {
     "color": "#c49a87",
     "dmccode": "407 ",
-    "name": "Desert Sand - dk "
+    "name": "Desert Sand - dk ",
+    "red": 196,
+    "green": 154,
+    "blue": 135
   },
   {
     "color": "#535657",
     "dmccode": "413 ",
-    "name": "Pewter Grey - dk "
+    "name": "Pewter Grey - dk ",
+    "red": 83,
+    "green": 86,
+    "blue": 87
   },
   {
     "color": "#95909d",
     "dmccode": "414 ",
-    "name": "Steel Grey - dk "
+    "name": "Steel Grey - dk ",
+    "red": 149,
+    "green": 144,
+    "blue": 157
   },
   {
     "color": "#d3d4db",
     "dmccode": "415 ",
-    "name": "Pearl Grey "
+    "name": "Pearl Grey ",
+    "red": 211,
+    "green": 212,
+    "blue": 219
   },
   {
     "color": "#866226",
     "dmccode": "420 ",
-    "name": "Hazelnut Brown - dk "
+    "name": "Hazelnut Brown - dk ",
+    "red": 134,
+    "green": 98,
+    "blue": 38
   },
   {
     "color": "#d0ba79",
     "dmccode": "422 ",
-    "name": "Hazelnut Brown - lt "
+    "name": "Hazelnut Brown - lt ",
+    "red": 208,
+    "green": 186,
+    "blue": 121
   },
   {
     "color": "#775437",
     "dmccode": "433 ",
-    "name": "Brown - med "
+    "name": "Brown - med ",
+    "red": 119,
+    "green": 84,
+    "blue": 55
   },
   {
     "color": "#b78237",
     "dmccode": "434 ",
-    "name": "Brown - lt "
+    "name": "Brown - lt ",
+    "red": 183,
+    "green": 130,
+    "blue": 55
   },
   {
     "color": "#c4863a",
     "dmccode": "435 ",
-    "name": "Brown - vy lt "
+    "name": "Brown - vy lt ",
+    "red": 196,
+    "green": 134,
+    "blue": 58
   },
   {
     "color": "#c09557",
     "dmccode": "436 ",
-    "name": "Tan "
+    "name": "Tan ",
+    "red": 192,
+    "green": 149,
+    "blue": 87
   },
   {
     "color": "#d9b879",
     "dmccode": "437 ",
-    "name": "Tan - lt "
+    "name": "Tan - lt ",
+    "red": 217,
+    "green": 184,
+    "blue": 121
   },
   {
     "color": "#f5d500",
     "dmccode": "444 ",
-    "name": "Lemon - dk "
+    "name": "Lemon - dk ",
+    "red": 245,
+    "green": 213,
+    "blue": 0
   },
   {
     "color": "#f0ed85",
     "dmccode": "445 ",
-    "name": "Lemon - lt "
+    "name": "Lemon - lt ",
+    "red": 240,
+    "green": 237,
+    "blue": 133
   },
   {
     "color": "#978b81",
     "dmccode": "451 ",
-    "name": "Shell Grey - dk "
+    "name": "Shell Grey - dk ",
+    "red": 151,
+    "green": 139,
+    "blue": 129
   },
   {
     "color": "#bbaea6",
     "dmccode": "452 ",
-    "name": "Shell Grey - med "
+    "name": "Shell Grey - med ",
+    "red": 187,
+    "green": 174,
+    "blue": 166
   },
   {
     "color": "#e3dcdb",
     "dmccode": "453 ",
-    "name": "Shell Grey - lt "
+    "name": "Shell Grey - lt ",
+    "red": 227,
+    "green": 220,
+    "blue": 219
   },
   {
     "color": "#798738",
     "dmccode": "469 ",
-    "name": "Avocado Green "
+    "name": "Avocado Green ",
+    "red": 121,
+    "green": 135,
+    "blue": 56
   },
   {
     "color": "#98a859",
     "dmccode": "470 ",
-    "name": "Avocado Green - lt "
+    "name": "Avocado Green - lt ",
+    "red": 152,
+    "green": 168,
+    "blue": 89
   },
   {
     "color": "#929937",
     "dmccode": "471 ",
-    "name": "Avocado Green - vy lt "
+    "name": "Avocado Green - vy lt ",
+    "red": 146,
+    "green": 153,
+    "blue": 55
   },
   {
     "color": "#dee077",
     "dmccode": "472 ",
-    "name": "Avocado Green - ultra lt "
+    "name": "Avocado Green - ultra lt ",
+    "red": 222,
+    "green": 224,
+    "blue": 119
   },
   {
     "color": "#98232c",
     "dmccode": "498 ",
-    "name": "Christmas Red - dk "
+    "name": "Christmas Red - dk ",
+    "red": 152,
+    "green": 35,
+    "blue": 44
   },
   {
     "color": "#14361e",
     "dmccode": "500 ",
-    "name": "Blue Green - vy dk "
+    "name": "Blue Green - vy dk ",
+    "red": 20,
+    "green": 54,
+    "blue": 30
   },
   {
     "color": "#496f5c",
     "dmccode": "501 ",
-    "name": "Blue Green - dk "
+    "name": "Blue Green - dk ",
+    "red": 73,
+    "green": 111,
+    "blue": 92
   },
   {
     "color": "#799a83",
     "dmccode": "502 ",
-    "name": "Blue Green "
+    "name": "Blue Green ",
+    "red": 121,
+    "green": 154,
+    "blue": 131
   },
   {
     "color": "#8ebea9",
     "dmccode": "503 ",
-    "name": "Blue Green - med "
+    "name": "Blue Green - med ",
+    "red": 142,
+    "green": 190,
+    "blue": 169
   },
   {
     "color": "#d1e2d7",
     "dmccode": "504 ",
-    "name": "Blue Green - vy lt "
+    "name": "Blue Green - vy lt ",
+    "red": 209,
+    "green": 226,
+    "blue": 215
   },
   {
     "color": "#418253",
     "dmccode": "505",
-    "name": "Jade"
+    "name": "Jade",
+    "red": 65,
+    "green": 130,
+    "blue": 83
   },
   {
     "color": "#166d92",
     "dmccode": "517 ",
-    "name": "Wedgwood - dk "
+    "name": "Wedgwood - dk ",
+    "red": 22,
+    "green": 109,
+    "blue": 146
   },
   {
     "color": "#6b9cb9",
     "dmccode": "518 ",
-    "name": "Wedgwood - lt "
+    "name": "Wedgwood - lt ",
+    "red": 107,
+    "green": 156,
+    "blue": 185
   },
   {
     "color": "#a8c6d8",
     "dmccode": "519 ",
-    "name": "Sky Blue "
+    "name": "Sky Blue ",
+    "red": 168,
+    "green": 198,
+    "blue": 216
   },
   {
     "color": "#4f6035",
     "dmccode": "520 ",
-    "name": "Fern Green - dk "
+    "name": "Fern Green - dk ",
+    "red": 79,
+    "green": 96,
+    "blue": 53
   },
   {
     "color": "#93a181",
     "dmccode": "522 ",
-    "name": "Fern Green "
+    "name": "Fern Green ",
+    "red": 147,
+    "green": 161,
+    "blue": 129
   },
   {
     "color": "#a5a888",
     "dmccode": "523 ",
-    "name": "Fern Green - lt "
+    "name": "Fern Green - lt ",
+    "red": 165,
+    "green": 168,
+    "blue": 136
   },
   {
     "color": "#bec0a8",
     "dmccode": "524 ",
-    "name": "Fern Green - vy lt "
+    "name": "Fern Green - vy lt ",
+    "red": 190,
+    "green": 192,
+    "blue": 168
   },
   {
     "color": "#504f50",
     "dmccode": "535 ",
-    "name": "Ash Grey - vy lt "
+    "name": "Ash Grey - vy lt ",
+    "red": 80,
+    "green": 79,
+    "blue": 80
   },
   {
     "color": "#f0e3d4",
     "dmccode": "543 ",
-    "name": "Beige Brown - ultra vy lt "
+    "name": "Beige Brown - ultra vy lt ",
+    "red": 240,
+    "green": 227,
+    "blue": 212
   },
   {
     "color": "#541244",
     "dmccode": "550 ",
-    "name": "Violet - vy dk "
+    "name": "Violet - vy dk ",
+    "red": 84,
+    "green": 18,
+    "blue": 68
   },
   {
     "color": "#7b3f6c",
     "dmccode": "552 ",
-    "name": "Violet - med "
+    "name": "Violet - med ",
+    "red": 123,
+    "green": 63,
+    "blue": 108
   },
   {
     "color": "#a772a4",
     "dmccode": "553 ",
-    "name": "Violet "
+    "name": "Violet ",
+    "red": 167,
+    "green": 114,
+    "blue": 164
   },
   {
     "color": "#ae99b1",
     "dmccode": "554 ",
-    "name": "Violet - lt "
+    "name": "Violet - lt ",
+    "red": 174,
+    "green": 153,
+    "blue": 177
   },
   {
     "color": "#377557",
     "dmccode": "561 ",
-    "name": "Jade - vy dk "
+    "name": "Jade - vy dk ",
+    "red": 55,
+    "green": 117,
+    "blue": 87
   },
   {
     "color": "#599b6d",
     "dmccode": "562 ",
-    "name": "Jade - med "
+    "name": "Jade - med ",
+    "red": 89,
+    "green": 155,
+    "blue": 109
   },
   {
     "color": "#87c39e",
     "dmccode": "563 ",
-    "name": "Jade - lt "
+    "name": "Jade - lt ",
+    "red": 135,
+    "green": 195,
+    "blue": 158
   },
   {
     "color": "#9cd0ab",
     "dmccode": "564 ",
-    "name": "Jade - vy lt "
+    "name": "Jade - vy lt ",
+    "red": 156,
+    "green": 208,
+    "blue": 171
   },
   {
     "color": "#68772d",
     "dmccode": "580 ",
-    "name": "Moss Green - dk "
+    "name": "Moss Green - dk ",
+    "red": 104,
+    "green": 119,
+    "blue": 45
   },
   {
     "color": "#9fa146",
     "dmccode": "581 ",
-    "name": "Moss Green "
+    "name": "Moss Green ",
+    "red": 159,
+    "green": 161,
+    "blue": 70
   },
   {
     "color": "#70aeb4",
     "dmccode": "597 ",
-    "name": "Turquoise "
+    "name": "Turquoise ",
+    "red": 112,
+    "green": 174,
+    "blue": 180
   },
   {
     "color": "#97ccca",
     "dmccode": "598 ",
-    "name": "Turquoise - lt "
+    "name": "Turquoise - lt ",
+    "red": 151,
+    "green": 204,
+    "blue": 202
   },
   {
     "color": "#bf1c48",
     "dmccode": "600 ",
-    "name": "Cranberry - vy dk "
+    "name": "Cranberry - vy dk ",
+    "red": 191,
+    "green": 28,
+    "blue": 72
   },
   {
     "color": "#d34067",
     "dmccode": "601 ",
-    "name": "Cranberry - dk "
+    "name": "Cranberry - dk ",
+    "red": 211,
+    "green": 64,
+    "blue": 103
   },
   {
     "color": "#ca0b51",
     "dmccode": "602 ",
-    "name": "Cranberry - med "
+    "name": "Cranberry - med ",
+    "red": 202,
+    "green": 11,
+    "blue": 81
   },
   {
     "color": "#ef7ba1",
     "dmccode": "603 ",
-    "name": "Cranberry "
+    "name": "Cranberry ",
+    "red": 239,
+    "green": 123,
+    "blue": 161
   },
   {
     "color": "#ec9ab9",
     "dmccode": "604 ",
-    "name": "Cranberry - lt "
+    "name": "Cranberry - lt ",
+    "red": 236,
+    "green": 154,
+    "blue": 185
   },
   {
     "color": "#faccdb",
     "dmccode": "605 ",
-    "name": "Cranberry - vy lt "
+    "name": "Cranberry - vy lt ",
+    "red": 250,
+    "green": 204,
+    "blue": 219
   },
   {
     "color": "#ea592c",
     "dmccode": "606 ",
-    "name": "Bright Orange Red "
+    "name": "Bright Orange Red ",
+    "red": 234,
+    "green": 89,
+    "blue": 44
   },
   {
     "color": "#f06e46",
     "dmccode": "608 ",
-    "name": "Bright Orange "
+    "name": "Bright Orange ",
+    "red": 240,
+    "green": 110,
+    "blue": 70
   },
   {
     "color": "#806638",
     "dmccode": "610 ",
-    "name": "Drab Brown - vy dk "
+    "name": "Drab Brown - vy dk ",
+    "red": 128,
+    "green": 102,
+    "blue": 56
   },
   {
     "color": "#9e9072",
     "dmccode": "611 ",
-    "name": "Drab Brown - dk "
+    "name": "Drab Brown - dk ",
+    "red": 158,
+    "green": 144,
+    "blue": 114
   },
   {
     "color": "#917d4a",
     "dmccode": "612 ",
-    "name": "Drab Brown - med "
+    "name": "Drab Brown - med ",
+    "red": 145,
+    "green": 125,
+    "blue": 74
   },
   {
     "color": "#bcae83",
     "dmccode": "613 ",
-    "name": "Drab Brown - lt "
+    "name": "Drab Brown - lt ",
+    "red": 188,
+    "green": 174,
+    "blue": 131
   },
   {
     "color": "#8c593e",
     "dmccode": "632 ",
-    "name": "Desert Sand - ultra vy dk "
+    "name": "Desert Sand - ultra vy dk ",
+    "red": 140,
+    "green": 89,
+    "blue": 62
   },
   {
     "color": "#938962",
     "dmccode": "640 ",
-    "name": "Beige Grey - vy dk "
+    "name": "Beige Grey - vy dk ",
+    "red": 147,
+    "green": 137,
+    "blue": 98
   },
   {
     "color": "#bab599",
     "dmccode": "642 ",
-    "name": "Beige Grey - dk "
+    "name": "Beige Grey - dk ",
+    "red": 186,
+    "green": 181,
+    "blue": 153
   },
   {
     "color": "#d6d3c1",
     "dmccode": "644 ",
-    "name": "Beige Grey - med "
+    "name": "Beige Grey - med ",
+    "red": 214,
+    "green": 211,
+    "blue": 193
   },
   {
     "color": "#747e65",
     "dmccode": "645 ",
-    "name": "Beaver Grey - vy dk "
+    "name": "Beaver Grey - vy dk ",
+    "red": 116,
+    "green": 126,
+    "blue": 101
   },
   {
     "color": "#97978e",
     "dmccode": "646 ",
-    "name": "Beaver Grey - dk "
+    "name": "Beaver Grey - dk ",
+    "red": 151,
+    "green": 151,
+    "blue": 142
   },
   {
     "color": "#abafa3",
     "dmccode": "647 ",
-    "name": "Beaver Grey - med "
+    "name": "Beaver Grey - med ",
+    "red": 171,
+    "green": 175,
+    "blue": 163
   },
   {
     "color": "#babfad",
     "dmccode": "648 ",
-    "name": "Beaver Grey - lt "
+    "name": "Beaver Grey - lt ",
+    "red": 186,
+    "green": 191,
+    "blue": 173
   },
   {
     "color": "#d12627",
     "dmccode": "666 ",
-    "name": "Christmas Red - bright "
+    "name": "Christmas Red - bright ",
+    "red": 209,
+    "green": 38,
+    "blue": 39
   },
   {
     "color": "#eed7a1",
     "dmccode": "676 ",
-    "name": "Old Gold - lt "
+    "name": "Old Gold - lt ",
+    "red": 238,
+    "green": 215,
+    "blue": 161
   },
   {
     "color": "#ede0ba",
     "dmccode": "677 ",
-    "name": "Old Gold - vy lt "
+    "name": "Old Gold - vy lt ",
+    "red": 237,
+    "green": 224,
+    "blue": 186
   },
   {
     "color": "#af8334",
     "dmccode": "680 ",
-    "name": "Old Gold - dk "
+    "name": "Old Gold - dk ",
+    "red": 175,
+    "green": 131,
+    "blue": 52
   },
   {
     "color": "#015731",
     "dmccode": "699 ",
-    "name": "Christmas Green "
+    "name": "Christmas Green ",
+    "red": 1,
+    "green": 87,
+    "blue": 49
   },
   {
     "color": "#2e9148",
     "dmccode": "700 ",
-    "name": "Christmas Green - bright "
+    "name": "Christmas Green - bright ",
+    "red": 46,
+    "green": 145,
+    "blue": 72
   },
   {
     "color": "#007a3f",
     "dmccode": "701 ",
-    "name": "Christmas Green - lt "
+    "name": "Christmas Green - lt ",
+    "red": 0,
+    "green": 122,
+    "blue": 63
   },
   {
     "color": "#59a052",
     "dmccode": "702 ",
-    "name": "Kelly Green "
+    "name": "Kelly Green ",
+    "red": 89,
+    "green": 160,
+    "blue": 82
   },
   {
     "color": "#81b85e",
     "dmccode": "703 ",
-    "name": "Chartreuse "
+    "name": "Chartreuse ",
+    "red": 129,
+    "green": 184,
+    "blue": 94
   },
   {
     "color": "#bad765",
     "dmccode": "704 ",
-    "name": "Chartreuse - bright "
+    "name": "Chartreuse - bright ",
+    "red": 186,
+    "green": 215,
+    "blue": 101
   },
   {
     "color": "#e1e1d9",
     "dmccode": "712 ",
-    "name": "Cream "
+    "name": "Cream ",
+    "red": 225,
+    "green": 225,
+    "blue": 217
   },
   {
     "color": "#9f2d6f",
     "dmccode": "718 ",
-    "name": "Plum "
+    "name": "Plum ",
+    "red": 159,
+    "green": 45,
+    "blue": 111
   },
   {
     "color": "#ec6810",
     "dmccode": "720 ",
-    "name": "Orange Spice - dk "
+    "name": "Orange Spice - dk ",
+    "red": 236,
+    "green": 104,
+    "blue": 16
   },
   {
     "color": "#e4752b",
     "dmccode": "721 ",
-    "name": "Orange Spice - med "
+    "name": "Orange Spice - med ",
+    "red": 228,
+    "green": 117,
+    "blue": 43
   },
   {
     "color": "#faa463",
     "dmccode": "722 ",
-    "name": "Orange Spice - lt "
+    "name": "Orange Spice - lt ",
+    "red": 250,
+    "green": 164,
+    "blue": 99
   },
   {
     "color": "#fad558",
     "dmccode": "725 ",
-    "name": "Topaz "
+    "name": "Topaz ",
+    "red": 250,
+    "green": 213,
+    "blue": 88
   },
   {
     "color": "#ffe35f",
     "dmccode": "726 ",
-    "name": "Topaz - lt "
+    "name": "Topaz - lt ",
+    "red": 255,
+    "green": 227,
+    "blue": 95
   },
   {
     "color": "#feee89",
     "dmccode": "727 ",
-    "name": "Topaz - vy lt "
+    "name": "Topaz - vy lt ",
+    "red": 254,
+    "green": 238,
+    "blue": 137
   },
   {
     "color": "#ecbf3b",
     "dmccode": "728",
-    "name": "Topaz"
+    "name": "Topaz",
+    "red": 236,
+    "green": 191,
+    "blue": 59
   },
   {
     "color": "#cc993d",
     "dmccode": "729 ",
-    "name": "Old Gold - med "
+    "name": "Old Gold - med ",
+    "red": 204,
+    "green": 153,
+    "blue": 61
   },
   {
     "color": "#746d2b",
     "dmccode": "730 ",
-    "name": "Olive Green - vy dk "
+    "name": "Olive Green - vy dk ",
+    "red": 116,
+    "green": 109,
+    "blue": 43
   },
   {
     "color": "#837d2f",
     "dmccode": "731 ",
-    "name": "Olive Green - dk "
+    "name": "Olive Green - dk ",
+    "red": 131,
+    "green": 125,
+    "blue": 47
   },
   {
     "color": "#91852a",
     "dmccode": "732 ",
-    "name": "Olive Green "
+    "name": "Olive Green ",
+    "red": 145,
+    "green": 133,
+    "blue": 42
   },
   {
     "color": "#a6a036",
     "dmccode": "733 ",
-    "name": "Olive Green - med "
+    "name": "Olive Green - med ",
+    "red": 166,
+    "green": 160,
+    "blue": 54
   },
   {
     "color": "#d1c66d",
     "dmccode": "734 ",
-    "name": "Olive Green - lt "
+    "name": "Olive Green - lt ",
+    "red": 209,
+    "green": 198,
+    "blue": 109
   },
   {
     "color": "#d9c38f",
     "dmccode": "738 ",
-    "name": "Tan - vy lt "
+    "name": "Tan - vy lt ",
+    "red": 217,
+    "green": 195,
+    "blue": 143
   },
   {
     "color": "#e5dab2",
     "dmccode": "739 ",
-    "name": "Tan - ultra vy lt "
+    "name": "Tan - ultra vy lt ",
+    "red": 229,
+    "green": 218,
+    "blue": 178
   },
   {
     "color": "#ff7600",
     "dmccode": "740 ",
-    "name": "Tangerine "
+    "name": "Tangerine ",
+    "red": 255,
+    "green": 118,
+    "blue": 0
   },
   {
     "color": "#f69726",
     "dmccode": "741 ",
-    "name": "Tangerine - med "
+    "name": "Tangerine - med ",
+    "red": 246,
+    "green": 151,
+    "blue": 38
   },
   {
     "color": "#ffc33a",
     "dmccode": "742 ",
-    "name": "Tangerine - lt "
+    "name": "Tangerine - lt ",
+    "red": 255,
+    "green": 195,
+    "blue": 58
   },
   {
     "color": "#ffda5a",
     "dmccode": "743 ",
-    "name": "Yellow - med "
+    "name": "Yellow - med ",
+    "red": 255,
+    "green": 218,
+    "blue": 90
   },
   {
     "color": "#ffe276",
     "dmccode": "744 ",
-    "name": "Yellow - pale "
+    "name": "Yellow - pale ",
+    "red": 255,
+    "green": 226,
+    "blue": 118
   },
   {
     "color": "#ffeda9",
     "dmccode": "745 ",
-    "name": "Yellow - lt pale "
+    "name": "Yellow - lt pale ",
+    "red": 255,
+    "green": 237,
+    "blue": 169
   },
   {
     "color": "#f5f0df",
     "dmccode": "746 ",
-    "name": "Off White "
+    "name": "Off White ",
+    "red": 245,
+    "green": 240,
+    "blue": 223
   },
   {
     "color": "#d3e9e7",
     "dmccode": "747 ",
-    "name": "Sky Blue - vy lt "
+    "name": "Sky Blue - vy lt ",
+    "red": 211,
+    "green": 233,
+    "blue": 231
   },
   {
     "color": "#efc1aa",
     "dmccode": "754 ",
-    "name": "Peach - lt "
+    "name": "Peach - lt ",
+    "red": 239,
+    "green": 193,
+    "blue": 170
   },
   {
     "color": "#eac0b4",
     "dmccode": "758 ",
-    "name": "Terra Cotta - vy lt "
+    "name": "Terra Cotta - vy lt ",
+    "red": 234,
+    "green": 192,
+    "blue": 180
   },
   {
     "color": "#e29690",
     "dmccode": "760 ",
-    "name": "Salmon "
+    "name": "Salmon ",
+    "red": 226,
+    "green": 150,
+    "blue": 144
   },
   {
     "color": "#f4c4c1",
     "dmccode": "761 ",
-    "name": "Salmon - lt "
+    "name": "Salmon - lt ",
+    "red": 244,
+    "green": 196,
+    "blue": 193
   },
   {
     "color": "#e9e9eb",
     "dmccode": "762 ",
-    "name": "Pearl Grey - vy lt "
+    "name": "Pearl Grey - vy lt ",
+    "red": 233,
+    "green": 233,
+    "blue": 235
   },
   {
     "color": "#f3f6d4",
     "dmccode": "772 ",
-    "name": "Yellow Green - vy lt "
+    "name": "Yellow Green - vy lt ",
+    "red": 243,
+    "green": 246,
+    "blue": 212
   },
   {
     "color": "#ceddea",
     "dmccode": "775 ",
-    "name": "Baby Blue - vy lt "
+    "name": "Baby Blue - vy lt ",
+    "red": 206,
+    "green": 221,
+    "blue": 234
   },
   {
     "color": "#eeaeb0",
     "dmccode": "776 ",
-    "name": "Pink - med "
+    "name": "Pink - med ",
+    "red": 238,
+    "green": 174,
+    "blue": 176
   },
   {
     "color": "#8a373b",
     "dmccode": "777",
-    "name": "Raspberry - vy dk"
+    "name": "Raspberry - vy dk",
+    "red": 138,
+    "green": 55,
+    "blue": 59
   },
   {
     "color": "#ddb3b1",
     "dmccode": "778 ",
-    "name": "Antique Mauve - vy lt "
+    "name": "Antique Mauve - vy lt ",
+    "red": 221,
+    "green": 179,
+    "blue": 177
   },
   {
     "color": "#6d5748",
     "dmccode": "779",
-    "name": "Cocoa - dk"
+    "name": "Cocoa - dk",
+    "red": 109,
+    "green": 87,
+    "blue": 72
   },
   {
     "color": "#936626",
     "dmccode": "780 ",
-    "name": "Topaz - ultra vy dk "
+    "name": "Topaz - ultra vy dk ",
+    "red": 147,
+    "green": 102,
+    "blue": 38
   },
   {
     "color": "#ba8225",
     "dmccode": "781 ",
-    "name": "Topaz - vy dk "
+    "name": "Topaz - vy dk ",
+    "red": 186,
+    "green": 130,
+    "blue": 37
   },
   {
     "color": "#b38132",
     "dmccode": "782 ",
-    "name": "Topaz - dk "
+    "name": "Topaz - dk ",
+    "red": 179,
+    "green": 129,
+    "blue": 50
   },
   {
     "color": "#d19d2f",
     "dmccode": "783 ",
-    "name": "Topaz - med "
+    "name": "Topaz - med ",
+    "red": 209,
+    "green": 157,
+    "blue": 47
   },
   {
     "color": "#161151",
     "dmccode": "791 ",
-    "name": "Cornflower Blue - vy dk "
+    "name": "Cornflower Blue - vy dk ",
+    "red": 22,
+    "green": 17,
+    "blue": 81
   },
   {
     "color": "#7971a0",
     "dmccode": "792 ",
-    "name": "Cornflower Blue - dk "
+    "name": "Cornflower Blue - dk ",
+    "red": 121,
+    "green": 113,
+    "blue": 160
   },
   {
     "color": "#686d8d",
     "dmccode": "793 ",
-    "name": "Cornflower Blue - med "
+    "name": "Cornflower Blue - med ",
+    "red": 104,
+    "green": 109,
+    "blue": 141
   },
   {
     "color": "#8ea7c0",
     "dmccode": "794 ",
-    "name": "Cornflower Blue - lt "
+    "name": "Cornflower Blue - lt ",
+    "red": 142,
+    "green": 167,
+    "blue": 192
   },
   {
     "color": "#181f66",
     "dmccode": "796 ",
-    "name": "Royal Blue - dk "
+    "name": "Royal Blue - dk ",
+    "red": 24,
+    "green": 31,
+    "blue": 102
   },
   {
     "color": "#2c4180",
     "dmccode": "797 ",
-    "name": "Royal Blue "
+    "name": "Royal Blue ",
+    "red": 44,
+    "green": 65,
+    "blue": 128
   },
   {
     "color": "#445997",
     "dmccode": "798 ",
-    "name": "Delft - dk "
+    "name": "Delft - dk ",
+    "red": 68,
+    "green": 89,
+    "blue": 151
   },
   {
     "color": "#6e8db5",
     "dmccode": "799 ",
-    "name": "Delft - med "
+    "name": "Delft - med ",
+    "red": 110,
+    "green": 141,
+    "blue": 181
   },
   {
     "color": "#c1d3df",
     "dmccode": "800 ",
-    "name": "Delft - pale "
+    "name": "Delft - pale ",
+    "red": 193,
+    "green": 211,
+    "blue": 223
   },
   {
     "color": "#63461f",
     "dmccode": "801 ",
-    "name": "Coffee Brown - dk "
+    "name": "Coffee Brown - dk ",
+    "red": 99,
+    "green": 70,
+    "blue": 31
   },
   {
     "color": "#437490",
     "dmccode": "806 ",
-    "name": "Peacock Blue - dk "
+    "name": "Peacock Blue - dk ",
+    "red": 67,
+    "green": 116,
+    "blue": 144
   },
   {
     "color": "#70a8b3",
     "dmccode": "807 ",
-    "name": "Peacock Blue "
+    "name": "Peacock Blue ",
+    "red": 112,
+    "green": 168,
+    "blue": 179
   },
   {
     "color": "#6c91c0",
     "dmccode": "809 ",
-    "name": "Delft "
+    "name": "Delft ",
+    "red": 108,
+    "green": 145,
+    "blue": 192
   },
   {
     "color": "#91b4ce",
     "dmccode": "813 ",
-    "name": "Blue - lt "
+    "name": "Blue - lt ",
+    "red": 145,
+    "green": 180,
+    "blue": 206
   },
   {
     "color": "#711f2e",
     "dmccode": "814 ",
-    "name": "Garnet - dk "
+    "name": "Garnet - dk ",
+    "red": 113,
+    "green": 31,
+    "blue": 46
   },
   {
     "color": "#9d3030",
     "dmccode": "815 ",
-    "name": "Garnet - med "
+    "name": "Garnet - med ",
+    "red": 157,
+    "green": 48,
+    "blue": 48
   },
   {
     "color": "#811024",
     "dmccode": "816 ",
-    "name": "Garnet "
+    "name": "Garnet ",
+    "red": 129,
+    "green": 16,
+    "blue": 36
   },
   {
     "color": "#bd2e2e",
     "dmccode": "817 ",
-    "name": "Coral Red - vy dk "
+    "name": "Coral Red - vy dk ",
+    "red": 189,
+    "green": 46,
+    "blue": 46
   },
   {
     "color": "#f9d6dd",
     "dmccode": "818 ",
-    "name": "Baby Pink "
+    "name": "Baby Pink ",
+    "red": 249,
+    "green": 214,
+    "blue": 221
   },
   {
     "color": "#fbe2df",
     "dmccode": "819 ",
-    "name": "Baby Pink - lt "
+    "name": "Baby Pink - lt ",
+    "red": 251,
+    "green": 226,
+    "blue": 223
   },
   {
     "color": "#190f60",
     "dmccode": "820 ",
-    "name": "Royal Blue - vy dk "
+    "name": "Royal Blue - vy dk ",
+    "red": 25,
+    "green": 15,
+    "blue": 96
   },
   {
     "color": "#e2dfd3",
     "dmccode": "822 ",
-    "name": "Beige Grey - lt "
-  },
-  {
-    "dmccode": "",
-    "name": ""
+    "name": "Beige Grey - lt ",
+    "red": 226,
+    "green": 223,
+    "blue": 211
   },
   {
     "color": "#124477",
     "dmccode": "823 ",
-    "name": "Navy Blue - dk "
-  },
-  {
-    "dmccode": "",
-    "name": ""
+    "name": "Navy Blue - dk ",
+    "red": 18,
+    "green": 68,
+    "blue": 119
   },
   {
     "color": "#3b6292",
     "dmccode": "824 ",
-    "name": "Blue - vy dk "
+    "name": "Blue - vy dk ",
+    "red": 59,
+    "green": 98,
+    "blue": 146
   },
   {
     "color": "#366390",
     "dmccode": "825 ",
-    "name": "Blue - dk "
+    "name": "Blue - dk ",
+    "red": 54,
+    "green": 99,
+    "blue": 144
   },
   {
     "color": "#5a82a2",
     "dmccode": "826 ",
-    "name": "Blue - med "
+    "name": "Blue - med ",
+    "red": 90,
+    "green": 130,
+    "blue": 162
   },
   {
     "color": "#b4d3e3",
     "dmccode": "827 ",
-    "name": "Blue - vy lt "
+    "name": "Blue - vy lt ",
+    "red": 180,
+    "green": 211,
+    "blue": 227
   },
   {
     "color": "#cae2eb",
     "dmccode": "828 ",
-    "name": "Blue - ultra vy lt "
+    "name": "Blue - ultra vy lt ",
+    "red": 202,
+    "green": 226,
+    "blue": 235
   },
   {
     "color": "#6f5422",
     "dmccode": "829 ",
-    "name": "Golden Olive - vy dk "
+    "name": "Golden Olive - vy dk ",
+    "red": 111,
+    "green": 84,
+    "blue": 34
   },
   {
     "color": "#806c26",
     "dmccode": "830 ",
-    "name": "Golden Olive - dk "
+    "name": "Golden Olive - dk ",
+    "red": 128,
+    "green": 108,
+    "blue": 38
   },
   {
     "color": "#957b2f",
     "dmccode": "831 ",
-    "name": "Golden Olive - med "
+    "name": "Golden Olive - med ",
+    "red": 149,
+    "green": 123,
+    "blue": 47
   },
   {
     "color": "#b19a3f",
     "dmccode": "832 ",
-    "name": "Golden Olive "
+    "name": "Golden Olive ",
+    "red": 177,
+    "green": 154,
+    "blue": 63
   },
   {
     "color": "#bfa43a",
     "dmccode": "833 ",
-    "name": "Golden Olive - lt "
+    "name": "Golden Olive - lt ",
+    "red": 191,
+    "green": 164,
+    "blue": 58
   },
   {
     "color": "#cab751",
     "dmccode": "834 ",
-    "name": "Golden Olive - vy lt "
+    "name": "Golden Olive - vy lt ",
+    "red": 202,
+    "green": 183,
+    "blue": 81
   },
   {
     "color": "#573c2a",
     "dmccode": "838 ",
-    "name": "Beige Brown - vy dk "
+    "name": "Beige Brown - vy dk ",
+    "red": 87,
+    "green": 60,
+    "blue": 42
   },
   {
     "color": "#684e37",
     "dmccode": "839 ",
-    "name": "Beige Brown - dk "
+    "name": "Beige Brown - dk ",
+    "red": 104,
+    "green": 78,
+    "blue": 55
   },
   {
     "color": "#977e65",
     "dmccode": "840 ",
-    "name": "Beige Brown - med "
+    "name": "Beige Brown - med ",
+    "red": 151,
+    "green": 126,
+    "blue": 101
   },
   {
     "color": "#b39f8c",
     "dmccode": "841 ",
-    "name": "Beige Brown - lt "
+    "name": "Beige Brown - lt ",
+    "red": 179,
+    "green": 159,
+    "blue": 140
   },
   {
     "color": "#cdb9a4",
     "dmccode": "842 ",
-    "name": "Beige Brown - vy lt "
+    "name": "Beige Brown - vy lt ",
+    "red": 205,
+    "green": 185,
+    "blue": 164
   },
   {
     "color": "#6c6e58",
     "dmccode": "844 ",
-    "name": "Beaver Grey - ultra dk "
+    "name": "Beaver Grey - ultra dk ",
+    "red": 108,
+    "green": 110,
+    "blue": 88
   },
   {
     "color": "#775820",
     "dmccode": "869 ",
-    "name": "Hazelnut Brown - vy dk "
+    "name": "Hazelnut Brown - vy dk ",
+    "red": 119,
+    "green": 88,
+    "blue": 32
   },
   {
     "color": "#043810",
     "dmccode": "890 ",
-    "name": "Pistachio Green - ultra dk "
+    "name": "Pistachio Green - ultra dk ",
+    "red": 4,
+    "green": 56,
+    "blue": 16
   },
   {
     "color": "#ef4949",
     "dmccode": "891 ",
-    "name": "Carnation - dk "
+    "name": "Carnation - dk ",
+    "red": 239,
+    "green": 73,
+    "blue": 73
   },
   {
     "color": "#f85b64",
     "dmccode": "892 ",
-    "name": "Carnation - med "
+    "name": "Carnation - med ",
+    "red": 248,
+    "green": 91,
+    "blue": 100
   },
   {
     "color": "#fc6a84",
     "dmccode": "893 ",
-    "name": "Carnation - lt "
+    "name": "Carnation - lt ",
+    "red": 252,
+    "green": 106,
+    "blue": 132
   },
   {
     "color": "#f999a5",
     "dmccode": "894 ",
-    "name": "Carnation - vy lt "
+    "name": "Carnation - vy lt ",
+    "red": 249,
+    "green": 153,
+    "blue": 165
   },
   {
     "color": "#29542f",
     "dmccode": "895 ",
-    "name": "Hunter Green - vy dk "
+    "name": "Hunter Green - vy dk ",
+    "red": 41,
+    "green": 84,
+    "blue": 47
   },
   {
     "color": "#502f1b",
     "dmccode": "898 ",
-    "name": "Coffee Brown - vy dk "
+    "name": "Coffee Brown - vy dk ",
+    "red": 80,
+    "green": 47,
+    "blue": 27
   },
   {
     "color": "#ee8593",
     "dmccode": "899 ",
-    "name": "Rose - med "
+    "name": "Rose - med ",
+    "red": 238,
+    "green": 133,
+    "blue": 147
   },
   {
     "color": "#d45d28",
     "dmccode": "900 ",
-    "name": "Burnt Orange - dk "
+    "name": "Burnt Orange - dk ",
+    "red": 212,
+    "green": 93,
+    "blue": 40
   },
   {
     "color": "#6b3b33",
     "dmccode": "902 ",
-    "name": "Garnet - vy dk "
+    "name": "Garnet - vy dk ",
+    "red": 107,
+    "green": 59,
+    "blue": 51
   },
   {
     "color": "#4f6c33",
     "dmccode": "904 ",
-    "name": "Parrot Green - vy dk "
+    "name": "Parrot Green - vy dk ",
+    "red": 79,
+    "green": 108,
+    "blue": 51
   },
   {
     "color": "#759a3e",
     "dmccode": "905 ",
-    "name": "Parrot Green - dk "
+    "name": "Parrot Green - dk ",
+    "red": 117,
+    "green": 154,
+    "blue": 62
   },
   {
     "color": "#82ae44",
     "dmccode": "906 ",
-    "name": "Parrot Green - med "
+    "name": "Parrot Green - med ",
+    "red": 130,
+    "green": 174,
+    "blue": 68
   },
   {
     "color": "#a9c33e",
     "dmccode": "907 ",
-    "name": "Parrot Green - lt "
+    "name": "Parrot Green - lt ",
+    "red": 169,
+    "green": 195,
+    "blue": 62
   },
   {
     "color": "#00793b",
     "dmccode": "909 ",
-    "name": "Emerald Green - vy dk "
+    "name": "Emerald Green - vy dk ",
+    "red": 0,
+    "green": 121,
+    "blue": 59
   },
   {
     "color": "#008c4c",
     "dmccode": "910 ",
-    "name": "Emerald Green - dk "
+    "name": "Emerald Green - dk ",
+    "red": 0,
+    "green": 140,
+    "blue": 76
   },
   {
     "color": "#40a756",
     "dmccode": "911 ",
-    "name": "Emerald Green - med "
+    "name": "Emerald Green - med ",
+    "red": 64,
+    "green": 167,
+    "blue": 86
   },
   {
     "color": "#58a96b",
     "dmccode": "912 ",
-    "name": "Emerald Green - lt "
+    "name": "Emerald Green - lt ",
+    "red": 88,
+    "green": 169,
+    "blue": 107
   },
   {
     "color": "#88c78d",
     "dmccode": "913 ",
-    "name": "Nile Green - med "
+    "name": "Nile Green - med ",
+    "red": 136,
+    "green": 199,
+    "blue": 141
   },
   {
     "color": "#800137",
     "dmccode": "915 ",
-    "name": "Plum - dk "
+    "name": "Plum - dk ",
+    "red": 128,
+    "green": 1,
+    "blue": 55
   },
   {
     "color": "#832a58",
     "dmccode": "917 ",
-    "name": "Plum - med "
+    "name": "Plum - med ",
+    "red": 131,
+    "green": 42,
+    "blue": 88
   },
   {
     "color": "#8c3b1a",
     "dmccode": "918 ",
-    "name": "Red Copper - dk "
+    "name": "Red Copper - dk ",
+    "red": 140,
+    "green": 59,
+    "blue": 26
   },
   {
     "color": "#9b3b1b",
     "dmccode": "919 ",
-    "name": "Red Copper "
+    "name": "Red Copper ",
+    "red": 155,
+    "green": 59,
+    "blue": 27
   },
   {
     "color": "#a74f2a",
     "dmccode": "920 ",
-    "name": "Copper - med "
+    "name": "Copper - med ",
+    "red": 167,
+    "green": 79,
+    "blue": 42
   },
   {
     "color": "#c36b29",
     "dmccode": "921 ",
-    "name": "Copper "
+    "name": "Copper ",
+    "red": 195,
+    "green": 107,
+    "blue": 41
   },
   {
     "color": "#d6834d",
     "dmccode": "922 ",
-    "name": "Copper - lt "
+    "name": "Copper - lt ",
+    "red": 214,
+    "green": 131,
+    "blue": 77
   },
   {
     "color": "#42605c",
     "dmccode": "924 ",
-    "name": "Grey Green - vy dk "
+    "name": "Grey Green - vy dk ",
+    "red": 66,
+    "green": 96,
+    "blue": 92
   },
   {
     "color": "#789899",
     "dmccode": "926 ",
-    "name": "Grey Green - med "
+    "name": "Grey Green - med ",
+    "red": 120,
+    "green": 152,
+    "blue": 153
   },
   {
     "color": "#c5d2cf",
     "dmccode": "927 ",
-    "name": "Grey Green - lt "
+    "name": "Grey Green - lt ",
+    "red": 197,
+    "green": 210,
+    "blue": 207
   },
   {
     "color": "#e5eae9",
     "dmccode": "928 ",
-    "name": "Grey Green - vy lt "
+    "name": "Grey Green - vy lt ",
+    "red": 229,
+    "green": 234,
+    "blue": 233
   },
   {
     "color": "#435e67",
     "dmccode": "930 ",
-    "name": "Antique Blue - dk "
+    "name": "Antique Blue - dk ",
+    "red": 67,
+    "green": 94,
+    "blue": 103
   },
   {
     "color": "#678997",
     "dmccode": "931 ",
-    "name": "Antique Blue - med "
+    "name": "Antique Blue - med ",
+    "red": 103,
+    "green": 137,
+    "blue": 151
   },
   {
     "color": "#8faeb9",
     "dmccode": "932 ",
-    "name": "Antique Blue - lt "
+    "name": "Antique Blue - lt ",
+    "red": 143,
+    "green": 174,
+    "blue": 185
   },
   {
     "color": "#4d4c34",
     "dmccode": "934 ",
-    "name": "Black Avocado Green - dk "
+    "name": "Black Avocado Green - dk ",
+    "red": 77,
+    "green": 76,
+    "blue": 52
   },
   {
     "color": "#4b5035",
     "dmccode": "935 ",
-    "name": "Black Avocado Green - med "
+    "name": "Black Avocado Green - med ",
+    "red": 75,
+    "green": 80,
+    "blue": 53
   },
   {
     "color": "#5d5c2b",
     "dmccode": "936 ",
-    "name": "Avocado Green - vy dk "
+    "name": "Avocado Green - vy dk ",
+    "red": 93,
+    "green": 92,
+    "blue": 43
   },
   {
     "color": "#4f5925",
     "dmccode": "937 ",
-    "name": "Avocado Green - med "
+    "name": "Avocado Green - med ",
+    "red": 79,
+    "green": 89,
+    "blue": 37
   },
   {
     "color": "#3b2811",
     "dmccode": "938 ",
-    "name": "Coffee Brown - ultra dk "
+    "name": "Coffee Brown - ultra dk ",
+    "red": 59,
+    "green": 40,
+    "blue": 17
   },
   {
     "color": "#02101c",
     "dmccode": "939 ",
-    "name": "Navy Blue - vy dk "
+    "name": "Navy Blue - vy dk ",
+    "red": 2,
+    "green": 16,
+    "blue": 28
   },
   {
     "color": "#009a7b",
     "dmccode": "943 ",
-    "name": "Aquamarine - med "
+    "name": "Aquamarine - med ",
+    "red": 0,
+    "green": 154,
+    "blue": 123
   },
   {
     "color": "#e3be8e",
     "dmccode": "945 ",
-    "name": "Tawny "
+    "name": "Tawny ",
+    "red": 227,
+    "green": 190,
+    "blue": 142
   },
   {
     "color": "#e15729",
     "dmccode": "946 ",
-    "name": "Burnt Orange - med "
+    "name": "Burnt Orange - med ",
+    "red": 225,
+    "green": 87,
+    "blue": 41
   },
   {
     "color": "#f26922",
     "dmccode": "947 ",
-    "name": "Burnt Orange "
+    "name": "Burnt Orange ",
+    "red": 242,
+    "green": 105,
+    "blue": 34
   },
   {
     "color": "#feebe2",
     "dmccode": "948 ",
-    "name": "Peach - vy lt "
+    "name": "Peach - vy lt ",
+    "red": 254,
+    "green": 235,
+    "blue": 226
   },
   {
     "color": "#e7ceb9",
     "dmccode": "950 ",
-    "name": "Desert Sand - lt "
+    "name": "Desert Sand - lt ",
+    "red": 231,
+    "green": 206,
+    "blue": 185
   },
   {
     "color": "#f2e0ce",
     "dmccode": "951 ",
-    "name": "Tawny - lt "
+    "name": "Tawny - lt ",
+    "red": 242,
+    "green": 224,
+    "blue": 206
   },
   {
     "color": "#abd58b",
     "dmccode": "954 ",
-    "name": "Nile Green "
+    "name": "Nile Green ",
+    "red": 171,
+    "green": 213,
+    "blue": 139
   },
   {
     "color": "#b4e8b3",
     "dmccode": "955 ",
-    "name": "Nile Green - lt "
+    "name": "Nile Green - lt ",
+    "red": 180,
+    "green": 232,
+    "blue": 179
   },
   {
     "color": "#ff7a90",
     "dmccode": "956 ",
-    "name": "Geranium "
+    "name": "Geranium ",
+    "red": 255,
+    "green": 122,
+    "blue": 144
   },
   {
     "color": "#f9afb7",
     "dmccode": "957 ",
-    "name": "Geranium - pale "
+    "name": "Geranium - pale ",
+    "red": 249,
+    "green": 175,
+    "blue": 183
   },
   {
     "color": "#51c0bb",
     "dmccode": "958 ",
-    "name": "Seagreen - dk "
+    "name": "Seagreen - dk ",
+    "red": 81,
+    "green": 192,
+    "blue": 187
   },
   {
     "color": "#8fd3d4",
     "dmccode": "959 ",
-    "name": "Seagreen - med "
+    "name": "Seagreen - med ",
+    "red": 143,
+    "green": 211,
+    "blue": 212
   },
   {
     "color": "#df6877",
     "dmccode": "961 ",
-    "name": "Dusty Rose - dk "
+    "name": "Dusty Rose - dk ",
+    "red": 223,
+    "green": 104,
+    "blue": 119
   },
   {
     "color": "#f08d9f",
     "dmccode": "962 ",
-    "name": "Dusty Rose - med "
+    "name": "Dusty Rose - med ",
+    "red": 240,
+    "green": 141,
+    "blue": 159
   },
   {
     "color": "#fad0d5",
     "dmccode": "963 ",
-    "name": "Dusty Rose - ultra vy lt "
+    "name": "Dusty Rose - ultra vy lt ",
+    "red": 250,
+    "green": 208,
+    "blue": 213
   },
   {
     "color": "#9cd3cc",
     "dmccode": "964 ",
-    "name": "Seagreen - lt "
+    "name": "Seagreen - lt ",
+    "red": 156,
+    "green": 211,
+    "blue": 204
   },
   {
     "color": "#bbd7ae",
     "dmccode": "966 ",
-    "name": "Baby Green - med "
+    "name": "Baby Green - med ",
+    "red": 187,
+    "green": 215,
+    "blue": 174
   },
   {
     "color": "#fbdbcd",
     "dmccode": "967",
-    "name": "Apricot - vy lt"
+    "name": "Apricot - vy lt",
+    "red": 251,
+    "green": 219,
+    "blue": 205
   },
   {
     "color": "#ff781e",
     "dmccode": "970 ",
-    "name": "Pumpkin - bright "
+    "name": "Pumpkin - bright ",
+    "red": 255,
+    "green": 120,
+    "blue": 30
   },
   {
     "color": "#fc7e0c",
     "dmccode": "971 ",
-    "name": "Pumpkin "
+    "name": "Pumpkin ",
+    "red": 252,
+    "green": 126,
+    "blue": 12
   },
   {
     "color": "#ffb401",
     "dmccode": "972 ",
-    "name": "Canary - deep "
+    "name": "Canary - deep ",
+    "red": 255,
+    "green": 180,
+    "blue": 1
   },
   {
     "color": "#ffe21a",
     "dmccode": "973 ",
-    "name": "Canary - bright "
+    "name": "Canary - bright ",
+    "red": 255,
+    "green": 226,
+    "blue": 26
   },
   {
     "color": "#945c2d",
     "dmccode": "975 ",
-    "name": "Golden Brown - dk "
+    "name": "Golden Brown - dk ",
+    "red": 148,
+    "green": 92,
+    "blue": 45
   },
   {
     "color": "#e6973f",
     "dmccode": "976 ",
-    "name": "Golden Brown - med "
+    "name": "Golden Brown - med ",
+    "red": 230,
+    "green": 151,
+    "blue": 63
   },
   {
     "color": "#e59034",
     "dmccode": "977 ",
-    "name": "Golden Brown - lt "
+    "name": "Golden Brown - lt ",
+    "red": 229,
+    "green": 144,
+    "blue": 52
   },
   {
     "color": "#1f561f",
     "dmccode": "986 ",
-    "name": "Forest Green - vy dk "
+    "name": "Forest Green - vy dk ",
+    "red": 31,
+    "green": 86,
+    "blue": 31
   },
   {
     "color": "#568357",
     "dmccode": "987 ",
-    "name": "Forest Green - dk "
+    "name": "Forest Green - dk ",
+    "red": 86,
+    "green": 131,
+    "blue": 87
   },
   {
     "color": "#76996c",
     "dmccode": "988 ",
-    "name": "Forest Green - med "
+    "name": "Forest Green - med ",
+    "red": 118,
+    "green": 153,
+    "blue": 108
   },
   {
     "color": "#87a462",
     "dmccode": "989 ",
-    "name": "Forest Green "
+    "name": "Forest Green ",
+    "red": 135,
+    "green": 164,
+    "blue": 98
   },
   {
     "color": "#176a59",
     "dmccode": "991 ",
-    "name": "Aquamarine - dk "
+    "name": "Aquamarine - dk ",
+    "red": 23,
+    "green": 106,
+    "blue": 89
   },
   {
     "color": "#6cbfa8",
     "dmccode": "992 ",
-    "name": "Aquamarine - lt "
+    "name": "Aquamarine - lt ",
+    "red": 108,
+    "green": 191,
+    "blue": 168
   },
   {
     "color": "#8ec2b3",
     "dmccode": "993 ",
-    "name": "Aquamarine - vy lt "
+    "name": "Aquamarine - vy lt ",
+    "red": 142,
+    "green": 194,
+    "blue": 179
   },
   {
     "color": "#0064b0",
     "dmccode": "995 ",
-    "name": "Electric Blue - dk "
+    "name": "Electric Blue - dk ",
+    "red": 0,
+    "green": 100,
+    "blue": 176
   },
   {
     "color": "#57baf5",
     "dmccode": "996 ",
-    "name": "Electric Blue - med "
-  },
-  {
-    "dmccode": "",
-    "name": ""
+    "name": "Electric Blue - med ",
+    "red": 87,
+    "green": 186,
+    "blue": 245
   },
   {
     "color": "#635f2f",
     "dmccode": "3011 ",
-    "name": "Khaki Green - dk "
+    "name": "Khaki Green - dk ",
+    "red": 99,
+    "green": 95,
+    "blue": 47
   },
   {
     "color": "#9b9648",
     "dmccode": "3012 ",
-    "name": "Khaki Green - med "
+    "name": "Khaki Green - med ",
+    "red": 155,
+    "green": 150,
+    "blue": 72
   },
   {
     "color": "#999c6c",
     "dmccode": "3013 ",
-    "name": "Khaki Green - lt "
+    "name": "Khaki Green - lt ",
+    "red": 153,
+    "green": 156,
+    "blue": 108
   },
   {
     "color": "#3b2e08",
     "dmccode": "3021 ",
-    "name": "Brown Grey - vy dk "
+    "name": "Brown Grey - vy dk ",
+    "red": 59,
+    "green": 46,
+    "blue": 8
   },
   {
     "color": "#938e6e",
     "dmccode": "3022 ",
-    "name": "Brown Grey - med "
+    "name": "Brown Grey - med ",
+    "red": 147,
+    "green": 142,
+    "blue": 110
   },
   {
     "color": "#b2ae95",
     "dmccode": "3023 ",
-    "name": "Brown Grey - lt "
+    "name": "Brown Grey - lt ",
+    "red": 178,
+    "green": 174,
+    "blue": 149
   },
   {
     "color": "#dcdcd7",
     "dmccode": "3024 ",
-    "name": "Brown Grey - vy lt "
+    "name": "Brown Grey - vy lt ",
+    "red": 220,
+    "green": 220,
+    "blue": 215
   },
   {
     "color": "#442e10",
     "dmccode": "3031 ",
-    "name": "Mocha Brown - vy dk "
+    "name": "Mocha Brown - vy dk ",
+    "red": 68,
+    "green": 46,
+    "blue": 16
   },
   {
     "color": "#ada183",
     "dmccode": "3032 ",
-    "name": "Mocha Brown - med "
+    "name": "Mocha Brown - med ",
+    "red": 173,
+    "green": 161,
+    "blue": 131
   },
   {
     "color": "#d7d0c2",
     "dmccode": "3033 ",
-    "name": "Mocha Brown - vy lt "
+    "name": "Mocha Brown - vy lt ",
+    "red": 215,
+    "green": 208,
+    "blue": 194
   },
   {
     "color": "#966e6e",
     "dmccode": "3041 ",
-    "name": "Antique Violet - med "
+    "name": "Antique Violet - med ",
+    "red": 150,
+    "green": 110,
+    "blue": 110
   },
   {
     "color": "#ccc1d0",
     "dmccode": "3042 ",
-    "name": "Antique Violet - lt "
+    "name": "Antique Violet - lt ",
+    "red": 204,
+    "green": 193,
+    "blue": 208
   },
   {
     "color": "#b19563",
     "dmccode": "3045 ",
-    "name": "Yellow Beige - dk "
+    "name": "Yellow Beige - dk ",
+    "red": 177,
+    "green": 149,
+    "blue": 99
   },
   {
     "color": "#ccbc7d",
     "dmccode": "3046 ",
-    "name": "Yellow Beige - med "
+    "name": "Yellow Beige - med ",
+    "red": 204,
+    "green": 188,
+    "blue": 125
   },
   {
     "color": "#ececd2",
     "dmccode": "3047 ",
-    "name": "Yellow Beige - lt "
+    "name": "Yellow Beige - lt ",
+    "red": 236,
+    "green": 236,
+    "blue": 210
   },
   {
     "color": "#6d6f42",
     "dmccode": "3051 ",
-    "name": "Green Grey - dk "
+    "name": "Green Grey - dk ",
+    "red": 109,
+    "green": 111,
+    "blue": 66
   },
   {
     "color": "#899770",
     "dmccode": "3052 ",
-    "name": "Green Grey - med "
+    "name": "Green Grey - med ",
+    "red": 137,
+    "green": 151,
+    "blue": 112
   },
   {
     "color": "#bac28b",
     "dmccode": "3053 ",
-    "name": "Green Grey "
+    "name": "Green Grey ",
+    "red": 186,
+    "green": 194,
+    "blue": 139
   },
   {
     "color": "#cda072",
     "dmccode": "3064 ",
-    "name": "Desert Sand "
+    "name": "Desert Sand ",
+    "red": 205,
+    "green": 160,
+    "blue": 114
   },
   {
     "color": "#e3e6dc",
     "dmccode": "3072 ",
-    "name": "Beaver Grey - vy lt "
+    "name": "Beaver Grey - vy lt ",
+    "red": 227,
+    "green": 230,
+    "blue": 220
   },
   {
     "color": "#fff3ad",
     "dmccode": "3078 ",
-    "name": "Golden Yellow - vy lt "
+    "name": "Golden Yellow - vy lt ",
+    "red": 255,
+    "green": 243,
+    "blue": 173
   },
   {
     "color": "#c6d3e1",
     "dmccode": "3325 ",
-    "name": "Baby Blue - lt "
+    "name": "Baby Blue - lt ",
+    "red": 198,
+    "green": 211,
+    "blue": 225
   },
   {
     "color": "#f7b4b7",
     "dmccode": "3326 ",
-    "name": "Rose - lt "
+    "name": "Rose - lt ",
+    "red": 247,
+    "green": 180,
+    "blue": 183
   },
   {
     "color": "#c36154",
     "dmccode": "3328 ",
-    "name": "Salmon - dk "
+    "name": "Salmon - dk ",
+    "red": 195,
+    "green": 97,
+    "blue": 84
   },
   {
     "color": "#f38351",
     "dmccode": "3340 ",
-    "name": "Apricot - med "
+    "name": "Apricot - med ",
+    "red": 243,
+    "green": 131,
+    "blue": 81
   },
   {
     "color": "#fbbe9d",
     "dmccode": "3341 ",
-    "name": "Apricot "
+    "name": "Apricot ",
+    "red": 251,
+    "green": 190,
+    "blue": 157
   },
   {
     "color": "#486131",
     "dmccode": "3345 ",
-    "name": "Hunter Green - dk "
+    "name": "Hunter Green - dk ",
+    "red": 72,
+    "green": 97,
+    "blue": 49
   },
   {
     "color": "#6a823d",
     "dmccode": "3346 ",
-    "name": "Hunter Green "
+    "name": "Hunter Green ",
+    "red": 106,
+    "green": 130,
+    "blue": 61
   },
   {
     "color": "#78983b",
     "dmccode": "3347 ",
-    "name": "Yellow Green - med "
+    "name": "Yellow Green - med ",
+    "red": 120,
+    "green": 152,
+    "blue": 59
   },
   {
     "color": "#e3ee9f",
     "dmccode": "3348 ",
-    "name": "Yellow Green - lt "
+    "name": "Yellow Green - lt ",
+    "red": 227,
+    "green": 238,
+    "blue": 159
   },
   {
     "color": "#b95569",
     "dmccode": "3350 ",
-    "name": "Dusty Rose - ultra dk "
+    "name": "Dusty Rose - ultra dk ",
+    "red": 185,
+    "green": 85,
+    "blue": 105
   },
   {
     "color": "#e3a5aa",
     "dmccode": "3354 ",
-    "name": "Dusty Rose - lt "
+    "name": "Dusty Rose - lt ",
+    "red": 227,
+    "green": 165,
+    "blue": 170
   },
   {
     "color": "#2e3d1a",
     "dmccode": "3362 ",
-    "name": "Pine Green - dk "
+    "name": "Pine Green - dk ",
+    "red": 46,
+    "green": 61,
+    "blue": 26
   },
   {
     "color": "#72885f",
     "dmccode": "3363 ",
-    "name": "Pine Green - med "
+    "name": "Pine Green - med ",
+    "red": 114,
+    "green": 136,
+    "blue": 95
   },
   {
     "color": "#85905c",
     "dmccode": "3364 ",
-    "name": "Pine Green "
+    "name": "Pine Green ",
+    "red": 133,
+    "green": 144,
+    "blue": 92
   },
   {
     "color": "#2d1705",
     "dmccode": "3371 ",
-    "name": "Black Brown "
+    "name": "Black Brown ",
+    "red": 45,
+    "green": 23,
+    "blue": 5
   },
   {
     "color": "#b34e8c",
     "dmccode": "3607 ",
-    "name": "Plum - lt "
+    "name": "Plum - lt ",
+    "red": 179,
+    "green": 78,
+    "blue": 140
   },
   {
     "color": "#c07ba3",
     "dmccode": "3608 ",
-    "name": "Plum - vy lt "
+    "name": "Plum - vy lt ",
+    "red": 192,
+    "green": 123,
+    "blue": 163
   },
   {
     "color": "#e9afd3",
     "dmccode": "3609 ",
-    "name": "Plum - ultra lt "
+    "name": "Plum - ultra lt ",
+    "red": 233,
+    "green": 175,
+    "blue": 211
   },
   {
     "color": "#7d3248",
     "dmccode": "3685 ",
-    "name": "Mauve - vy dk "
+    "name": "Mauve - vy dk ",
+    "red": 125,
+    "green": 50,
+    "blue": 72
   },
   {
     "color": "#c2596d",
     "dmccode": "3687 ",
-    "name": "Mauve "
+    "name": "Mauve ",
+    "red": 194,
+    "green": 89,
+    "blue": 109
   },
   {
     "color": "#e6849a",
     "dmccode": "3688 ",
-    "name": "Mauve - med "
+    "name": "Mauve - med ",
+    "red": 230,
+    "green": 132,
+    "blue": 154
   },
   {
     "color": "#e8b9c5",
     "dmccode": "3689 ",
-    "name": "Mauve - lt "
+    "name": "Mauve - lt ",
+    "red": 232,
+    "green": 185,
+    "blue": 197
   },
   {
     "color": "#f65d5b",
     "dmccode": "3705 ",
-    "name": "Melon - dk "
+    "name": "Melon - dk ",
+    "red": 246,
+    "green": 93,
+    "blue": 91
   },
   {
     "color": "#ff988e",
     "dmccode": "3706 ",
-    "name": "Melon - med "
+    "name": "Melon - med ",
+    "red": 255,
+    "green": 152,
+    "blue": 142
   },
   {
     "color": "#fcbbc1",
     "dmccode": "3708 ",
-    "name": "Melon - lt "
+    "name": "Melon - lt ",
+    "red": 252,
+    "green": 187,
+    "blue": 193
   },
   {
     "color": "#db7d73",
     "dmccode": "3712 ",
-    "name": "Salmon - med "
+    "name": "Salmon - med ",
+    "red": 219,
+    "green": 125,
+    "blue": 115
   },
   {
     "color": "#fcdcda",
     "dmccode": "3713 ",
-    "name": "Salmon - vy lt "
+    "name": "Salmon - vy lt ",
+    "red": 252,
+    "green": 220,
+    "blue": 218
   },
   {
     "color": "#fcb1ba",
     "dmccode": "3716 ",
-    "name": "Dusty Rose - vy lt "
+    "name": "Dusty Rose - vy lt ",
+    "red": 252,
+    "green": 177,
+    "blue": 186
   },
   {
     "color": "#aa5048",
     "dmccode": "3721 ",
-    "name": "Shell Pink - dk "
+    "name": "Shell Pink - dk ",
+    "red": 170,
+    "green": 80,
+    "blue": 72
   },
   {
     "color": "#a45d55",
     "dmccode": "3722 ",
-    "name": "Shell Pink - med "
+    "name": "Shell Pink - med ",
+    "red": 164,
+    "green": 93,
+    "blue": 85
   },
   {
     "color": "#874c49",
     "dmccode": "3726 ",
-    "name": "Antique Mauve - dk "
+    "name": "Antique Mauve - dk ",
+    "red": 135,
+    "green": 76,
+    "blue": 73
   },
   {
     "color": "#e6bcc3",
     "dmccode": "3727 ",
-    "name": "Antique Mauve - lt "
+    "name": "Antique Mauve - lt ",
+    "red": 230,
+    "green": 188,
+    "blue": 195
   },
   {
     "color": "#c65a6b",
     "dmccode": "3731 ",
-    "name": "Dusty Rose - vy dk "
+    "name": "Dusty Rose - vy dk ",
+    "red": 198,
+    "green": 90,
+    "blue": 107
   },
   {
     "color": "#eda6ac",
     "dmccode": "3733 ",
-    "name": "Dusty Rose "
+    "name": "Dusty Rose ",
+    "red": 237,
+    "green": 166,
+    "blue": 172
   },
   {
     "color": "#72535a",
     "dmccode": "3740 ",
-    "name": "Antique Violet - dk "
+    "name": "Antique Violet - dk ",
+    "red": 114,
+    "green": 83,
+    "blue": 90
   },
   {
     "color": "#c7bac7",
     "dmccode": "3743 ",
-    "name": "Antique Violet - vy lt "
+    "name": "Antique Violet - vy lt ",
+    "red": 199,
+    "green": 186,
+    "blue": 199
   },
   {
     "color": "#8572a4",
     "dmccode": "3746 ",
-    "name": "Blue Violet - dk "
+    "name": "Blue Violet - dk ",
+    "red": 133,
+    "green": 114,
+    "blue": 164
   },
   {
     "color": "#bcc0d8",
     "dmccode": "3747 ",
-    "name": "Blue Violet - vy lt "
+    "name": "Blue Violet - vy lt ",
+    "red": 188,
+    "green": 192,
+    "blue": 216
   },
   {
     "color": "#444d58",
     "dmccode": "3750 ",
-    "name": "Antique Blue - vy dk "
+    "name": "Antique Blue - vy dk ",
+    "red": 68,
+    "green": 77,
+    "blue": 88
   },
   {
     "color": "#bbc8d6",
     "dmccode": "3752 ",
-    "name": "Antique Blue - vy lt "
+    "name": "Antique Blue - vy lt ",
+    "red": 187,
+    "green": 200,
+    "blue": 214
   },
   {
     "color": "#ccd5da",
     "dmccode": "3753 ",
-    "name": "Antique Blue - ultra vy lt "
+    "name": "Antique Blue - ultra vy lt ",
+    "red": 204,
+    "green": 213,
+    "blue": 218
   },
   {
     "color": "#9fbbd5",
     "dmccode": "3755 ",
-    "name": "Baby Blue "
+    "name": "Baby Blue ",
+    "red": 159,
+    "green": 187,
+    "blue": 213
   },
   {
     "color": "#e8edf3",
     "dmccode": "3756 ",
-    "name": "Baby Blue - ultra vy lt "
+    "name": "Baby Blue - ultra vy lt ",
+    "red": 232,
+    "green": 237,
+    "blue": 243
   },
   {
     "color": "#4f819d",
     "dmccode": "3760 ",
-    "name": "Wedgwood - med "
+    "name": "Wedgwood - med ",
+    "red": 79,
+    "green": 129,
+    "blue": 157
   },
   {
     "color": "#b8dae9",
     "dmccode": "3761 ",
-    "name": "Sky Blue - lt "
+    "name": "Sky Blue - lt ",
+    "red": 184,
+    "green": 218,
+    "blue": 233
   },
   {
     "color": "#296e87",
     "dmccode": "3765 ",
-    "name": "Peacock Blue - vy dk "
+    "name": "Peacock Blue - vy dk ",
+    "red": 41,
+    "green": 110,
+    "blue": 135
   },
   {
     "color": "#7cbec6",
     "dmccode": "3766 ",
-    "name": "Peacock Blue - lt "
+    "name": "Peacock Blue - lt ",
+    "red": 124,
+    "green": 190,
+    "blue": 198
   },
   {
     "color": "#6b8084",
     "dmccode": "3768 ",
-    "name": "Grey Green - dk "
+    "name": "Grey Green - dk ",
+    "red": 107,
+    "green": 128,
+    "blue": 132
   },
   {
     "color": "#f8eedc",
     "dmccode": "3770 ",
-    "name": "Tawny - vy lt "
+    "name": "Tawny - vy lt ",
+    "red": 248,
+    "green": 238,
+    "blue": 220
   },
   {
     "color": "#e8b58f",
     "dmccode": "3771",
-    "name": "Terra Cotta - ultra vy lt"
+    "name": "Terra Cotta - ultra vy lt",
+    "red": 232,
+    "green": 181,
+    "blue": 143
   },
   {
     "color": "#b8846c",
     "dmccode": "3772 ",
-    "name": "Desert Sand - vy dk "
+    "name": "Desert Sand - vy dk ",
+    "red": 184,
+    "green": 132,
+    "blue": 108
   },
   {
     "color": "#d8b39d",
     "dmccode": "3773 ",
-    "name": "Desert Sand - med "
+    "name": "Desert Sand - med ",
+    "red": 216,
+    "green": 179,
+    "blue": 157
   },
   {
     "color": "#f6e1d0",
     "dmccode": "3774 ",
-    "name": "Desert Sand - vy lt "
+    "name": "Desert Sand - vy lt ",
+    "red": 246,
+    "green": 225,
+    "blue": 208
   },
   {
     "color": "#c27d45",
     "dmccode": "3776 ",
-    "name": "Mahogany - lt "
+    "name": "Mahogany - lt ",
+    "red": 194,
+    "green": 125,
+    "blue": 69
   },
   {
     "color": "#892b21",
     "dmccode": "3777 ",
-    "name": "Terra Cotta - vy dk "
+    "name": "Terra Cotta - vy dk ",
+    "red": 137,
+    "green": 43,
+    "blue": 33
   },
   {
     "color": "#c4856f",
     "dmccode": "3778 ",
-    "name": "Terra Cotta - lt "
+    "name": "Terra Cotta - lt ",
+    "red": 196,
+    "green": 133,
+    "blue": 111
   },
   {
     "color": "#f2c6b8",
     "dmccode": "3779 ",
-    "name": "Terra Cotta - ultra vy lt "
+    "name": "Terra Cotta - ultra vy lt ",
+    "red": 242,
+    "green": 198,
+    "blue": 184
   },
   {
     "color": "#5c4c2d",
     "dmccode": "3781 ",
-    "name": "Mocha Brown - dk "
+    "name": "Mocha Brown - dk ",
+    "red": 92,
+    "green": 76,
+    "blue": 45
   },
   {
     "color": "#d2caba",
     "dmccode": "3782 ",
-    "name": "Mocha Brown - lt "
+    "name": "Mocha Brown - lt ",
+    "red": 210,
+    "green": 202,
+    "blue": 186
   },
   {
     "color": "#605b45",
     "dmccode": "3787 ",
-    "name": "Brown Grey - dk "
+    "name": "Brown Grey - dk ",
+    "red": 96,
+    "green": 91,
+    "blue": 69
   },
   {
     "color": "#978266",
     "dmccode": "3790 ",
-    "name": "Beige Grey - ultra dk "
+    "name": "Beige Grey - ultra dk ",
+    "red": 151,
+    "green": 130,
+    "blue": 102
   },
   {
     "color": "#2f3b36",
     "dmccode": "3799 ",
-    "name": "Pewter Grey - vy dk "
+    "name": "Pewter Grey - vy dk ",
+    "red": 47,
+    "green": 59,
+    "blue": 54
   },
   {
     "color": "#e65952",
     "dmccode": "3801 ",
-    "name": "Christmas Red - lt "
+    "name": "Christmas Red - lt ",
+    "red": 230,
+    "green": 89,
+    "blue": 82
   },
   {
     "color": "#6f2e35",
     "dmccode": "3802 ",
-    "name": "Antique Mauve - vy dk "
+    "name": "Antique Mauve - vy dk ",
+    "red": 111,
+    "green": 46,
+    "blue": 53
   },
   {
     "color": "#863248",
     "dmccode": "3803 ",
-    "name": "Mauve - dk "
+    "name": "Mauve - dk ",
+    "red": 134,
+    "green": 50,
+    "blue": 72
   },
   {
     "color": "#c33c62",
     "dmccode": "3804 ",
-    "name": "Cyclamen Pink - dk "
+    "name": "Cyclamen Pink - dk ",
+    "red": 195,
+    "green": 60,
+    "blue": 98
   },
   {
     "color": "#ce507f",
     "dmccode": "3805 ",
-    "name": "Cyclamen Pink "
+    "name": "Cyclamen Pink ",
+    "red": 206,
+    "green": 80,
+    "blue": 127
   },
   {
     "color": "#f19ac2",
     "dmccode": "3806 ",
-    "name": "Cyclamen Pink - lt "
+    "name": "Cyclamen Pink - lt ",
+    "red": 241,
+    "green": 154,
+    "blue": 194
   },
   {
     "color": "#073563",
     "dmccode": "3807 ",
-    "name": "Cornflower Blue "
+    "name": "Cornflower Blue ",
+    "red": 7,
+    "green": 53,
+    "blue": 99
   },
   {
     "color": "#0c464b",
     "dmccode": "3808 ",
-    "name": "Turquoise - ultra vy dk "
+    "name": "Turquoise - ultra vy dk ",
+    "red": 12,
+    "green": 70,
+    "blue": 75
   },
   {
     "color": "#1c869b",
     "dmccode": "3809 ",
-    "name": "Turquoise - vy dk "
+    "name": "Turquoise - vy dk ",
+    "red": 28,
+    "green": 134,
+    "blue": 155
   },
   {
     "color": "#4fa1a9",
     "dmccode": "3810 ",
-    "name": "Turquoise - dk "
+    "name": "Turquoise - dk ",
+    "red": 79,
+    "green": 161,
+    "blue": 169
   },
   {
     "color": "#c4e7e8",
     "dmccode": "3811 ",
-    "name": "Turquoise - vy lt "
+    "name": "Turquoise - vy lt ",
+    "red": 196,
+    "green": 231,
+    "blue": 232
   },
   {
     "color": "#008679",
     "dmccode": "3812 ",
-    "name": "Seagreen - vy dk "
+    "name": "Seagreen - vy dk ",
+    "red": 0,
+    "green": 134,
+    "blue": 121
   },
   {
     "color": "#b8cebe",
     "dmccode": "3813 ",
-    "name": "Blue Green - lt "
+    "name": "Blue Green - lt ",
+    "red": 184,
+    "green": 206,
+    "blue": 190
   },
   {
     "color": "#3f8878",
     "dmccode": "3814 ",
-    "name": "Aquamarine "
+    "name": "Aquamarine ",
+    "red": 63,
+    "green": 136,
+    "blue": 120
   },
   {
     "color": "#538a6d",
     "dmccode": "3815 ",
-    "name": "Celadon Green - dk "
+    "name": "Celadon Green - dk ",
+    "red": 83,
+    "green": 138,
+    "blue": 109
   },
   {
     "color": "#699d85",
     "dmccode": "3816 ",
-    "name": "Celadon Green "
+    "name": "Celadon Green ",
+    "red": 105,
+    "green": 157,
+    "blue": 133
   },
   {
     "color": "#a6c5b4",
     "dmccode": "3817 ",
-    "name": "Celadon Green - lt "
+    "name": "Celadon Green - lt ",
+    "red": 166,
+    "green": 197,
+    "blue": 180
   },
   {
     "color": "#005d2e",
     "dmccode": "3818 ",
-    "name": "Emerald Green - ultra vy dk "
+    "name": "Emerald Green - ultra vy dk ",
+    "red": 0,
+    "green": 93,
+    "blue": 46
   },
   {
     "color": "#d2d057",
     "dmccode": "3819 ",
-    "name": "Moss Green - lt "
+    "name": "Moss Green - lt ",
+    "red": 210,
+    "green": 208,
+    "blue": 87
   },
   {
     "color": "#ddb442",
     "dmccode": "3820 ",
-    "name": "Straw - dk "
+    "name": "Straw - dk ",
+    "red": 221,
+    "green": 180,
+    "blue": 66
   },
   {
     "color": "#e2b73a",
     "dmccode": "3821 ",
-    "name": "Straw "
+    "name": "Straw ",
+    "red": 226,
+    "green": 183,
+    "blue": 58
   },
   {
     "color": "#f1d863",
     "dmccode": "3822 ",
-    "name": "Straw - lt "
+    "name": "Straw - lt ",
+    "red": 241,
+    "green": 216,
+    "blue": 99
   },
   {
     "color": "#fffcdc",
     "dmccode": "3823 ",
-    "name": "Yellow - ultra pale "
+    "name": "Yellow - ultra pale ",
+    "red": 255,
+    "green": 252,
+    "blue": 220
   },
   {
     "color": "#fbccb8",
     "dmccode": "3824 ",
-    "name": "Apricot - lt "
+    "name": "Apricot - lt ",
+    "red": 251,
+    "green": 204,
+    "blue": 184
   },
   {
     "color": "#fdc391",
     "dmccode": "3825 ",
-    "name": "Pumpkin - pale "
+    "name": "Pumpkin - pale ",
+    "red": 253,
+    "green": 195,
+    "blue": 145
   },
   {
     "color": "#c38c55",
     "dmccode": "3826 ",
-    "name": "Golden Brown "
+    "name": "Golden Brown ",
+    "red": 195,
+    "green": 140,
+    "blue": 85
   },
   {
     "color": "#e8aa5f",
     "dmccode": "3827 ",
-    "name": "Golden Brown - pale "
+    "name": "Golden Brown - pale ",
+    "red": 232,
+    "green": 170,
+    "blue": 95
   },
   {
     "color": "#af8846",
     "dmccode": "3828 ",
-    "name": "Hazelnut Brown "
+    "name": "Hazelnut Brown ",
+    "red": 175,
+    "green": 136,
+    "blue": 70
   },
   {
     "color": "#a47829",
     "dmccode": "3829 ",
-    "name": "Old Gold - vy dk "
+    "name": "Old Gold - vy dk ",
+    "red": 164,
+    "green": 120,
+    "blue": 41
   },
   {
     "color": "#b97161",
     "dmccode": "3830 ",
-    "name": "Terra Cotta "
+    "name": "Terra Cotta ",
+    "red": 185,
+    "green": 113,
+    "blue": 97
   },
   {
     "color": "#b33034",
     "dmccode": "3831 ",
-    "name": "Raspberry - dk "
+    "name": "Raspberry - dk ",
+    "red": 179,
+    "green": 48,
+    "blue": 52
   },
   {
     "color": "#d55d63",
     "dmccode": "3832 ",
-    "name": "Raspberry - med "
+    "name": "Raspberry - med ",
+    "red": 213,
+    "green": 93,
+    "blue": 99
   },
   {
     "color": "#e8868c",
     "dmccode": "3833 ",
-    "name": "Raspberry - lt "
+    "name": "Raspberry - lt ",
+    "red": 232,
+    "green": 134,
+    "blue": 140
   },
   {
     "color": "#642441",
     "dmccode": "3834 ",
-    "name": "Grape - dk "
+    "name": "Grape - dk ",
+    "red": 100,
+    "green": 36,
+    "blue": 65
   },
   {
     "color": "#784775",
     "dmccode": "3835 ",
-    "name": "Grape - med "
+    "name": "Grape - med ",
+    "red": 120,
+    "green": 71,
+    "blue": 117
   },
   {
     "color": "#c1aec2",
     "dmccode": "3836 ",
-    "name": "Grape - lt "
+    "name": "Grape - lt ",
+    "red": 193,
+    "green": 174,
+    "blue": 194
   },
   {
     "color": "#7c4087",
     "dmccode": "3837 ",
-    "name": "Lavender - ultra dk "
+    "name": "Lavender - ultra dk ",
+    "red": 124,
+    "green": 64,
+    "blue": 135
   },
   {
     "color": "#62669a",
     "dmccode": "3838 ",
-    "name": "Lavender Blue - dk "
+    "name": "Lavender Blue - dk ",
+    "red": 98,
+    "green": 102,
+    "blue": 154
   },
   {
     "color": "#94a8c9",
     "dmccode": "3839 ",
-    "name": "Lavender Blue - med "
+    "name": "Lavender Blue - med ",
+    "red": 148,
+    "green": 168,
+    "blue": 201
   },
   {
     "color": "#c1d4ec",
     "dmccode": "3840 ",
-    "name": "Lavender Blue - lt "
+    "name": "Lavender Blue - lt ",
+    "red": 193,
+    "green": 212,
+    "blue": 236
   },
   {
     "color": "#cbdde7",
     "dmccode": "3841 ",
-    "name": "Baby Blue - pale "
+    "name": "Baby Blue - pale ",
+    "red": 203,
+    "green": 221,
+    "blue": 231
   },
   {
     "color": "#12557e",
     "dmccode": "3842 ",
-    "name": "Wedgwood - dk "
+    "name": "Wedgwood - dk ",
+    "red": 18,
+    "green": 85,
+    "blue": 126
   },
   {
     "color": "#0095d3",
     "dmccode": "3843 ",
-    "name": "Electric Blue "
+    "name": "Electric Blue ",
+    "red": 0,
+    "green": 149,
+    "blue": 211
   },
   {
     "color": "#04acce",
     "dmccode": "3844 ",
-    "name": "Bright Turquoise - dk "
+    "name": "Bright Turquoise - dk ",
+    "red": 4,
+    "green": 172,
+    "blue": 206
   },
   {
     "color": "#01cbec",
     "dmccode": "3845 ",
-    "name": "Bright Turquoise - med "
+    "name": "Bright Turquoise - med ",
+    "red": 1,
+    "green": 203,
+    "blue": 236
   },
   {
     "color": "#63d3e1",
     "dmccode": "3846 ",
-    "name": "Bright Turquoise - lt "
+    "name": "Bright Turquoise - lt ",
+    "red": 99,
+    "green": 211,
+    "blue": 225
   },
   {
     "color": "#00604e",
     "dmccode": "3847 ",
-    "name": "Teal Green - dk "
+    "name": "Teal Green - dk ",
+    "red": 0,
+    "green": 96,
+    "blue": 78
   },
   {
     "color": "#42917f",
     "dmccode": "3848 ",
-    "name": "Teal Green - med "
+    "name": "Teal Green - med ",
+    "red": 66,
+    "green": 145,
+    "blue": 127
   },
   {
     "color": "#6eb2a7",
     "dmccode": "3849 ",
-    "name": "Teal Green - lt "
+    "name": "Teal Green - lt ",
+    "red": 110,
+    "green": 178,
+    "blue": 167
   },
   {
     "color": "#08926f",
     "dmccode": "3850 ",
-    "name": "Bright Green - dk "
+    "name": "Bright Green - dk ",
+    "red": 8,
+    "green": 146,
+    "blue": 111
   },
   {
     "color": "#56b69c",
     "dmccode": "3851 ",
-    "name": "Bright Green - lt "
+    "name": "Bright Green - lt ",
+    "red": 86,
+    "green": 182,
+    "blue": 156
   },
   {
     "color": "#cc972b",
     "dmccode": "3852 ",
-    "name": "Straw - vy dk "
+    "name": "Straw - vy dk ",
+    "red": 204,
+    "green": 151,
+    "blue": 43
   },
   {
     "color": "#fc9749",
     "dmccode": "3853 ",
-    "name": "Autumn Gold - dk "
+    "name": "Autumn Gold - dk ",
+    "red": 252,
+    "green": 151,
+    "blue": 73
   },
   {
     "color": "#f7b25c",
     "dmccode": "3854 ",
-    "name": "Autumn Gold - med "
+    "name": "Autumn Gold - med ",
+    "red": 247,
+    "green": 178,
+    "blue": 92
   },
   {
     "color": "#f7ca84",
     "dmccode": "3855 ",
-    "name": "Autumn Gold - lt "
+    "name": "Autumn Gold - lt ",
+    "red": 247,
+    "green": 202,
+    "blue": 132
   },
   {
     "color": "#ebbc9a",
     "dmccode": "3856 ",
-    "name": "Mahogany - ultra vy lt "
+    "name": "Mahogany - ultra vy lt ",
+    "red": 235,
+    "green": 188,
+    "blue": 154
   },
   {
     "color": "#804133",
     "dmccode": "3857 ",
-    "name": "Rosewood - dk "
+    "name": "Rosewood - dk ",
+    "red": 128,
+    "green": 65,
+    "blue": 51
   },
   {
     "color": "#8d5745",
     "dmccode": "3858 ",
-    "name": "Rosewood - med "
+    "name": "Rosewood - med ",
+    "red": 141,
+    "green": 87,
+    "blue": 69
   },
   {
     "color": "#b68472",
     "dmccode": "3859 ",
-    "name": "Rosewood - lt "
+    "name": "Rosewood - lt ",
+    "red": 182,
+    "green": 132,
+    "blue": 114
   },
   {
     "color": "#947974",
     "dmccode": "3860 ",
-    "name": "Cocoa "
+    "name": "Cocoa ",
+    "red": 148,
+    "green": 121,
+    "blue": 116
   },
   {
     "color": "#9e887f",
     "dmccode": "3861 ",
-    "name": "Cocoa - lt "
+    "name": "Cocoa - lt ",
+    "red": 158,
+    "green": 136,
+    "blue": 127
   },
   {
     "color": "#845f2e",
     "dmccode": "3862 ",
-    "name": "Mocha Beige - dk "
+    "name": "Mocha Beige - dk ",
+    "red": 132,
+    "green": 95,
+    "blue": 46
   },
   {
     "color": "#a4866c",
     "dmccode": "3863 ",
-    "name": "Mocha Beige - med "
+    "name": "Mocha Beige - med ",
+    "red": 164,
+    "green": 134,
+    "blue": 108
   },
   {
     "color": "#c9af93",
     "dmccode": "3864 ",
-    "name": "Mocha Beige - lt "
+    "name": "Mocha Beige - lt ",
+    "red": 201,
+    "green": 175,
+    "blue": 147
   },
   {
     "color": "#faf9f5",
     "dmccode": "3865 ",
-    "name": "Winter White "
+    "name": "Winter White ",
+    "red": 250,
+    "green": 249,
+    "blue": 245
   },
   {
     "color": "#e7e5dd",
     "dmccode": "3866 ",
-    "name": "Mocha Brown - ultra vy lt "
+    "name": "Mocha Brown - ultra vy lt ",
+    "red": 231,
+    "green": 229,
+    "blue": 221
   }
 ]

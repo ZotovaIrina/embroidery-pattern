@@ -6,6 +6,7 @@ angular.module('embroidery-pattern')
         $scope.heightImage = 0;
         $scope.maxWidth = 0;
         $scope.maxHeigth = 0;
+        $scope.numberOfColor = 50;
         $scope.formShow = false;
 
 
@@ -24,6 +25,7 @@ angular.module('embroidery-pattern')
                 data: {
                     widthImage: $scope.widthImage,
                     heightImage: $scope.heightImage,
+                    numberOfColor: $scope.numberOfColor,
                     file: file
                 }
             });
