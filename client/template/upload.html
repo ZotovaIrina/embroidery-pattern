@@ -41,7 +41,18 @@
                         class="col-xs-12 col-sm-3"
                         ng-show="formShow">
                 </slider>
-                <input type="number" ng-model="numberOfColor">
+                <slider slider-id="sliderNumberOfColor"
+                        ng-model="numberOfColor"
+                        min="0"
+                        max="200"
+                        step="5"
+                        precision="5"
+                        orientation="horizontal"
+                        handle="round"
+                        tooltip="always"
+                        class="col-xs-12 col-sm-3"
+                        ng-show="formShow">
+                </slider>
                 <i ng-show="myForm.heightImage.$error.required">*required</i>
                 Profile Picture:
                 <input type="file"

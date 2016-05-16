@@ -27,13 +27,14 @@ router.route('/')
     getColors,
     convert,
     function (req, res) {
-        console.log("router");
+        console.log("router POST image");
         //console.log("color", req.body.color);
-        var file = req.files.file;
+        var file = req.imageConvert;
         res.json({
             success: true,
             textMessage: 'File upload successfully',
-            file: file
+            URL: file.srcPath,
+            color: file.listOfColor
         });
     })
 

@@ -1,5 +1,4 @@
-//change color using color map
-
+//change number of color
 
 var express = require('express'),
     path = require('path'),
@@ -10,34 +9,24 @@ var express = require('express'),
 
 module.exports = function getColors(req, res, next) {
     console.log("change color");
-    var file = req.files.file,
-        numberOfColor = req.body.numberOfColor,
-        extension = path.extname(file.originalFilename),
-        name = path.basename(file.originalFilename, extension),
-        srcName = name + '.gif',
-        srcPath = path.join(pathConfig.publicDir, '/images/resize/', srcName),
-        distPath = path.join(pathConfig.publicDir, '/images/changeColor/', srcName),
-        colormap = path.join(pathConfig.serverDir, '/parsing/DMCcolormap.gif');
-
+    var srcPath = req.imageConvert.srcPath,
+        numberOfColor = req.body.numberOfColor;
+    console.log(srcPath);
     var args = [
         srcPath,
-        '-colorspace',
+       '-colorspace',
         'RGB',
-        //'-dither',
-        //'none',
-        //'-remap',
-        //colormap,
         '-colors',
         numberOfColor,
-        distPath
+        srcPath
     ];
 
     var p = new Promise(function (resolve, reject) {
-        var color = im.convert(args, function (err, data) {
+        im.convert(args, function (err, data) {
             if (err) {
                 reject(err);
             }
-            console.log("Image change color complete", data);
+            console.log("Image change color complete");
             resolve();
         });
 

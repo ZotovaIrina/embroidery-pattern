@@ -7,13 +7,18 @@ var express = require('express'),
     pathConfig = require('../path');
 
 module.exports = function resizeImage(req, res, next) {
+    console.log("resize image");
+    //srcPath - path to temp folder to get original image
+    //extention - get extantion original file. We should convert image in gif format. It takes opportunity to limit number of color.
+    //distPath - end path of file
     var file = req.files.file,
-        srcPath = path.join(file.path),
         width = req.body.widthImage,
+        srcPath = path.join(file.path),
         extension = path.extname(file.originalFilename),
-        name = path.basename(file.originalFilename, extension),
+        name = path.basename(file.path, extension),
         distName = name + '.gif',
-        distPath = path.join(pathConfig.publicDir, '/images/resize/', distName);
+        distPath = path.join(pathConfig.publicDir, '/images/temp_convert/', distName);
+
 
     var args = [
         srcPath,
@@ -28,6 +33,14 @@ module.exports = function resizeImage(req, res, next) {
             if (err) {
                 reject(err);
             }
+
+            req.imageConvert = {
+                srcPath: srcPath
+            };
+
+            req.imageConvert = {
+                srcPath: distPath
+            };
             console.log("Image resize complete");
             resolve();
         });

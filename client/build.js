@@ -33,7 +33,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         $scope.heightImage = 0;
         $scope.maxWidth = 0;
         $scope.maxHeigth = 0;
-        $scope.numberOfColor = 50;
+        $scope.numberOfColor = 20;
         $scope.formShow = false;
 
 

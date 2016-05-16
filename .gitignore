@@ -4,7 +4,7 @@ mongo
 .idea
 bower_components
 server/public/images/temp
-server/public/images/resize
 server/public/images/color
 server/public/images/changeColor
 server/public/images/convert
+server/public/images/temp_convert
