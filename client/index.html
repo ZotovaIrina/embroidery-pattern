@@ -4,8 +4,9 @@
 
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
 
 
@@ -16,12 +17,9 @@
 </head>
 <body>
 
+    <div ui-view="navigation" id="navigation" ng-controller="navigation"></div>
 
-
-<div class="row row-content">
-    <div ui-view="content" class="col-xs-12" id="content"></div>
-
-</div>
+    <div ui-view="content" id="content"></div>
 
 
 <!-- build:js build.min.js -->

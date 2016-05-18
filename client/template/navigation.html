@@ -1,19 +1,70 @@
-<div>
-    <nav class="navbar navbar-inverse navbar-fixed-top"
-         role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button"
-                    class="navbar-toggle collapsed"
-                    data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1"
-                    aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img id="brand-img" src="/public/images/label.png"></a>
-        </div>
-    </nav>
+<md-toolbar layout="row"
+            layout-wrap
+            class="md-toolbar-tools md-primary">
+    <div layout="row"
+         layout-align="start center"
+         flex-gt-sm="20"
+         flex-sm="80">
+        <md-tooltip>Home page</md-tooltip>
+        <a href="#" id="logo">
+            <img id="logo-icon"
+                 class="png-icon"
+                 src="/public/images/label.png">
+
+            <p id="logo-p">
+                EP
+            </p>
+        </a>
+    </div>
+<div menu-buttons
+     layout="row"
+     flex="80"
+     hide show-gt-sm>
 </div>
+    <div layout="row"
+         layout-align="end center"
+         flex
+         hide-gt-sm show-sm>
+        <md-button class="md-icon-button"
+                   ng-click="openSideNavPanel()">
+            <md-tooltip>Menu</md-tooltip>
+            <i class="material-icons">dehaze</i>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<md-sidenav class="md-sidenav-right md-whiteframe-z2"
+            md-component-id="right">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>MENU</span>
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button"
+                       ng-click="closeSideNavPanel()">
+                <i class="material-icons">clear</i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding="">
+        <div menu-buttons
+             layout="column"
+             flex
+             hide-gt-sm show-sm></div>
+    </md-content>
+</md-sidenav>
+
+<!--<md-menu>-->
+<!--<md-button md-menu-origin ng-click="$mdOpenMenu()">Help</md-button>-->
+<!--<md-menu-content width="2">-->
+<!--<md-menu-item>-->
+<!--<md-button>Help</md-button>-->
+<!--</md-menu-item>-->
+<!--<md-menu-item>-->
+<!--<md-button>About</md-button>-->
+<!--</md-menu-item>-->
+<!--</md-menu-content>-->
+<!--</md-menu>-->
+
+

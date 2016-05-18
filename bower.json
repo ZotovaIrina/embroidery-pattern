@@ -25,6 +25,7 @@
     "angular": "^1.5.5",
     "angular-ui-router": "^0.2.18",
     "angular-animate": "^1.5.5",
-    "angular-bootstrap-slider": "^0.1.27"
+    "angular-bootstrap-slider": "^0.1.27",
+    "angular-material": "^1.0.8"
   }
 }
