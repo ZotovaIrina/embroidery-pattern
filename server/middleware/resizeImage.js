@@ -35,16 +35,15 @@ module.exports = function resizeImage(req, res, next) {
             }
 
             req.imageConvert = {
-                srcPath: srcPath
-            };
-
-            req.imageConvert = {
-                srcPath: distPath
+                srcPath: distPath,
+                fileName: distName
             };
             console.log("Image resize complete");
             resolve();
         });
-    })
-        .then(next);
+    });
+    p
+        .then(next)
+        .catch(err => console.error(err));
 //wait when image will be saved and then next
 };

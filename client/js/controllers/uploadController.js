@@ -2,37 +2,34 @@ angular.module('embroidery-pattern')
     .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', function ($scope, Upload, $timeout, baseURL) {
         'use strict';
 
-        $scope.widthImage = 0;
-        $scope.heightImage = 0;
-        $scope.maxWidth = 0;
-        $scope.maxHeigth = 0;
         $scope.numberOfColor = 20;
         $scope.formShow = false;
+        $scope.imageResult = false;
 
-
-        $scope.widthChange = function(){
-            $scope.heightImage = parseInt($scope.proportion * $scope.widthImage);
+        $scope.imageLoaded = function(result){
+            $scope.formShow = true;
+            $scope.imageParams = result;
+            $scope.$apply();
         };
 
-        $scope.heightChange = function(){
-            $scope.widthImage = parseInt($scope.heightImage / $scope.proportion);
+        $scope.widthChange = function (newWidth) {
+            $scope.imageParams.heightImage = parseInt($scope.imageParams.proportion * newWidth);
         };
 
         $scope.uploadPic = function (file) {
-            console.log(file);
+            var data = angular.extend({
+                file: file,
+                numberOfColor: $scope.numberOfColor
+            }, $scope.imageParams);
+            console.log(data);
             file.upload = Upload.upload({
                 url: baseURL + '/upload',
-                data: {
-                    widthImage: $scope.widthImage,
-                    heightImage: $scope.heightImage,
-                    numberOfColor: $scope.numberOfColor,
-                    file: file
-                }
+                data: data
             });
 
             file.upload.then(function (response) {
-                console.log("response: ", response);
-                console.log("path: ", response.data.file.path);
+                $scope.imageResult = true;
+                $scope.imageResultUrl = response.data.fileName;
             }, function (response) {
                 if (response.status > 0) {
                     $scope.errorMsg = response.status + ': ' + response.data;

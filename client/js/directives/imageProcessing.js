@@ -3,19 +3,21 @@ angular.module('embroidery-pattern')
 
         return {
             restrict: 'A',
+            scope: {
+                imageOnLoad: '&'
+            },
             link: function (scope, element, attrs) {
-
                 element.bind("load", function (e) {
+                    var imageParams = {};
                     console.log("load image");
                     // success, "onload" catched
                     // now we can do specific stuff:
-                    scope.heightImage = this.naturalHeight;
-                    scope.widthImage = this.naturalWidth;
-                    scope.maxWidth = this.naturalWidth;
-                    scope.maxHeigth = this.naturalHeight;
-                    scope.proportion = this.naturalHeight / this.naturalWidth;
-                    scope.formShow = true;
-                    scope.$apply();
+                    imageParams.heightImage = this.naturalHeight;
+                    imageParams.widthImage = this.naturalWidth;
+                    imageParams.maxWidth = this.naturalWidth;
+                    imageParams.maxHeigth = this.naturalHeight;
+                    imageParams.proportion = this.naturalHeight / this.naturalWidth;
+                    scope.imageOnLoad({result: imageParams});
                 });
 
             }

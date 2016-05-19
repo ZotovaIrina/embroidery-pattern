@@ -1,9 +1,11 @@
-$mainColor: #009688;
-$lightMainColor: #d1b1ff;
-$darkColor: #8a00c6;
-$secondColor: #6ee4ff;
-$lightSecondColor: #dafaff;
+#p-size-image {
+   display: inline-block;
+  vertical-align: middle;
+ }
 
+#input-width {
+  display: inline-block;
+}
 
 form .progress {
   line-height: 15px;
@@ -18,7 +20,7 @@ form .progress {
 
 .progress div {
   font-size: smaller;
-  background: $mainColor;
+  background: $accentColor;
   width: 0;
 }
 

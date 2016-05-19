@@ -1,4 +1,5 @@
-<div>
+<div layout="row"
+     layout-wrap>
     <h1 id="header">Upload page</h1>
 
 
@@ -7,53 +8,57 @@
             <fieldset>
                 <legend>Upload on form submit</legend>
 
-                <label ng-show="formShow">
-                    Width:
-                </label>
-                <slider slider-id="sliderWidth"
-                        ng-model="widthImage"
-                        min="0"
-                        max="maxWidth"
-                        step="10"
-                        precision="5"
-                        orientation="horizontal"
-                        handle="round"
-                        tooltip="always"
-                        ng-change="widthChange()"
-                        class="col-xs-12 col-sm-3"
-                        ng-show="formShow">
-                </slider>
-                <i ng-show="myForm.widthImage.$error.required"> *required</i>
+                <md-input-container ng-if="formShow"
+                                    layout="row"
+                                    flex="100">
+                    <label flex="15">
+                        Width x Height:
+                    </label>
+                    <md-slider min="5"
+                               flex="70"
+                               max="{{imageParams.maxWidth}}"
+                               ng-model="imageParams.widthImage"
+                               step="5"
+                               id="width-slider"
+                               class="md-primary"
+                               aria-label="5"
+                               ng-change="widthChange(imageParams.widthImage)">
+                    </md-slider>
+                    <div flex="15">
+                        <input type="number"
+                               ng-model="imageParams.widthImage"
+                               ng-change="widthChange(imageParams.widthImage)"
+                               flex="50"
+                               required
+                               id="input-width">
 
-                <label ng-show="formShow">
-                    Height:
-                </label>
-                <slider slider-id="sliderHeigth"
-                        ng-model="heightImage"
-                        min="0"
-                        max="maxHeigth"
-                        step="10"
-                        precision="5"
-                        orientation="horizontal"
-                        handle="round"
-                        tooltip="always"
-                        ng-change="heightChange()"
-                        class="col-xs-12 col-sm-3"
-                        ng-show="formShow">
-                </slider>
-                <slider slider-id="sliderNumberOfColor"
-                        ng-model="numberOfColor"
-                        min="0"
-                        max="200"
-                        step="5"
-                        precision="5"
-                        orientation="horizontal"
-                        handle="round"
-                        tooltip="always"
-                        class="col-xs-12 col-sm-3"
-                        ng-show="formShow">
-                </slider>
-                <i ng-show="myForm.heightImage.$error.required">*required</i>
+                        <p flex="50"
+                           id="p-size-image">
+                            x {{imageParams.heightImage}} pixels
+                        </p>
+                    </div>
+                </md-input-container>
+
+                <md-input-container ng-show="formShow"
+                                    layout="row"
+                                    flex="100">
+                    <label flex="15">
+                        Number of color:
+                    </label>
+                    <md-slider min="5"
+                               flex="70"
+                               max="200"
+                               ng-model="numberOfColor"
+                               step="5"
+                               id="color-slider"
+                               class="md-primary"
+                               aria-label="5">
+                    </md-slider>
+                    <input type="number"
+                           ng-model="numberOfColor"
+                           flex="15"
+                           required>
+                </md-input-container>
                 Profile Picture:
                 <input type="file"
                        ngf-select=""
@@ -72,7 +77,8 @@
                 <img ngf-src="picFile"
                      class="thumb"
                      id="picFile"
-                     image-processing>
+                     image-processing
+                     image-on-load="imageLoaded(result)">
               <span class="progress"
                     ng-show="picFile.progress >= 0">
                   <div style="width:{{picFile.progress}}%"
@@ -83,6 +89,7 @@
                 <span ng-show="picFile.result">
                     Upload Successful
                 </span>
+                <img ng-if="imageResult" ng-src="/public/images/temp_convert/{{imageResultUrl}}">
             </fieldset>
         </form>
 

@@ -26,7 +26,8 @@ module.exports = function getColors(req, res, next) {
             req.imageConvert.colorMap = data;
             resolve();
         });
-    })
-        .then(next);
+    });
+    p.then(next)
+        .catch(err => console.error(err));
 //wait when image will be saved and then next
 };
