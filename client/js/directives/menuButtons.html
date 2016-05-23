@@ -4,16 +4,16 @@
          layout-align="space-around center"
          flex-gt-sm="70"
          flex-sm="100">
-        <md-button href="#/">Home</md-button>
-        <md-button ui-sref="app.uploadImage">Upload image</md-button>
-        <md-button ui-sref="app.freePattern">Free pattern</md-button>
-        <md-button ui-sref="app.learn">Learn</md-button>
+        <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" href="#/">Home</md-button>
+        <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" ui-sref="app.uploadImage">Upload image</md-button>
+        <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" ui-sref="app.freePattern">Free pattern</md-button>
+        <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" ui-sref="app.learn">Learn</md-button>
     </div>
     <div layout-gt-sm="row"
          layout-sm="column"
          layout-align="end center"
          flex-gt-sm="30"
          flex-sm="100">
-        <md-button class="md-raised md-accent" ng-class="{'full-button': $mdMedia('sm')}">Log In</md-button>
+        <md-button class="md-raised md-accent" ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}">Log In</md-button>
     </div>
 </div>

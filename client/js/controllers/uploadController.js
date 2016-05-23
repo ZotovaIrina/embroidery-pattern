@@ -1,10 +1,12 @@
 angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', function ($scope, Upload, $timeout, baseURL) {
+    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', function ($scope, Upload, $timeout, baseURL, $mdMedia) {
         'use strict';
 
+        $scope.$mdMedia = $mdMedia;
         $scope.numberOfColor = 20;
         $scope.formShow = false;
         $scope.imageResult = false;
+        $scope.uploadProgress = false;
 
         $scope.imageLoaded = function(result){
             $scope.formShow = true;
@@ -13,7 +15,22 @@ angular.module('embroidery-pattern')
         };
 
         $scope.widthChange = function (newWidth) {
+            if(newWidth < 5 || undefined){
+                console.log("wrong!!!");
+                $scope.imageParams.widthImage = 5;
+            }
             $scope.imageParams.heightImage = parseInt($scope.imageParams.proportion * newWidth);
+        };
+
+        $scope.numberChange = function(value) {
+            if(value < 2 || undefined){
+                console.log("wrong!!!");
+                $scope.numberOfColor = 2;
+            }
+            if(value > 200 || undefined){
+                console.log("wrong!!!");
+                $scope.numberOfColor = 200;
+            }
         };
 
         $scope.uploadPic = function (file) {

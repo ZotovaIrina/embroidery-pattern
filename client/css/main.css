@@ -1,22 +1,31 @@
 @import url("/public/lib/angular-material.min.css");
-.row-header {
-  margin: 0 auto;
-  padding: 0 0;
+.header {
+  font-size: 30px;
+  color: #7E57C2;
 }
 
-.row-content {
-  margin: 0 auto;
-  padding: 50px 0;
-  min-height: 400px;
+.invalid {
+  color: red;
+}
+
+.input-container {
+  width: 100%;
+  margin: 8px 0;
+}
+
+#width-label {
+  color: black;
+  font-size: 16px;
+  vertical-align: middle;
 }
 
 #p-size-image {
   display: inline-block;
-  vertical-align: middle;
+  margin: 6px 0 0 0;
 }
 
-#input-width {
-  display: inline-block;
+#input-numberOfColor {
+  width: 60px;
 }
 
 form .progress {
@@ -33,6 +42,40 @@ form .progress {
   font-size: smaller;
   background: #69F0AE;
   width: 0;
+}
+
+.preview-block {
+  display: block;
+  border: 2px solid #7E57C2;
+  max-height: 100vh;
+}
+
+.button-icon {
+  vertical-align: middle;
+}
+
+.imagePreview {
+  max-height: -webkit-calc(90vh - 64px);
+  max-height: -moz-calc(90vh - 64px);
+  max-height: calc(90vh - 64px);
+  max-width: 100%;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: -webkit-calc(90vh - 64px);
+  max-height: -moz-calc(90vh - 64px);
+  max-height: calc(90vh - 64px);
+  max-width: 100%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 960px) {
+  .convert-button {
+    width: 100%;
+  }
 }
 
 #logo {

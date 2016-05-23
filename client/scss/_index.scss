@@ -1,11 +1,14 @@
-$baseURL: "http://localhost:3000";
+//#navigation {
+//  position: fixed;
+//
+//  width: 100%;
+//}
+//
+//#content {
+//  padding-top: 56px;
+//}
 
-.row-header {
-  margin: 0 auto;
-  padding: 0 0;
-}
-.row-content {
-  margin: 0 auto;
-  padding: 50px 0;
-  min-height: 400px;
+.header {
+  font-size: $h1FontSize;
+  color: $primaryColor;
 }

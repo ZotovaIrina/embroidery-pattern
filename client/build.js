@@ -74,12 +74,14 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
     }]);
 ;angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', function ($scope, Upload, $timeout, baseURL) {
+    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', function ($scope, Upload, $timeout, baseURL, $mdMedia) {
         'use strict';
 
+        $scope.$mdMedia = $mdMedia;
         $scope.numberOfColor = 20;
         $scope.formShow = false;
         $scope.imageResult = false;
+        $scope.uploadProgress = false;
 
         $scope.imageLoaded = function(result){
             $scope.formShow = true;
@@ -88,7 +90,22 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         };
 
         $scope.widthChange = function (newWidth) {
+            if(newWidth < 5 || undefined){
+                console.log("wrong!!!");
+                $scope.imageParams.widthImage = 5;
+            }
             $scope.imageParams.heightImage = parseInt($scope.imageParams.proportion * newWidth);
+        };
+
+        $scope.numberChange = function(value) {
+            if(value < 2 || undefined){
+                console.log("wrong!!!");
+                $scope.numberOfColor = 2;
+            }
+            if(value > 200 || undefined){
+                console.log("wrong!!!");
+                $scope.numberOfColor = 200;
+            }
         };
 
         $scope.uploadPic = function (file) {
@@ -117,6 +134,21 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
     }]);;angular.module('embroidery-pattern')
+    .directive('fit', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                scope.fit = function () {
+                    console.log('fit');
+                    var height = element[0].naturalHeight;
+                    var width = element[0].naturalWidth;
+                    console.log(element);
+                    console.log("width", width);
+                    element.attr('style', 'max-width: 100%; max-height: -webkit-calc(90vh - 64px); max-height: -moz-calc(90vh - 64px); max-height: calc(90vh - 64px); width: ' + width + 'px; height: ' + height + 'px;');
+                };
+            }
+        };
+    });;angular.module('embroidery-pattern')
     .directive('imageProcessing', [function () {
 
         return {
@@ -151,4 +183,40 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         };
 
 
-    }]);
+    }]);;angular.module('embroidery-pattern')
+    .directive('zoomIn', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            scope.zoomIn= function() {
+                console.log('Zoom in');
+                var startHeight = element[0].clientHeight;
+                var startWidth = element[0].clientWidth;
+                var height = parseInt(startHeight*1.2);
+                var width = parseInt(startWidth*1.2);
+                console.log(element);
+                console.log("startWidth", startWidth);
+                console.log("width", width);
+                element.attr('style','max-width: none; max-height: none; width: '+ width + 'px; height: '+ height + 'px;');
+            };
+        }
+    };
+});;angular.module('embroidery-pattern')
+    .directive('zoomOut', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                scope.zoomOut= function() {
+                    console.log('Zoom out');
+                    var startHeight = element[0].clientHeight;
+                    var startWidth = element[0].clientWidth;
+                    var height = parseInt(startHeight/1.2);
+                    var width = parseInt(startWidth/1.2);
+                    console.log(element);
+                    console.log("startWidth", startWidth);
+                    console.log("width", width);
+                    element.attr('style','max-width: none; max-height: none; width: '+ width + 'px; height: '+ height + 'px;');
+                };
+            }
+        };
+    });
