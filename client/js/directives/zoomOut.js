@@ -6,13 +6,13 @@ angular.module('embroidery-pattern')
                 scope.zoomOut= function() {
                     console.log('Zoom out');
                     var startHeight = element[0].clientHeight;
-                    var startWidth = element[0].clientWidth;
+                    //var startWidth = element[0].clientWidth;
                     var height = parseInt(startHeight/1.2);
-                    var width = parseInt(startWidth/1.2);
+                    //var width = parseInt(startWidth*1.2);
                     console.log(element);
-                    console.log("startWidth", startWidth);
-                    console.log("width", width);
-                    element.attr('style','max-width: none; max-height: none; width: '+ width + 'px; height: '+ height + 'px;');
+                    console.log("startHeight", startHeight);
+                    console.log("height", height);
+                    element.attr('style','height: '+ height + 'px;');
                 };
             }
         };
