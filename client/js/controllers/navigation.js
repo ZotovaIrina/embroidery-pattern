@@ -1,5 +1,5 @@
 angular.module('embroidery-pattern')
-    .controller('navigation', ['$scope','$mdSidenav', '$mdMedia', function ($scope, $mdSidenav, $mdMedia) {
+    .controller('Navigation', ['$scope','$mdSidenav', '$mdMedia', function ($scope, $mdSidenav, $mdMedia) {
         'use strict';
 
         $scope.showMobileMainHeader = true;

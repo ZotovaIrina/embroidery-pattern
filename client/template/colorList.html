@@ -1,0 +1,69 @@
+<md-dialog class="dialog" aria-label="Color List" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Color List</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">clear</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content"
+                 layout="column"
+                 flex="100">
+                <div class="dialog-list-container"
+                     layout="row"
+                     layout-padding
+                     flex="100">
+                    <div class="dialog-list-color"
+                         flex
+                         layout-align="center center">
+                        Color
+                    </div>
+                    <div class="dialog-list-number"
+                         flex
+                         layout-align="center center">
+                        Number
+                    </div>
+                    <div class="dialog-list-name"
+                         flex
+                            layout-align="center center">
+                        Name
+                    </div>
+                </div>
+                <div class="dialog-list-container"
+                     layout="row"
+                     layout-padding
+                     flex="100"
+                     ng-repeat="color in listOfColors">
+                    <div  layout-align="start center"
+                          style="width: 36px;">
+                        <div class="colorCircle dialog-list-color"
+                         ng-style="{'background-color': color.color}"></div>
+                    </div>
+                    <div  layout-align="center center"
+                          style="width: 60px;"
+                          class="dialog-list-number">
+                        {{color.dmccode}}
+                    </div>
+                    <div  flex
+                          layout-align="center center"
+                          class="dialog-list-name">
+                        {{color.name}}
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="save('save')">
+                Save
+            </md-button>
+            <md-button ng-click="cancel()">
+                Close
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

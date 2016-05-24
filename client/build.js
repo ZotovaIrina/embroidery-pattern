@@ -22,7 +22,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 url: '/',
                 views: {
                     'navigation': {
-                        templateUrl: 'template/navigation.html'
+                        templateUrl: 'template/navigation.html',
+                        controller: 'Navigation'
                     },
                     'content': {
                         templateUrl: 'template/home.html'
@@ -59,7 +60,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
 ;angular.module('embroidery-pattern')
-    .controller('navigation', ['$scope','$mdSidenav', '$mdMedia', function ($scope, $mdSidenav, $mdMedia) {
+    .controller('Navigation', ['$scope','$mdSidenav', '$mdMedia', function ($scope, $mdSidenav, $mdMedia) {
         'use strict';
 
         $scope.showMobileMainHeader = true;
@@ -74,7 +75,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
     }]);
 ;angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', function ($scope, Upload, $timeout, baseURL, $mdMedia) {
+    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', '$mdDialog', function ($scope, Upload, $timeout, baseURL, $mdMedia, $mdDialog) {
         'use strict';
 
         $scope.$mdMedia = $mdMedia;
@@ -109,6 +110,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             });
 
             file.upload.then(function (response) {
+                $scope.color = response.data.color;
                 $scope.imageResult = true;
                 $scope.imageResultUrl = response.data.fileName;
             }, function (response) {
@@ -120,6 +122,57 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
             });
         };
+
+
+        //Modal Window with list of color
+        $scope.customFullscreen = $mdMedia('xs');
+        $scope.showConfirm = function(ev) {
+            var useFullScreen = $mdMedia('xs');
+            console.log('$scope.color', $scope.color);
+            $mdDialog.show({
+                controller: DialogController,
+                controllerAs: 'ctrl',
+                templateUrl: 'template/colorList.html',
+                locals: {
+                    color: $scope.color
+                },
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose:true,
+                fullscreen: useFullScreen
+            })
+                .then(function(answer) {
+                    $scope.status = 'You said the information was "' + answer + '".';
+                    console.log('You said the information was "' + answer + '".');
+                }, function() {
+                    $scope.status = 'You cancelled the dialog.';
+                    console.log('You cancelled the dialog.');
+                });
+            $scope.$watch(function() {
+                return $mdMedia('xs');
+            }, function(wantsFullScreen) {
+                $scope.customFullscreen = (wantsFullScreen === true);
+            });
+        };
+
+        function DialogController($scope, $mdDialog, color) {
+            $scope.listOfColors = color;
+            $scope.testColor = $scope.listOfColors[0].name;
+            console.log("color in controller", $scope.listOfColors);
+            $scope.hide = function() {
+                $mdDialog.hide();
+            };
+            $scope.cancel = function() {
+                $mdDialog.cancel();
+            };
+            $scope.save = function(answer) {
+                console.log('save');
+                $mdDialog.hide(answer);
+            };
+        }
+
+
+
 
 
     }]);;angular.module('embroidery-pattern')
@@ -147,11 +200,12 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     console.log("load image");
                     // success, "onload" catched
                     // now we can do specific stuff:
-                    imageParams.heightImage = this.naturalHeight;
-                    imageParams.widthImage = this.naturalWidth;
+                    imageParams.heightImage = parseInt(this.naturalHeight*0.9);
+                    imageParams.widthImage = parseInt(this.naturalWidth*0.9);
                     imageParams.maxWidth = this.naturalWidth;
                     imageParams.maxHeigth = this.naturalHeight;
                     imageParams.proportion = this.naturalHeight / this.naturalWidth;
+                    imageParams.numberOfColor = 20;
                     scope.imageOnLoad({result: imageParams});
                 });
 
@@ -182,7 +236,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 console.log(element);
                 console.log("startHeight", startHeight);
                 console.log("height", height);
-                element.attr('style','height: '+ height + 'px;');
+                element.attr('style','max-width: none; width: auto; height: '+ height + 'px;');
             };
         }
     };

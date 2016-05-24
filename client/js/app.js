@@ -22,7 +22,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 url: '/',
                 views: {
                     'navigation': {
-                        templateUrl: 'template/navigation.html'
+                        templateUrl: 'template/navigation.html',
+                        controller: 'Navigation'
                     },
                     'content': {
                         templateUrl: 'template/home.html'

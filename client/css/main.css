@@ -44,6 +44,9 @@ form .progress {
 }
 
 .preview-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
   overflow: auto;
   height: 400px;
 }
@@ -52,6 +55,24 @@ form .progress {
   .convert-button {
     width: 100%;
   }
+}
+
+.border {
+  border: 1px solid #7E57C2;
+}
+
+.listOfColor {
+  display: inline-block;
+}
+
+.colorCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.dialog {
+  width: 80%;
 }
 
 #logo {
