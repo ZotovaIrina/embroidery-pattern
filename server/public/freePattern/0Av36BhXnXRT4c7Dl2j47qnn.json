@@ -1,0 +1,282 @@
+[
+  {
+    "color": "#535657",
+    "dmccode": "413 ",
+    "name": "Pewter Grey - dk ",
+    "red": 83,
+    "green": 86,
+    "blue": 87
+  },
+  {
+    "color": "#9b3b1b",
+    "dmccode": "919 ",
+    "name": "Red Copper ",
+    "red": 155,
+    "green": 59,
+    "blue": 27
+  },
+  {
+    "color": "#d12627",
+    "dmccode": "666 ",
+    "name": "Christmas Red - bright ",
+    "red": 209,
+    "green": 38,
+    "blue": 39
+  },
+  {
+    "color": "#d12627",
+    "dmccode": "666 ",
+    "name": "Christmas Red - bright ",
+    "red": 209,
+    "green": 38,
+    "blue": 39
+  },
+  {
+    "color": "#d12627",
+    "dmccode": "666 ",
+    "name": "Christmas Red - bright ",
+    "red": 209,
+    "green": 38,
+    "blue": 39
+  },
+  {
+    "color": "#a74f2a",
+    "dmccode": "920 ",
+    "name": "Copper - med ",
+    "red": 167,
+    "green": 79,
+    "blue": 42
+  },
+  {
+    "color": "#ef4949",
+    "dmccode": "891 ",
+    "name": "Carnation - dk ",
+    "red": 239,
+    "green": 73,
+    "blue": 73
+  },
+  {
+    "color": "#c27d45",
+    "dmccode": "3776 ",
+    "name": "Mahogany - lt ",
+    "red": 194,
+    "green": 125,
+    "blue": 69
+  },
+  {
+    "color": "#c27d45",
+    "dmccode": "3776 ",
+    "name": "Mahogany - lt ",
+    "red": 194,
+    "green": 125,
+    "blue": 69
+  },
+  {
+    "color": "#a06757",
+    "dmccode": "356 ",
+    "name": "TerraCotta-med ",
+    "red": 160,
+    "green": 103,
+    "blue": 87
+  },
+  {
+    "color": "#a4866c",
+    "dmccode": "3863 ",
+    "name": "Mocha Beige - med ",
+    "red": 164,
+    "green": 134,
+    "blue": 108
+  },
+  {
+    "color": "#d6834d",
+    "dmccode": "922 ",
+    "name": "Copper - lt ",
+    "red": 214,
+    "green": 131,
+    "blue": 77
+  },
+  {
+    "color": "#d6834d",
+    "dmccode": "922 ",
+    "name": "Copper - lt ",
+    "red": 214,
+    "green": 131,
+    "blue": 77
+  },
+  {
+    "color": "#cda072",
+    "dmccode": "3064 ",
+    "name": "Desert Sand ",
+    "red": 205,
+    "green": 160,
+    "blue": 114
+  },
+  {
+    "color": "#cda072",
+    "dmccode": "3064 ",
+    "name": "Desert Sand ",
+    "red": 205,
+    "green": 160,
+    "blue": 114
+  },
+  {
+    "color": "#cda072",
+    "dmccode": "3064 ",
+    "name": "Desert Sand ",
+    "red": 205,
+    "green": 160,
+    "blue": 114
+  },
+  {
+    "color": "#e8aa5f",
+    "dmccode": "3827 ",
+    "name": "Golden Brown - pale ",
+    "red": 232,
+    "green": 170,
+    "blue": 95
+  },
+  {
+    "color": "#e8a76d",
+    "dmccode": "402 ",
+    "name": "Mahogany - vy lt ",
+    "red": 232,
+    "green": 167,
+    "blue": 109
+  },
+  {
+    "color": "#f7ca84",
+    "dmccode": "3855 ",
+    "name": "Autumn Gold - lt ",
+    "red": 247,
+    "green": 202,
+    "blue": 132
+  },
+  {
+    "color": "#4fa1a9",
+    "dmccode": "3810 ",
+    "name": "Turquoise - dk ",
+    "red": 79,
+    "green": 161,
+    "blue": 169
+  },
+  {
+    "color": "#b2ae95",
+    "dmccode": "3023 ",
+    "name": "Brown Grey - lt ",
+    "red": 178,
+    "green": 174,
+    "blue": 149
+  },
+  {
+    "color": "#d9b879",
+    "dmccode": "437 ",
+    "name": "Tan - lt ",
+    "red": 217,
+    "green": 184,
+    "blue": 121
+  },
+  {
+    "color": "#d8b39d",
+    "dmccode": "3773 ",
+    "name": "Desert Sand - med ",
+    "red": 216,
+    "green": 179,
+    "blue": 157
+  },
+  {
+    "color": "#d8b39d",
+    "dmccode": "3773 ",
+    "name": "Desert Sand - med ",
+    "red": 216,
+    "green": 179,
+    "blue": 157
+  },
+  {
+    "color": "#ebbc9a",
+    "dmccode": "3856 ",
+    "name": "Mahogany - ultra vy lt ",
+    "red": 235,
+    "green": 188,
+    "blue": 154
+  },
+  {
+    "color": "#d2caba",
+    "dmccode": "3782 ",
+    "name": "Mocha Brown - lt ",
+    "red": 210,
+    "green": 202,
+    "blue": 186
+  },
+  {
+    "color": "#efc1aa",
+    "dmccode": "754 ",
+    "name": "Peach - lt ",
+    "red": 239,
+    "green": 193,
+    "blue": 170
+  },
+  {
+    "color": "#eed7a1",
+    "dmccode": "676 ",
+    "name": "Old Gold - lt ",
+    "red": 238,
+    "green": 215,
+    "blue": 161
+  },
+  {
+    "color": "#ffeda9",
+    "dmccode": "745 ",
+    "name": "Yellow - lt pale ",
+    "red": 255,
+    "green": 237,
+    "blue": 169
+  },
+  {
+    "color": "#9fbbd5",
+    "dmccode": "3755 ",
+    "name": "Baby Blue ",
+    "red": 159,
+    "green": 187,
+    "blue": 213
+  },
+  {
+    "color": "#dcdcd7",
+    "dmccode": "3024 ",
+    "name": "Brown Grey - vy lt ",
+    "red": 220,
+    "green": 220,
+    "blue": 215
+  },
+  {
+    "color": "#ecd9cf",
+    "dmccode": "225 ",
+    "name": "ShellPink-ultra vy lt ",
+    "red": 236,
+    "green": 217,
+    "blue": 207
+  },
+  {
+    "color": "#f6e1d0",
+    "dmccode": "3774 ",
+    "name": "Desert Sand - vy lt ",
+    "red": 246,
+    "green": 225,
+    "blue": 208
+  },
+  {
+    "color": "#f5f0df",
+    "dmccode": "746 ",
+    "name": "Off White ",
+    "red": 245,
+    "green": 240,
+    "blue": 223
+  },
+  {
+    "color": "#fefefe",
+    "dmccode": "blanc",
+    "name": "White",
+    "red": 254,
+    "green": 254,
+    "blue": 254
+  }
+]
