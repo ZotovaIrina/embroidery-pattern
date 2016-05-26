@@ -1,1 +1,29 @@
-<h1>Free pattern</h1>
+<h1 class="header"
+    flex="100">
+    Free pattern
+</h1>
+
+<div layout="row"
+     layout-margin
+     layout-wrap
+     ng-cloak>
+
+    <md-whiteframe class="md-whiteframe-9dp"
+                   flex-gt-sm="30"
+                   flex-sm="45"
+                   flex-xs="100"
+                   layout="column"
+                   layout-padding
+                   layout-align="center center"
+                   ng-repeat="pattern in listOfPatterns">
+        <md-whiteframe class="md-whiteframe-2dp patternContainer">
+            <img class="patternImage"
+                 ng-src="/public/freePattern/!{{pattern}}.jpg">
+        </md-whiteframe>
+        <md-button class="md-raised md-primary full-button"
+                   ui-sref="app.patternForFree({id: pattern})">
+            Look at
+        </md-button>
+    </md-whiteframe>
+
+</div>

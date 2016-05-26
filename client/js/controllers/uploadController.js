@@ -5,10 +5,12 @@ angular.module('embroidery-pattern')
         $scope.$mdMedia = $mdMedia;
         $scope.numberOfColor = 20;
         $scope.formShow = false;
+        $scope.doNotLike = false;
         $scope.imageResult = false;
 
         $scope.imageLoaded = function(result){
             $scope.formShow = true;
+            $scope.doNotLike = false;
             $scope.imageParams = result;
             $scope.$apply();
         };
@@ -19,6 +21,7 @@ angular.module('embroidery-pattern')
 
         $scope.notLike = function() {
             $scope.imageResult = false;
+            $scope.doNotLike = true;
             $scope.picFile.progress = 0;
         };
 

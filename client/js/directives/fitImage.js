@@ -5,7 +5,7 @@ angular.module('embroidery-pattern')
             link: function (scope, element, attrs) {
                 scope.fit = function () {
                     console.log('fit');
-                    element.attr('style','height: 99%');
+                    element.attr('style','width: 100%');
                 };
             }
         };

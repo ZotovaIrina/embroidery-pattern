@@ -30,7 +30,6 @@ router.route('/')
         console.log("router POST image");
         //console.log("color", req.body.color);
         var file = req.imageConvert;
-        console.log(file);
         res.json({
             success: true,
             textMessage: 'File upload successfully',

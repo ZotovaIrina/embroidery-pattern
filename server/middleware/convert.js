@@ -16,6 +16,7 @@ module.exports = function getColors(req, res, next) {
 
     //find rgb for all color in string which give imagemagick in getColor middleware in write in colorArray
     var colorArray = [];
+
     function getMatches(string, regex) {
         var match;
         while (match = regex.exec(string)) {
@@ -67,6 +68,7 @@ module.exports = function getColors(req, res, next) {
             closestColor.push(item.closest);
         });
         req.imageConvert.listOfColor = closestColor;
+
         var args = [
             srcPath,
             ...imPointsArray,

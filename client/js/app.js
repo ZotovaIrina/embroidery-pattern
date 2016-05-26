@@ -43,7 +43,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 url: 'freePattern',
                 views: {
                     'content@': {
-                        templateUrl: 'template/freePattern.html'
+                        templateUrl: 'template/freePattern.html',
+                        controller: 'FreePattern'
                     }
                 }
             })
@@ -52,6 +53,15 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 views: {
                     'content@': {
                         templateUrl: 'template/learn.html'
+                    }
+                }
+            })
+            .state('app.patternForFree', {
+                url: 'freePattern/:id',
+                views: {
+                    'content@': {
+                        templateUrl: 'template/pattern.html',
+                        controller: 'FreePattern'
                     }
                 }
             });

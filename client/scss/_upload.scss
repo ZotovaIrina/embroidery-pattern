@@ -37,17 +37,6 @@ form .progress {
   image-rendering:  pixelated;
 }
 
-//.image-container {
-//  display: flex;
-//  align-items: center;
-//  justify-content: center;
-//  max-height: -webkit-calc(90vh - 64px);
-//  max-height: -moz-calc(90vh - 64px);
-//  max-height: calc(90vh - 64px);
-//  max-width: 100%;
-//  overflow: auto;
-//}
-//
 .preview-container {
   align-items: center;
   justify-content: center;
@@ -79,6 +68,18 @@ form .progress {
 .dialog {
   width:80%
 }
+
+.dialog-list-color {
+  width: 48px;
+  text-align: center;
+}
+
+.dialog-list-number {
+
+  width: 72px;
+  text-align: center;
+}
+
 
 
 

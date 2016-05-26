@@ -7,6 +7,10 @@
 
     <p flex="100">Let's start. In order to get color schema for your image, upload file and select options: how many
         color do you want to have and image which do you prefer</p>
+
+    <p flex="100">I'm strongly recommend you do not very big resize in program and don't take very big images on start.
+        This can lead to you don't like result. Do picture more simple. It helps improve the result and you will
+        immediately see what you can expect after convert photo. </p>
 </div>
 
 <div layout="row"
@@ -17,7 +21,7 @@
           ng-class="{border: imageResult}">
 
         <div ng-class="{'invalid': uploadForm.file.$error.maxSize}"
-             ng-hide="formShow">
+             ng-show="!formShow || doNotLike">
             <md-button class="md-button md-raised"
                        ngf-select
                        ng-model="picFile"
@@ -66,9 +70,8 @@
                     </span>
                 <!--span show when upload hove been starting and response don't get yet-->
             </div>
-            <div layout-align="end center"
-                 layout-gt-xs="row"
-                 layout-xs="column"
+            <div layout-align-gt-sm="end center"
+                 layout="row"
                  flex>
                 <md-button class="md-raised md-primary convert-button"
                            ng-click="uploadPic(picFile)"
@@ -96,7 +99,6 @@
                            flex-xs="50">
                     Don't like
                 </md-button>
-
             </div>
         </md-toolbar>
 
@@ -175,13 +177,6 @@
             </div>
         </div>
     </form>
-
-
-
-
-
-
-
 
 
 </div>

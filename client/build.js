@@ -43,7 +43,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 url: 'freePattern',
                 views: {
                     'content@': {
-                        templateUrl: 'template/freePattern.html'
+                        templateUrl: 'template/freePattern.html',
+                        controller: 'FreePattern'
                     }
                 }
             })
@@ -54,12 +55,56 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                         templateUrl: 'template/learn.html'
                     }
                 }
+            })
+            .state('app.patternForFree', {
+                url: 'freePattern/:id',
+                views: {
+                    'content@': {
+                        templateUrl: 'template/pattern.html',
+                        controller: 'FreePattern'
+                    }
+                }
             });
         $urlRouterProvider.otherwise('/');
     }]);
 
 
 ;angular.module('embroidery-pattern')
+    .controller('FreePattern', ['$scope', 'freePatternService', '$stateParams', '$mdMedia', function ($scope, freePatternService, $stateParams, $mdMedia) {
+        'use strict';
+
+        $scope.id = $stateParams.id;
+        $scope.$mdMedia = $mdMedia;
+        $scope.showColor = false;
+        //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
+        if ($scope.id === undefined) {
+            $scope.listOfPatterns = "";
+            freePatternService.getFreePattern()
+                .then(function (response) {
+                    $scope.listOfPatterns = response;
+                });
+        } else {
+            $scope.listOfColors = "";
+            freePatternService.getListOfColor($scope.id)
+                .then(function (response) {
+                    $scope.listOfColors = response;
+                });
+        }
+
+
+        $scope.colorToggle = function () {
+            $scope.showColor = !$scope.showColor;
+        };
+
+
+
+
+
+
+
+
+
+    }]);;angular.module('embroidery-pattern')
     .controller('Navigation', ['$scope','$mdSidenav', '$mdMedia', function ($scope, $mdSidenav, $mdMedia) {
         'use strict';
 
@@ -81,10 +126,12 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         $scope.$mdMedia = $mdMedia;
         $scope.numberOfColor = 20;
         $scope.formShow = false;
+        $scope.doNotLike = false;
         $scope.imageResult = false;
 
         $scope.imageLoaded = function(result){
             $scope.formShow = true;
+            $scope.doNotLike = false;
             $scope.imageParams = result;
             $scope.$apply();
         };
@@ -95,6 +142,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
         $scope.notLike = function() {
             $scope.imageResult = false;
+            $scope.doNotLike = true;
             $scope.picFile.progress = 0;
         };
 
@@ -182,7 +230,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             link: function (scope, element, attrs) {
                 scope.fit = function () {
                     console.log('fit');
-                    element.attr('style','height: 99%');
+                    element.attr('style','width: 100%');
                 };
             }
         };
@@ -215,6 +263,14 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
     }]);
 ;angular.module('embroidery-pattern')
+    .directive('listOfColor', [function () {
+        return {
+            templateUrl: 'js/directives/listOfColor.html',
+            replace: true
+        };
+
+
+    }]);;angular.module('embroidery-pattern')
     .directive('menuButtons', [function () {
         return {
             templateUrl: 'js/directives/menuButtons.html',
@@ -258,4 +314,36 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 };
             }
         };
-    });
+    });;angular.module('embroidery-pattern')
+
+    .service('freePatternService', ['baseURL', '$http', function (baseURL, $http) {
+
+        this.getFreePattern = function () {
+            var patternJson = baseURL + '/public/freePattern/freePattern.json';
+            return $http.get(patternJson)
+                .then(function (response) {
+                    return response.data;
+                }, function (err) {
+                    return err.data;
+                });
+        };
+        this.getListOfColor = function (name) {
+            var colorJson = baseURL + '/public/freePattern/' + name +'.json';
+            return $http.get(colorJson)
+                .then(function (response) {
+                    return response.data;
+                }, function (err) {
+                    return err.data;
+                });
+        };
+        this.getPattern = function (name) {
+            var pattern = baseURL + '/public/freePattern/' + name +'.git';
+            return $http.get(pattern)
+                .then(function (response) {
+                    return response.data;
+                }, function (err) {
+                    return err.data;
+                });
+        };
+
+    }]);

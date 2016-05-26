@@ -75,6 +75,16 @@ form .progress {
   width: 80%;
 }
 
+.dialog-list-color {
+  width: 48px;
+  text-align: center;
+}
+
+.dialog-list-number {
+  width: 72px;
+  text-align: center;
+}
+
 #logo {
   text-decoration: none;
   padding-left: 15px;
@@ -96,6 +106,31 @@ form .progress {
 
 .full-button {
   width: 100%;
+}
+
+.patternContainer {
+  width: 80%;
+  height: 0;
+  padding-bottom: 80%;
+  margin-top: 16px;
+}
+
+.patternImage {
+  width: 100%;
+  height: auto;
+}
+
+.content-box {
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.open-button {
+  font-size: 36px;
+}
+
+#imagePattern {
+  image-rendering: pixelated;
 }
 
 /*# sourceMappingURL=main.css.map */
