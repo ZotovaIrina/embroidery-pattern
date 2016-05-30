@@ -9,8 +9,8 @@
          flex-gt-sm="30"
          flex-sm="100">
         <md-toolbar class="md-toolbar-tools md-primary"
-                    layout="column">
-            DMC string
+                    layout="column" layout-padding>
+            <div>DMC string</div>
             <md-button ng-show="$mdMedia('sm')||$mdMedia('xs')"
                        flex="100"
                        ng-click="colorToggle()">
@@ -25,16 +25,15 @@
             </md-button>
         </md-toolbar>
         <div class="border content-box"
-             ng-hide="$mdMedia('sm')||$mdMedia('xs')"
-             ng-show="showColor">
+             ng-hide="$mdMedia('sm')||$mdMedia('xs')">
             <list-of-color></list-of-color>
         </div>
     </div>
 
 
     <div layout="column"
-                flex-gt-sm="70"
-                flex-sm="100">
+         flex-gt-sm="70"
+         flex-sm="100">
         <md-toolbar class="md-toolbar-tools md-primary"
                     layout="row">
             <md-button ng-click="fit()">
@@ -49,10 +48,10 @@
         </md-toolbar>
         <md-content style="max-height: 70vh;">
             <img ng-src="/public/freePattern/{{id}}.gif"
-             class="thumb imagePreview"
-             zoom-in
-             zoom-out
-             fit>
+                 class="thumb imagePreview"
+                 zoom-in
+                 zoom-out
+                 fit>
         </md-content>
     </div>
 

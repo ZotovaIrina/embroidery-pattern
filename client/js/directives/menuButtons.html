@@ -14,6 +14,18 @@
          layout-align="end center"
          flex-gt-sm="30"
          flex-sm="100">
-        <md-button class="md-raised md-accent" ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}">Log In</md-button>
+        <md-button class="md-raised md-accent"
+                   ng-hide="registarationSuccess || loginSuccess"
+                   ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}"
+                   ng-click="showLogIn($event)">Log In</md-button>
+        <md-button class="md-raised md-accent"
+                   ng-hide="registarationSuccess || loginSuccess"
+                   ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}"
+                   ng-click="showRegistration($event)">Registration</md-button>
+        <h2 ng-show="registarationSuccess || loginSuccess">{{user.login}}</h2>
+        <md-button class="md-raised md-accent"
+                   ng-show="registarationSuccess || loginSuccess"
+                   ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}">
+            Log Out</md-button>
     </div>
 </div>

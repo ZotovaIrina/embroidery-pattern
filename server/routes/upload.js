@@ -11,12 +11,6 @@ var express = require('express'),
 
 router.route('/')
 
-    .get(function (req, res, next) {
-        console.log('upload get');
-        res.json({
-            success: true
-        });
-    })
 
     .post(
     multiparty({
@@ -30,7 +24,7 @@ router.route('/')
         console.log("router POST image");
         //console.log("color", req.body.color);
         var file = req.imageConvert;
-        res.json({
+        res.status(200).json({
             success: true,
             textMessage: 'File upload successfully',
             fileName: file.fileName,
@@ -38,16 +32,10 @@ router.route('/')
         });
     })
 
-    .put(function (req, res, next) {
-        console.log('upload put');
-        res.json({
-            success: true
-        });
-    })
 
     .delete(function (req, res, next) {
         console.log('upload delete');
-        res.json({
+        res.status(200).json({
             success: true
         });
     });

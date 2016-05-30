@@ -1,0 +1,41 @@
+<md-dialog class="dialog" aria-label="Log In" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Log In</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">clear</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content"
+                 layout="column"
+                 flex="100">
+                <md-input-container>
+                    <label>login</label>
+                    <input ng-model="user.login" type="text" required>
+                </md-input-container>
+                <md-input-container>
+                    <label>E-mail</label>
+                    <input ng-model="user.email" type="email">
+                </md-input-container>
+                <md-input-container>
+                    <label>Password</label>
+                    <input ng-model="user.password" type="text">
+                </md-input-container>
+
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="registration(user)">
+                Registration
+            </md-button>
+            <md-button ng-click="cancel()">
+                Close
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
