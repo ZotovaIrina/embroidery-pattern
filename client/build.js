@@ -1,5 +1,5 @@
 
-angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ui.bootstrap-slider', 'ngMaterial'])
+angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
     .constant("baseURL", "http://localhost:3000")
     .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider',
     function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
@@ -105,7 +105,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
     }]);;angular.module('embroidery-pattern')
-    .controller('Navigation', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 'userService', function ($scope, $mdSidenav, $mdMedia, $mdDialog, userService) {
+    .controller('Navigation', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', '$cookies', 'userService', function ($scope, $mdSidenav, $mdMedia, $mdDialog, $cookies, userService) {
         'use strict';
 
         $scope.showMobileMainHeader = true;
@@ -125,7 +125,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
         $scope.customFullscreen = $mdMedia('xs');
 
-        //Modal window for register
+        //Modal window for register. $scope.showRegistration forms modal window and prefer data, controller for control active inside modal window. then - what happen when modal window will close
+        // registerController function control form inside model window. $ watch look at screen size. If xs, then model window on the full screen
         $scope.showRegistration = function (ev) {
             var useFullScreen = $mdMedia('xs');
             $mdDialog.show({
@@ -146,11 +147,21 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                         .then(function (response) {
                             console.log("get response: ", response);
                             $scope.registarationSuccess = response.success;
+                            $cookies.put('x-access-token', response.token);
+                        })
+                        .catch(function (err) {
+                            console.log("Error!!!!", err);
+                            $mdDialog.show(
+                                $mdDialog.alert()
+                                    .parent(angular.element(document.querySelector('#popupContainer')))
+                                    .clickOutsideToClose(true)
+                                    .title('Error!')
+                                    .textContent(err.status + " " + err.data.message)
+                                    .ariaLabel('Alert error')
+                                    .ok('OK')
+                            );
                         });
 
-                }, function () {
-                    $scope.status = 'You cancelled the dialog.';
-                    console.log('You cancelled the dialog.');
                 });
 
 
@@ -177,11 +188,27 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 fullscreen: useFullScreen
             })
                 .then(function (user) {
-                    console.log('You said the information was "' + user + '".');
-                }, function () {
-                    $scope.status = 'You cancelled the dialog.';
-                    console.log('You cancelled the dialog.');
+                    console.log('You said the information was:', user);
+                    userService.logIn(user)
+                        .then(function (response) {
+                            console.log("get response: ", response);
+                            $scope.loginSuccess = response.success;
+                            $cookies.put('x-access-token', response.token);
+                        }).catch(function (err) {
+                            console.log("Error!!!!", err);
+                            $mdDialog.show(
+                                $mdDialog.alert()
+                                    .parent(angular.element(document.querySelector('#popupContainer')))
+                                    .clickOutsideToClose(true)
+                                    .title('Error!')
+                                    .textContent(err.status + " " + err.data.err.message)
+                                    .ariaLabel('Alert error')
+                                    .ok('OK')
+                            );
+                        });
                 });
+
+
             $scope.$watch(function () {
                 return $mdMedia('xs');
             }, function (wantsFullScreen) {
@@ -206,11 +233,21 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             $scope.cancel = function () {
                 $mdDialog.cancel();
             };
-            $scope.save = function (answer) {
-                console.log('save');
-                $mdDialog.hide(answer);
+            $scope.login = function (user) {
+                $mdDialog.hide(user);
             };
         }
+
+
+        $scope.logOut = function (user) {
+            userService.logOut(user)
+                .then(function (response) {
+                    console.log("get response: ", response);
+                    $scope.registarationSuccess = !response.success;
+                    $scope.loginSuccess = !response.success;
+                    $scope.user = {};
+                });
+        };
 
 
     }]);
@@ -443,8 +480,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
     }]);;angular.module('embroidery-pattern')
 
-    .service('userService', ['baseURL', '$http', function (baseURL, $http) {
-
+    .service('userService', ['baseURL', '$http', '$q', function (baseURL, $http, $q) {
+        var user = null;
         this.registration = function (newUser) {
             var URL = baseURL + '/users/register';
             console.log("service", newUser);
@@ -452,8 +489,33 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 .then(function (response) {
                     return response.data;
                 }, function (err) {
-                    return err.data;
+                    return $q.reject(err);
                 });
         };
+
+        this.logIn = function (user) {
+            var URL = baseURL + '/users/login';
+            console.log("service", user);
+            return $http.post(URL, user)
+                .then(function (response) {
+                    user = response.data;
+                    return response.data;
+                }, function (err) {
+                    return $q.reject(err);
+                });
+        };
+        this.logOut = function (user) {
+            var URL = baseURL + '/users/logout';
+            return $http.post(URL, user)
+                .then(function (response) {
+                    return response.data;
+                }, function (err) {
+                    $q.reject(err);
+                });
+        };
+        this.getCurrentUser = function(){
+            return user;
+        };
+
 
     }]);

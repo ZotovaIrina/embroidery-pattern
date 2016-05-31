@@ -14,11 +14,10 @@ router
     });
 
 
-
 router
     .post('/register', function (req, res) {
         console.log('register', req.body);
-        var username = req.body.login,
+        var username = req.body.username,
             password = req.body.password,
             email = req.body.email;
         User.find({username: username}, function (err, docs) {
@@ -38,24 +37,29 @@ router
                             message: 'This email using already'
                         });
                     } else {
-                        User.register(new User({ username : username }),
-                            password, function(err, user) {
+                        User.register(new User({username: username}),
+                            password, function (err, user) {
                                 if (err) {
-                                    return res.status(500).json({err: err});
+                                    return res.status(500).json({success: false,
+                                        err: err});
                                 }
-                                if(req.body.firstname) {
+                                if (req.body.firstname) {
                                     user.firstname = req.body.firstname;
                                 }
-                                if(req.body.lastname) {
+                                if (req.body.lastname) {
                                     user.lastname = req.body.lastname;
                                 }
-                                if(email) {
+                                if (email) {
                                     user.email = email;
                                 }
-                                user.save(function(err,user) {
+                                user.save(function (err, user) {
                                     passport.authenticate('local')(req, res, function () {
-                                        return res.status(200).json({success: true,
-                                            message: 'Registration Successful!'});
+                                        var token = Verify.getToken(user);
+                                        return res.status(200).json({
+                                            success: true,
+                                            message: 'Registration Successful!',
+                                            token: token
+                                        });
                                     });
                                 });
                             });
@@ -66,6 +70,61 @@ router
         });
 
 
+    });
+
+router
+    .post('/login', function (req, res, next) {
+        console.log(req.body);
+        var username = req.body.username,
+            password = req.body.password;
+        User.findOne({username: username}, function (err, user) {
+            if (!user) {
+                console.log('Name not exist');
+                res.status(401).json({
+                    success: false,
+                    message: 'This login is not exist'
+                });
+            }
+            else {
+                console.log("user", user);
+                passport.authenticate('local', function (err, user, info) {
+                    if (err) {
+                        return next(err);
+                    }
+                    if (!user) {
+                        return res.status(401).json({
+                            success: false,
+                            err: info
+                        });
+                    }
+                    req.logIn(user, function (err) {
+                        if (err) {
+                            return res.status(500).json({
+                                success: false,
+                                err: 'Could not log in user'
+                            });
+                        }
+
+                        var token = Verify.getToken(user);
+                        res.status(200).json({
+                            status: 'Login successful!',
+                            success: true,
+                            token: token
+                        });
+                    });
+                })(req, res, next);
+
+            }
+        });
+    });
+
+router
+    .get('/logout', function (req, res) {
+        req.logout();
+        res.status(200).json({
+            success: true,
+            message: 'Bye!'
+        });
     });
 
 router.get('/facebook', passport.authenticate('facebook'),
@@ -97,41 +156,5 @@ router.get('/facebook/callback', function (req, res, next) {
         });
     })(req, res, next);
 });
-
-router
-    .post('/login', function (req, res, next) {
-        passport.authenticate('local', function (err, user, info) {
-            if (err) {
-                return next(err);
-            }
-            if (!user) {
-                return res.status(401).json({
-                    err: info
-                });
-            }
-            req.logIn(user, function (err) {
-                if (err) {
-                    return res.status(500).json({
-                        err: 'Could not log in user'
-                    });
-                }
-
-                var token = Verify.getToken(user);
-                res.status(200).json({
-                    status: 'Login successful!',
-                    success: true,
-                    token: token
-                });
-            });
-        })(req, res, next);
-    });
-
-router
-    .get('/logout', function (req, res) {
-        req.logout();
-        res.status(200).json({
-            status: 'Bye!'
-        });
-    });
 
 module.exports = router;

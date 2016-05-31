@@ -1,5 +1,5 @@
 
-angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ui.bootstrap-slider', 'ngMaterial'])
+angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
     .constant("baseURL", "http://localhost:3000")
     .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider',
     function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {

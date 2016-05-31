@@ -143,9 +143,10 @@ module.exports = function (grunt) {
     ]);
     grunt.registerTask('devDependencies', [
         'clean:bower',
-        'bower_concat',
-        'uglify:bower'
+        'bower_concat'
+
     ]);
+    //'uglify:bower'
     grunt.registerTask('dist', [
         'devDependencies',
         'devBuild',

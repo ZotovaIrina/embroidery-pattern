@@ -15,17 +15,17 @@
                  flex="100">
                 <md-input-container>
                     <label>User Name</label>
-                    <input ng-model="newUser.name" type="text" required>
+                    <input ng-model="user.username" type="text" required>
                 </md-input-container>
                 <md-input-container>
-                    <label>Passworde</label>
-                    <input ng-model="newUser.password" type="text" required>
+                    <label>Password</label>
+                    <input ng-model="user.password" type="text" required>
                 </md-input-container>
             </div>
         </md-dialog-content>
         <md-dialog-actions layout="row">
             <span flex></span>
-            <md-button ng-click="save('save')">
+            <md-button ng-click="login(user)">
                 Log In
             </md-button>
             <md-button ng-click="cancel()">
