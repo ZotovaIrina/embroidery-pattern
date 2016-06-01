@@ -10,12 +10,20 @@ angular.module('embroidery-pattern')
             $mdSidenav('right').close();
         };
         $scope.$mdMedia = $mdMedia;
-
         $scope.user = {};
-        $scope.user = {};
-        $scope.registarationSuccess = false;
         $scope.loginSuccess = false;
 
+        userService.getCurrentUser()
+            .then(function (response) {
+                $scope.user = response.user;
+                $scope.loginSuccess = response.success;
+                console.log("user: ", $scope.user);
+            });
+
+
+//    $scope.user = response.user;
+        //    $scope.loginSuccess = response.success;
+        //console.log("user: ", $scope.user);
 
         $scope.customFullscreen = $mdMedia('xs');
 
@@ -137,8 +145,7 @@ angular.module('embroidery-pattern')
             userService.logOut(user)
                 .then(function (response) {
                     console.log("get response: ", response);
-                    $scope.registarationSuccess = !response.success;
-                    $scope.loginSuccess = !response.success;
+                    $scope.loginSuccess = false;
                     $scope.user = {};
                 });
         };

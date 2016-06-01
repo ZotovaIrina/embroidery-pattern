@@ -40,8 +40,10 @@ router
                         User.register(new User({username: username}),
                             password, function (err, user) {
                                 if (err) {
-                                    return res.status(500).json({success: false,
-                                        err: err});
+                                    return res.status(500).json({
+                                        success: false,
+                                        err: err
+                                    });
                                 }
                                 if (req.body.firstname) {
                                     user.firstname = req.body.firstname;
@@ -73,49 +75,61 @@ router
     });
 
 router
-    .post('/login', function (req, res, next) {
-        console.log(req.body);
+    .post('/login',Verify.getUser, function (req, res, next) {
+        console.log("router");
+        if (req.decoded) {
+            var user = {
+                username: req.decoded._doc.username || req.decoded._doc.firstname
+            };
+            res.status(200).json({
+                status: 'Login successful!',
+                success: true,
+                user: user
+            });
+        } else {
         var username = req.body.username,
             password = req.body.password;
-        User.findOne({username: username}, function (err, user) {
-            if (!user) {
-                console.log('Name not exist');
-                res.status(401).json({
-                    success: false,
-                    message: 'This login is not exist'
-                });
-            }
-            else {
-                console.log("user", user);
-                passport.authenticate('local', function (err, user, info) {
-                    if (err) {
-                        return next(err);
-                    }
-                    if (!user) {
-                        return res.status(401).json({
-                            success: false,
-                            err: info
-                        });
-                    }
-                    req.logIn(user, function (err) {
+            console.log('get username: ', username);
+            User.findOne({username: username}, function (err, user) {
+                if (!user) {
+                    console.log('Name not exist');
+                    res.status(401).json({
+                        success: false,
+                        message: 'This login is not exist'
+                    });
+                }
+                else {
+                    console.log("user", user);
+                    passport.authenticate('local', function (err, user, info) {
                         if (err) {
-                            return res.status(500).json({
+                            return next(err);
+                        }
+                        if (!user) {
+                            return res.status(401).json({
                                 success: false,
-                                err: 'Could not log in user'
+                                err: info
                             });
                         }
+                        req.logIn(user, function (err) {
+                            if (err) {
+                                return res.status(500).json({
+                                    success: false,
+                                    err: 'Could not log in user'
+                                });
+                            }
 
-                        var token = Verify.getToken(user);
-                        res.status(200).json({
-                            status: 'Login successful!',
-                            success: true,
-                            token: token
+                            var token = Verify.getToken(user);
+                            res.status(200).json({
+                                status: 'Login successful!',
+                                success: true,
+                                token: token
+                            });
                         });
-                    });
-                })(req, res, next);
+                    })(req, res, next);
 
-            }
-        });
+                }
+            });
+        }
     });
 
 router
