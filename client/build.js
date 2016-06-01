@@ -105,7 +105,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
     }]);;angular.module('embroidery-pattern')
-    .controller('Navigation', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', '$cookies', 'userService', function ($scope, $mdSidenav, $mdMedia, $mdDialog, $cookies, userService) {
+    .controller('Navigation', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 'userService', 'dialogWindow', function ($scope, $mdSidenav, $mdMedia, $mdDialog, userService, dialogWindow) {
         'use strict';
 
         $scope.showMobileMainHeader = true;
@@ -119,6 +119,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         $scope.user = {};
         $scope.loginSuccess = false;
 
+        //check user already log in
         userService.getCurrentUser()
             .then(function (response) {
                 $scope.user = response.user;
@@ -127,131 +128,50 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             });
 
 
-//    $scope.user = response.user;
-        //    $scope.loginSuccess = response.success;
-        //console.log("user: ", $scope.user);
-
-        $scope.customFullscreen = $mdMedia('xs');
-
         //Modal window for register. $scope.showRegistration forms modal window and prefer data, controller for control active inside modal window. then - what happen when modal window will close
-        // registerController function control form inside model window. $ watch look at screen size. If xs, then model window on the full screen
+        // registerController function control form inside model window.
         $scope.showRegistration = function (ev) {
-            var useFullScreen = $mdMedia('xs');
-            $mdDialog.show({
-                controller: registerController,
-                controllerAs: 'ctrl',
-                templateUrl: 'template/register.html',
-                locals: {
-                    user: $scope.user
-                },
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose: true,
-                fullscreen: useFullScreen
-            })
+            var templateUrl = 'template/register.html';
+            dialogWindow.dialogShow($scope.user, templateUrl)
                 .then(function (user) {
                     console.log('You said the information was: ', user);
                     userService.registration(user)
                         .then(function (response) {
-                            console.log("get response: ", response);
-                            $scope.registarationSuccess = response.success;
-                            $cookies.put('x-access-token', response.token);
+                            $scope.loginSuccess = response.success;
+
                         })
                         .catch(function (err) {
-                            console.log("Error!!!!", err);
-                            $mdDialog.show(
-                                $mdDialog.alert()
-                                    .parent(angular.element(document.querySelector('#popupContainer')))
-                                    .clickOutsideToClose(true)
-                                    .title('Error!')
-                                    .textContent(err.status + " " + err.data.message)
-                                    .ariaLabel('Alert error')
-                                    .ok('OK')
-                            );
+                            var status = err.status,
+                                message = err.data.message;
+                            dialogWindow.alertShow(status, message);
                         });
 
                 });
-
-
-            $scope.$watch(function () {
-                return $mdMedia('xs');
-            }, function (wantsFullScreen) {
-                $scope.customFullscreen = (wantsFullScreen === true);
-            });
         };
 
         //Modal Window for log In
         $scope.showLogIn = function (ev) {
-            var useFullScreen = $mdMedia('xs');
-            $mdDialog.show({
-                controller: logInController,
-                controllerAs: 'ctrl',
-                templateUrl: 'template/logIn.html',
-                locals: {
-                    user: $scope.user
-                },
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose: true,
-                fullscreen: useFullScreen
-            })
+            var templateUrl = 'template/logIn.html';
+            dialogWindow.dialogShow($scope.user, templateUrl)
                 .then(function (user) {
                     console.log('You said the information was:', user);
                     userService.logIn(user)
                         .then(function (response) {
-                            console.log("get response: ", response);
                             $scope.loginSuccess = response.success;
-                            $cookies.put('x-access-token', response.token);
                         }).catch(function (err) {
-                            console.log("Error!!!!", err);
-                            $mdDialog.show(
-                                $mdDialog.alert()
-                                    .parent(angular.element(document.querySelector('#popupContainer')))
-                                    .clickOutsideToClose(true)
-                                    .title('Error!')
-                                    .textContent(err.status + " " + err.data.err.message)
-                                    .ariaLabel('Alert error')
-                                    .ok('OK')
-                            );
+                            var status = err.status,
+                                message = err.data.message;
+                            dialogWindow.alertShow(status, message);
                         });
                 });
 
-
-            $scope.$watch(function () {
-                return $mdMedia('xs');
-            }, function (wantsFullScreen) {
-                $scope.customFullscreen = (wantsFullScreen === true);
-            });
         };
-
-        function registerController($scope, $mdDialog, user) {
-            console.log("user", user);
-            $scope.user = user;
-            $scope.cancel = function () {
-                $mdDialog.cancel();
-            };
-            $scope.registration = function (user) {
-                console.log('registration');
-                $mdDialog.hide(user);
-            };
-        }
-
-        function logInController($scope, $mdDialog, user) {
-            $scope.user = user;
-            $scope.cancel = function () {
-                $mdDialog.cancel();
-            };
-            $scope.login = function (user) {
-                $mdDialog.hide(user);
-            };
-        }
 
 
         $scope.logOut = function (user) {
             userService.logOut(user)
                 .then(function (response) {
-                    console.log("get response: ", response);
-                    $scope.loginSuccess = false;
+                    $scope.loginSuccess = !response.success;
                     $scope.user = {};
                 });
         };
@@ -455,6 +375,48 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         };
     });;angular.module('embroidery-pattern')
 
+    .service('dialogWindow', ['baseURL', '$mdDialog', '$mdMedia', function (baseURL, $mdDialog, $mdMedia) {
+
+        function logInController($scope, $mdDialog, user) {
+            $scope.user = user;
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+            $scope.login = function (user) {
+                $mdDialog.hide(user);
+            };
+        }
+
+        this.dialogShow = function (user, templateUrl) {
+            var useFullScreen = $mdMedia('xs');
+             return $mdDialog.show({
+                controller: logInController,
+                controllerAs: 'ctrl',
+                templateUrl: templateUrl,
+                locals: {
+                    user: user
+                },
+                parent: angular.element(document.body),
+                clickOutsideToClose: true,
+                fullscreen: useFullScreen
+            });
+        };
+
+        this.alertShow = function (status, message) {
+            return $mdDialog.show(
+                $mdDialog.alert()
+                    .parent(angular.element(document.querySelector('#popupContainer')))
+                    .clickOutsideToClose(true)
+                    .title('Error!')
+                    .textContent(status + " " + message)
+                    .ariaLabel('Alert error')
+                    .ok('OK')
+            );
+        };
+
+
+    }]);;angular.module('embroidery-pattern')
+
     .service('freePatternService', ['baseURL', '$http', function (baseURL, $http) {
 
         this.getFreePattern = function () {
@@ -493,6 +455,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             console.log("service", newUser);
             return $http.post(URL, newUser)
                 .then(function (response) {
+                    $cookies.put('x-access-token', response.data.token);
                     return response.data;
                 }, function (err) {
                     return $q.reject(err);
@@ -504,6 +467,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             console.log("service", user);
             return $http.post(URL, user)
                 .then(function (response) {
+                    $cookies.put('x-access-token', response.data.token);
                     user = response.data;
                     return response.data;
                 }, function (err) {

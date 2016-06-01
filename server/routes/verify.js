@@ -21,7 +21,6 @@ exports.getUser = function (req, res, next) {
                 err.status = 401;
                 return next(err);
             } else {
-                console.log(decoded);
                 req.decoded = decoded;
                 next();
             }

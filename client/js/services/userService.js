@@ -6,6 +6,7 @@ angular.module('embroidery-pattern')
             console.log("service", newUser);
             return $http.post(URL, newUser)
                 .then(function (response) {
+                    $cookies.put('x-access-token', response.data.token);
                     return response.data;
                 }, function (err) {
                     return $q.reject(err);
@@ -17,6 +18,7 @@ angular.module('embroidery-pattern')
             console.log("service", user);
             return $http.post(URL, user)
                 .then(function (response) {
+                    $cookies.put('x-access-token', response.data.token);
                     user = response.data;
                     return response.data;
                 }, function (err) {

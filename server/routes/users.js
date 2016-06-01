@@ -120,7 +120,7 @@ router
 
                             var token = Verify.getToken(user);
                             res.status(200).json({
-                                status: 'Login successful!',
+                                message: 'Login successful!',
                                 success: true,
                                 token: token
                             });
@@ -133,7 +133,7 @@ router
     });
 
 router
-    .get('/logout', function (req, res) {
+    .post('/logout', function (req, res) {
         req.logout();
         res.status(200).json({
             success: true,
