@@ -35,9 +35,9 @@ angular.module('embroidery-pattern')
 
                         })
                         .catch(function (err) {
-                            var status = err.status,
-                                message = err.data.message;
-                            dialogWindow.alertShow(status, message);
+                            var message = err.status + " " + err.data.message,
+                                title = "Error!";
+                            dialogWindow.alertShow(title, message);
                         });
 
                 });
@@ -53,9 +53,9 @@ angular.module('embroidery-pattern')
                         .then(function (response) {
                             $scope.loginSuccess = response.success;
                         }).catch(function (err) {
-                            var status = err.status,
-                                message = err.data.message;
-                            dialogWindow.alertShow(status, message);
+                            var message = err.status + " " + err.data.message,
+                                title = "Error!";
+                            dialogWindow.alertShow(title, message);
                         });
                 });
 

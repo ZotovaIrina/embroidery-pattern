@@ -48,14 +48,24 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     }
                 }
             })
-            .state('app.learn', {
-                url: 'learn',
+            .state('app.myPattern', {
+                url: 'myPattern',
                 views: {
                     'content@': {
-                        templateUrl: 'template/learn.html'
+                        templateUrl: 'template/myPattern.html',
+                        controller: 'MyPattern'
                     }
                 }
             })
+        .state('app.viewPattern', {
+            url: 'myPattern/:id',
+            views: {
+                'content@': {
+                    templateUrl: 'template/pattern.html',
+                    controller: 'MyPattern'
+                }
+            }
+        })
             .state('app.patternForFree', {
                 url: 'freePattern/:id',
                 views: {

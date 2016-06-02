@@ -48,14 +48,24 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     }
                 }
             })
-            .state('app.learn', {
-                url: 'learn',
+            .state('app.myPattern', {
+                url: 'myPattern',
                 views: {
                     'content@': {
-                        templateUrl: 'template/learn.html'
+                        templateUrl: 'template/myPattern.html',
+                        controller: 'MyPattern'
                     }
                 }
             })
+        .state('app.viewPattern', {
+            url: 'myPattern/:id',
+            views: {
+                'content@': {
+                    templateUrl: 'template/pattern.html',
+                    controller: 'MyPattern'
+                }
+            }
+        })
             .state('app.patternForFree', {
                 url: 'freePattern/:id',
                 views: {
@@ -70,7 +80,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
 
 ;angular.module('embroidery-pattern')
-    .controller('FreePattern', ['$scope', 'freePatternService', '$stateParams', '$mdMedia', function ($scope, freePatternService, $stateParams, $mdMedia) {
+    .controller('FreePattern', ['$scope', 'patternService', '$stateParams', '$mdMedia', 'baseURL',
+        function ($scope, patternService, $stateParams, $mdMedia, baseURL) {
         'use strict';
 
         $scope.id = $stateParams.id;
@@ -79,13 +90,16 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
         if ($scope.id === undefined) {
             $scope.listOfPatterns = "";
-            freePatternService.getFreePattern()
+            patternService.getFreePattern()
                 .then(function (response) {
                     $scope.listOfPatterns = response;
                 });
         } else {
             $scope.listOfColors = "";
-            freePatternService.getListOfColor($scope.id)
+            $scope.address = "/public/freePattern/";
+            $scope.extension = ".gif";
+            var URL = baseURL + '/public/freePattern/' + $scope.id +'.json';
+            patternService.getListOfColor(URL)
                 .then(function (response) {
                     $scope.listOfColors = response;
                 });
@@ -95,6 +109,67 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
         $scope.colorToggle = function () {
             $scope.showColor = !$scope.showColor;
         };
+
+
+
+
+
+
+
+
+
+    }]);;angular.module('embroidery-pattern')
+    .controller('MyPattern', ['$scope', 'saveImageService', '$stateParams', '$mdMedia', 'dialogWindow', '$state', 'baseURL', 'patternService',
+        function ($scope, saveImageService, $stateParams, $mdMedia, dialogWindow, $state, baseURL, patternService) {
+        'use strict';
+
+        $scope.id = $stateParams.id;
+        $scope.$mdMedia = $mdMedia;
+        $scope.images = {};
+        //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
+        if ($scope.id === undefined) {
+            saveImageService.getImage()
+            .then(function(response) {
+                    console.log("get images");
+                    $scope.images = response;
+                    angular.forEach($scope.images, function(image, index) {
+                        if (image === null) {
+                            $scope.images.splice(index, 1);
+                        }
+                    });
+                })
+            .catch(function() {
+                    dialogWindow.alertShow("Error!", "You must log in");
+                    $state.go('app');
+                });
+        } else {
+            $scope.address = "/public/images/temp_convert/";
+            $scope.extension = "";
+            var URL = baseURL + '/public/images/temp_convert/' + $scope.id +'.json';
+            patternService.getListOfColor(URL)
+                .then(function (response) {
+                    $scope.listOfColors = response;
+                });
+
+        }
+
+
+        $scope.deleteImage = function (image) {
+            console.log("delete image: ", image);
+            saveImageService.deleteImage(image)
+            .then(function(response) {
+                 console.log("delete");
+                    $scope.images = response;
+                    angular.forEach($scope.images, function(image, index) {
+                        if (image === null) {
+                            $scope.images.splice(index, 1);
+                        }
+                    });
+                });
+
+
+        };
+
 
 
 
@@ -141,9 +216,9 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
                         })
                         .catch(function (err) {
-                            var status = err.status,
-                                message = err.data.message;
-                            dialogWindow.alertShow(status, message);
+                            var message = err.status + " " + err.data.message,
+                                title = "Error!";
+                            dialogWindow.alertShow(title, message);
                         });
 
                 });
@@ -159,9 +234,9 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                         .then(function (response) {
                             $scope.loginSuccess = response.success;
                         }).catch(function (err) {
-                            var status = err.status,
-                                message = err.data.message;
-                            dialogWindow.alertShow(status, message);
+                            var message = err.status + " " + err.data.message,
+                                title = "Error!";
+                            dialogWindow.alertShow(title, message);
                         });
                 });
 
@@ -179,7 +254,8 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
     }]);
 ;angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', '$mdDialog', function ($scope, Upload, $timeout, baseURL, $mdMedia, $mdDialog) {
+    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', '$mdDialog', 'saveImageService', 'dialogWindow',
+        function ($scope, Upload, $timeout, baseURL, $mdMedia, $mdDialog, saveImageService, dialogWindow) {
         'use strict';
 
         $scope.$mdMedia = $mdMedia;
@@ -228,6 +304,21 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 // Math.min is to fix IE which reports 200% sometimes
                 file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
             });
+        };
+
+        $scope.save = function() {
+            console.log("save", $scope.imageResultUrl);
+            saveImageService.saveImage($scope.imageResultUrl)
+            .then(function () {
+                    dialogWindow.alertShow("Save", "Pattern saved");
+                })
+                .catch(function (err) {
+                    var message = err.status + " " + err.data.message,
+                        title = "Error!";
+                    dialogWindow.alertShow(title, message);
+                });
+
+
         };
 
 
@@ -402,14 +493,14 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
             });
         };
 
-        this.alertShow = function (status, message) {
+        this.alertShow = function (title, message) {
             return $mdDialog.show(
                 $mdDialog.alert()
                     .parent(angular.element(document.querySelector('#popupContainer')))
                     .clickOutsideToClose(true)
-                    .title('Error!')
-                    .textContent(status + " " + message)
-                    .ariaLabel('Alert error')
+                    .title(title)
+                    .textContent(message)
+                    .ariaLabel('Alert')
                     .ok('OK')
             );
         };
@@ -417,7 +508,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
 
     }]);;angular.module('embroidery-pattern')
 
-    .service('freePatternService', ['baseURL', '$http', function (baseURL, $http) {
+    .service('patternService', ['baseURL', '$http', function (baseURL, $http) {
 
         this.getFreePattern = function () {
             var patternJson = baseURL + '/public/freePattern/freePattern.json';
@@ -428,9 +519,9 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     return err.data;
                 });
         };
-        this.getListOfColor = function (name) {
-            var colorJson = baseURL + '/public/freePattern/' + name +'.json';
-            return $http.get(colorJson)
+        this.getListOfColor = function (URL) {
+            console.log("url: ", URL);
+            return $http.get(URL)
                 .then(function (response) {
                     return response.data;
                 }, function (err) {
@@ -444,6 +535,44 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     return response.data;
                 }, function (err) {
                     return err.data;
+                });
+        };
+
+    }]);;angular.module('embroidery-pattern')
+
+    .service('saveImageService', ['baseURL', '$http', '$cookies', '$q', function (baseURL, $http, $cookies, $q) {
+
+        this.getImage = function () {
+            var URL = baseURL + '/images/';
+            var token = $cookies.get('x-access-token');
+            if (!token){
+                return $q.reject();
+            } else {
+                return $http.get(URL, {headers: {"x-access-token": token}})
+                    .then(function (response) {
+                        console.log(response.data[0].images);
+                        return response.data[0].images;
+                    });
+            }
+        };
+
+        this.saveImage = function (image) {
+            var URL = baseURL + '/images/';
+            var token = $cookies.get('x-access-token');
+            return $http.post(URL, {_id: image}, {headers: {"x-access-token": token}})
+                .then(function (response) {
+                    console.log(response);
+                });
+        };
+
+
+        this.deleteImage = function (image) {
+            var URL = baseURL + '/images/' + image;
+            var token = $cookies.get('x-access-token');
+            return $http.delete(URL, {headers: {"x-access-token": token}})
+                .then(function (response) {
+                    console.log(response);
+                    return response.data.images;
                 });
         };
 

@@ -27,14 +27,14 @@ angular.module('embroidery-pattern')
             });
         };
 
-        this.alertShow = function (status, message) {
+        this.alertShow = function (title, message) {
             return $mdDialog.show(
                 $mdDialog.alert()
                     .parent(angular.element(document.querySelector('#popupContainer')))
                     .clickOutsideToClose(true)
-                    .title('Error!')
-                    .textContent(status + " " + message)
-                    .ariaLabel('Alert error')
+                    .title(title)
+                    .textContent(message)
+                    .ariaLabel('Alert')
                     .ok('OK')
             );
         };

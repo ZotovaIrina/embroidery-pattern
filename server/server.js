@@ -11,7 +11,8 @@ var express = require('express'),
 var pathConfig = require('./path'),
     config = require('./config'),
     users = require('./routes/users'),
-    upload = require('./routes/upload.js');
+    upload = require('./routes/upload.js'),
+    images = require('./routes/images.js');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/public', express.static(pathConfig.publicDir));
 app.use('/users', users);
 app.use('/upload', upload);
 app.use('/users', users);
+app.use('/images', images);
 
 
 // catch 404 and forward to error handler

@@ -7,7 +7,7 @@
         <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" href="#/">Home</md-button>
         <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" ui-sref="app.uploadImage">Upload image</md-button>
         <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" ui-sref="app.freePattern">Free pattern</md-button>
-        <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" ui-sref="app.learn">Learn</md-button>
+        <md-button ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}" ui-sref="app.myPattern" ng-show="loginSuccess">My patter</md-button>
     </div>
     <div layout-gt-sm="row"
          layout-sm="column"

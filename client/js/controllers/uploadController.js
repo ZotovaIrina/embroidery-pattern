@@ -1,5 +1,6 @@
 angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', '$mdDialog', function ($scope, Upload, $timeout, baseURL, $mdMedia, $mdDialog) {
+    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', '$mdDialog', 'saveImageService', 'dialogWindow',
+        function ($scope, Upload, $timeout, baseURL, $mdMedia, $mdDialog, saveImageService, dialogWindow) {
         'use strict';
 
         $scope.$mdMedia = $mdMedia;
@@ -48,6 +49,21 @@ angular.module('embroidery-pattern')
                 // Math.min is to fix IE which reports 200% sometimes
                 file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
             });
+        };
+
+        $scope.save = function() {
+            console.log("save", $scope.imageResultUrl);
+            saveImageService.saveImage($scope.imageResultUrl)
+            .then(function () {
+                    dialogWindow.alertShow("Save", "Pattern saved");
+                })
+                .catch(function (err) {
+                    var message = err.status + " " + err.data.message,
+                        title = "Error!";
+                    dialogWindow.alertShow(title, message);
+                });
+
+
         };
 
 

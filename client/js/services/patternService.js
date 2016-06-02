@@ -1,6 +1,6 @@
 angular.module('embroidery-pattern')
 
-    .service('freePatternService', ['baseURL', '$http', function (baseURL, $http) {
+    .service('patternService', ['baseURL', '$http', function (baseURL, $http) {
 
         this.getFreePattern = function () {
             var patternJson = baseURL + '/public/freePattern/freePattern.json';
@@ -11,9 +11,9 @@ angular.module('embroidery-pattern')
                     return err.data;
                 });
         };
-        this.getListOfColor = function (name) {
-            var colorJson = baseURL + '/public/freePattern/' + name +'.json';
-            return $http.get(colorJson)
+        this.getListOfColor = function (URL) {
+            console.log("url: ", URL);
+            return $http.get(URL)
                 .then(function (response) {
                     return response.data;
                 }, function (err) {

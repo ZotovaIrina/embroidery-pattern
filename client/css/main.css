@@ -133,4 +133,9 @@ form .progress {
   image-rendering: pixelated;
 }
 
+.heightAuto {
+  height: auto;
+  padding-bottom: 0;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -69,6 +69,10 @@ module.exports = function getColors(req, res, next) {
         });
         req.imageConvert.listOfColor = closestColor;
 
+        jsonfile.writeFile(srcPath+'.json', closestColor, function (err) {
+            console.error(err)
+        });
+
         var args = [
             srcPath,
             ...imPointsArray,
