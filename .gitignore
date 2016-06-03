@@ -10,3 +10,6 @@ server/public/images/convert
 server/public/images/temp_convert
 server/public/lib
 .sass-cache
+Ionic/EP/www/lib
+Ionic/EP/plugins
+Ionic/EP/hooks
