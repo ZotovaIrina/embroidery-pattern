@@ -1,0 +1,26 @@
+<ion-view view-title="EP">
+  <ion-content>
+    <h1 class="header">
+      Free pattern
+    </h1>
+
+    <div>
+
+      <div class="card"
+           ng-repeat="pattern in listOfPatterns">
+        <div class="patternContainer">
+          <img class="patternImage"
+               ng-src="/public/freePattern/!{{pattern}}.jpg">
+        </div>
+        <button class="full-button"
+                ui-sref="app.patternForFree({id: pattern})">
+          Preview
+        </button>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
+
+
+

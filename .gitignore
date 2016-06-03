@@ -13,3 +13,5 @@ server/public/lib
 Ionic/EP/www/lib
 Ionic/EP/plugins
 Ionic/EP/hooks
+Ionic/EP/.gitignore
+Ionic/EP/node_modules

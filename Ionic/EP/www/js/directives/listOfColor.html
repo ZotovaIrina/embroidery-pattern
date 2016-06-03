@@ -1,0 +1,40 @@
+<div>
+    <div class="dialog-list-container"
+         layout="row"
+         layout-padding
+         flex="100">
+        <div class="dialog-list-color"
+             layout-align="center center">
+            Color
+        </div>
+        <div class="dialog-list-number"
+             layout-align="center center">
+            Number
+        </div>
+        <div class="dialog-list-name"
+             layout-align="center center"
+             flex>
+            Name
+        </div>
+    </div>
+    <div class="dialog-list-container"
+         layout="row"
+         layout-padding
+         flex="100"
+         ng-repeat="color in listOfColors">
+        <div layout-align="start center"
+             class="dialog-list-color">
+            <div class="colorCircle"
+                 ng-style="{'background-color': color.color}"></div>
+        </div>
+        <div layout-align="center center"
+             class="dialog-list-number">
+            {{color.dmccode}}
+        </div>
+        <div flex
+             layout-align="center center"
+             class="dialog-list-name">
+            {{color.name}}
+        </div>
+    </div>
+</div>
