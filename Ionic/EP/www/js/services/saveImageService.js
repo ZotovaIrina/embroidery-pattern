@@ -1,4 +1,4 @@
-angular.module('embroidery-pattern.services')
+angular.module('embroidery-pattern')
 
     .service('saveImageService', ['baseURL', '$http', '$cookies', '$q', function (baseURL, $http, $cookies, $q) {
 

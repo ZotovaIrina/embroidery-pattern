@@ -1,6 +1,6 @@
-angular.module('embroidery-pattern.controllers', ['ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
+angular.module('embroidery-pattern')
 
-  .constant("baseURL", "http://localhost:3000")
+
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 

@@ -1,4 +1,4 @@
-angular.module('embroidery-pattern.controllers')
+angular.module('embroidery-pattern')
     .controller('Navigation', ['$scope', '$mdSidenav', '$mdMedia', '$mdDialog', 'userService', 'dialogWindow', function ($scope, $mdSidenav, $mdMedia, $mdDialog, userService, dialogWindow) {
         'use strict';
 

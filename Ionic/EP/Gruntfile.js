@@ -76,10 +76,10 @@ module.exports = function (grunt) {
                     src: ['dist/']
                 },
                 build: {
-                    src: ['client/build.js']
+                    src: ['www/build.js']
                 },
                 bower: {
-                    src: ['client/_bower.js']
+                    src: ['www/_bower.js']
                 }
             },
             copy: {

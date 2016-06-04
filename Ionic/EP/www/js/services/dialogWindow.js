@@ -1,4 +1,4 @@
-angular.module('embroidery-pattern.services')
+angular.module('embroidery-pattern')
 
     .service('dialogWindow', ['baseURL', '$mdDialog', '$mdMedia', function (baseURL, $mdDialog, $mdMedia) {
 

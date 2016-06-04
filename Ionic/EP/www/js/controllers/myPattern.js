@@ -1,4 +1,4 @@
-angular.module('embroidery-pattern.controllers')
+angular.module('embroidery-pattern')
     .controller('MyPattern', ['$scope', 'saveImageService', '$stateParams', '$mdMedia', 'dialogWindow', '$state', 'baseURL', 'patternService',
         function ($scope, saveImageService, $stateParams, $mdMedia, dialogWindow, $state, baseURL, patternService) {
         'use strict';

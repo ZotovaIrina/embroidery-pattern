@@ -4,8 +4,10 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('embroidery-pattern', ['ionic', 'embroidery-pattern.controllers', 'embroidery-pattern.services'])
 
+angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
+
+  .constant("baseURL", "http://localhost:3000")
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

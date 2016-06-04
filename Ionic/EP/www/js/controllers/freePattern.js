@@ -1,9 +1,10 @@
-angular.module('embroidery-pattern.controllers')
+angular.module('embroidery-pattern')
     .controller('FreePattern', ['$scope', 'patternService', '$stateParams', 'baseURL',
         function ($scope, patternService, $stateParams, baseURL) {
         'use strict';
 
         $scope.id = $stateParams.id;
+          $scope.baseURL = baseURL;
           console.log("$scope.id", $scope.id);
         $scope.showColor = false;
         //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else

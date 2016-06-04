@@ -1,4 +1,4 @@
-angular.module('embroidery-pattern.controllers')
+angular.module('embroidery-pattern')
     .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', '$mdDialog', 'saveImageService', 'dialogWindow',
         function ($scope, Upload, $timeout, baseURL, $mdMedia, $mdDialog, saveImageService, dialogWindow) {
         'use strict';

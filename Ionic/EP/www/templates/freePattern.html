@@ -10,7 +10,7 @@
            ng-repeat="pattern in listOfPatterns">
         <div class="patternContainer">
           <img class="patternImage"
-               ng-src="/public/freePattern/!{{pattern}}.jpg">
+               ng-src="{{baseURL}}/public/freePattern/!{{pattern}}.jpg">
         </div>
         <button class="full-button"
                 ui-sref="app.patternForFree({id: pattern})">

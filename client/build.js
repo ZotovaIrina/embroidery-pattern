@@ -57,15 +57,15 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     }
                 }
             })
-        .state('app.viewPattern', {
-            url: 'myPattern/:id',
-            views: {
-                'content@': {
-                    templateUrl: 'template/pattern.html',
-                    controller: 'MyPattern'
+            .state('app.viewPattern', {
+                url: 'myPattern/:id',
+                views: {
+                    'content@': {
+                        templateUrl: 'template/pattern.html',
+                        controller: 'MyPattern'
+                    }
                 }
-            }
-        })
+            })
             .state('app.patternForFree', {
                 url: 'freePattern/:id',
                 views: {

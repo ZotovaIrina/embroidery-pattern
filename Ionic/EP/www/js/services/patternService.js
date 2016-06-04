@@ -1,4 +1,4 @@
-angular.module('embroidery-pattern.services')
+angular.module('embroidery-pattern')
 
     .service('patternService', ['baseURL', '$http', function (baseURL, $http) {
 

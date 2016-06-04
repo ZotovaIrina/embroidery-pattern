@@ -6,7 +6,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy;
+    LocalStrategy = require('passport-local').Strategy,
+    cors = require('cors');
 
 var pathConfig = require('./path'),
     config = require('./config'),
@@ -15,6 +16,8 @@ var pathConfig = require('./path'),
     images = require('./routes/images.js');
 
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
