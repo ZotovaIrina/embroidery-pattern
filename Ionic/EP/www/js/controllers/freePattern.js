@@ -5,7 +5,6 @@ angular.module('embroidery-pattern')
 
         $scope.id = $stateParams.id;
           $scope.baseURL = baseURL;
-          console.log("$scope.id", $scope.id);
         $scope.showColor = false;
         //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
         if ($scope.id === undefined) {
@@ -13,7 +12,6 @@ angular.module('embroidery-pattern')
             patternService.getFreePattern()
                 .then(function (response) {
                     $scope.listOfPatterns = response;
-                console.log("listOfPatterns", $scope.listOfPatterns);
                 });
         } else {
             $scope.listOfColors = "";

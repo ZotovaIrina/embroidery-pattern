@@ -30,15 +30,25 @@
         <ion-item menu-close href="#/app/myPattern">
           My patter
         </ion-item>
-        <button class="button accent">
+        <ion-item class="item-divider"
+                  ng-show="loginSuccess">
+          <h2>{{user.username}}</h2>
+        </ion-item>
+        <ion-item class="button button-full accent"
+                  ng-click="login()"
+                  ng-hide="loginSuccess">
           Log In
-        </button>
-        <button class="button accent">
+        </ion-item>
+        <ion-item class="button button-full accent"
+                  ng-click="registration()"
+                  ng-hide="loginSuccess">
           Registration
-        </button>
-        <button class="button accent">
+        </ion-item>
+        <ion-item class="button button-full accent"
+                  ng-show="loginSuccess"
+          ng-click="lodOut()">
           Log Out
-        </button>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>

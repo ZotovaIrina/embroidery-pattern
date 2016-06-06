@@ -1,0 +1,29 @@
+<ion-modal-view>
+  <form>
+    <ion-header-bar class="bar-royal">
+      <h2 class="title">Log In</h2>
+    </ion-header-bar>
+    <ion-content>
+      <div>
+        <label class="item item-input">
+          <input ng-model="user.username" type="text" placeholder="User Name" required></label>
+      </div>
+      <div>
+        <label class="item item-input">
+          <input ng-model="user.password" type="password" placeholder="Password" required></label>
+      </div>
+      <div class="item item-divider">
+        <div class="button primary"
+                ng-click="doLogin(user)">
+          Log In
+        </div>
+        <div class="button primary"
+                ng-click="closeLogin()">
+          Close
+        </div>
+      </div>
+
+    </ion-content>
+
+  </form>
+</ion-modal-view>

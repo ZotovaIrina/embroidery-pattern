@@ -1,8 +1,17 @@
 $baseURL: "http://localhost:3000";
 
-$primaryColor: #7E57C2;
+$primaryColor: #886aea;
 $accentColor: #69F0AE;
-$lightPurple: #EDE7F6;
+$lightPurple: #faf5ff;
+
+.accent {
+  background-color: $accentColor;
+}
+
+.primary {
+  background-color: $primaryColor;
+  color: $lightPurple;
+}
 
 
 $h1FontSize: 30px;

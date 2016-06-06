@@ -14,7 +14,7 @@
          layout-align="end center"
          flex-gt-sm="30"
          flex-sm="100">
-        <h2 ng-show="registarationSuccess || loginSuccess">{{user.username}}</h2>
+        <h2 ng-show="loginSuccess">{{user.username}}</h2>
         <md-button class="md-raised md-accent"
                    ng-hide="loginSuccess"
                    ng-class="{'full-button': $mdMedia('sm')||$mdMedia('xs')}"
