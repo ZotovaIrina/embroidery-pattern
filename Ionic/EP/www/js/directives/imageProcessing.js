@@ -12,8 +12,8 @@ angular.module('embroidery-pattern')
                     console.log("load image");
                     // success, "onload" catched
                     // now we can do specific stuff:
-                    imageParams.heightImage = parseInt(this.naturalHeight*0.9);
-                    imageParams.widthImage = parseInt(this.naturalWidth*0.9);
+                    imageParams.heightImage = parseInt(this.naturalHeight*0.9, 10);
+                    imageParams.widthImage = parseInt(this.naturalWidth*0.9, 10);
                     imageParams.maxWidth = this.naturalWidth;
                     imageParams.maxHeigth = this.naturalHeight;
                     imageParams.proportion = this.naturalHeight / this.naturalWidth;

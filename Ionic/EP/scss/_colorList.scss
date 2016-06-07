@@ -1,0 +1,33 @@
+.colorCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.dialog-list-container {
+  display: inline-block;
+  text-align: left;
+  width:100%;
+}
+
+.dialog-list-color {
+  display: inline-block;
+  width: 48px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.dialog-list-number {
+  display: inline-block;
+  width: 68px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.dialog-list-name{
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  vertical-align: middle;
+}

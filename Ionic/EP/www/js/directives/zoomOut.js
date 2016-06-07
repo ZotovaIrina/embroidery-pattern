@@ -12,7 +12,7 @@ angular.module('embroidery-pattern')
                     console.log(element);
                     console.log("startHeight", startHeight);
                     console.log("height", height);
-                    element.attr('style','height: '+ height + 'px;');
+                    element.attr('style','width: auto; height: '+ height + 'px;');
                 };
             }
         };

@@ -47,7 +47,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         url: '/uploadImage',
         views: {
           'mainContent': {
-            templateUrl: 'templates/upload.html'
+            templateUrl: 'templates/upload.html',
+            controller: 'UploadController'
           }
         }
       })
@@ -93,7 +94,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
 ;angular.module('embroidery-pattern')
 
 
-  .controller('AppCtrl', ['$scope', '$ionicModal', 'userService', function ($scope, $ionicModal, userService) {
+  .controller('AppCtrl', ['$scope', '$ionicModal', 'userService', 'messageService',
+    function ($scope, $ionicModal, userService, messageService) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -147,6 +149,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
           var message = err.status + " " + err.data.message,
             title = "Error!";
           console.log(title, message);
+          messageService.showAlert(title, message);
         });
 
 
@@ -170,6 +173,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
           var message = err.status + " " + err.data.message,
             title = "Error!";
           console.log(title, message);
+          messageService.showAlert(title, message);
         });
       $scope.modalRegister.hide();
     };
@@ -187,6 +191,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
           $scope.user = {};
         });
     };
+
 
 
   }]);
@@ -293,201 +298,92 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
 
     }]);
 ;angular.module('embroidery-pattern')
-  .controller('Navigation', ['$scope', '$ionicModal', 'userService', 'dialogWindow', function ($scope, $ionicModal, userService, dialogWindow) {
-    'use strict';
-    console.log('navigation');
-    $scope.user = {};
-    $scope.loginSuccess = false;
+  .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', 'saveImageService', '$ionicModal', 'messageService',
+    function ($scope, Upload, $timeout, baseURL, saveImageService, $ionicModal, messageService) {
+      'use strict';
 
-    //check user already log in
-    userService.getCurrentUser()
-      .then(function (response) {
-        console.log("CurrentUser", response);
-        $scope.user = response.user;
-        $scope.loginSuccess = response.success;
-        console.log("user: ", $scope.user);
-      });
+      $scope.baseURL = baseURL;
+      $scope.numberOfColor = 20;
+      $scope.formShow = false;
+      $scope.doNotLike = false;
+      $scope.imageResult = false;
 
-    $scope.login = function () {
-      $scope.modal.show();
-    };
-
-    $scope.close = function() {
-      $scope.modal.hide();
-    };
-
-
-    //Modal window for register. $scope.showRegistration forms modal window and prefer data, controller for control active inside modal window. then - what happen when modal window will close
-    // registerController function control form inside model window.
-    $scope.showRegistration = function (ev) {
-      var templateUrl = 'template/register.html';
-      dialogWindow.dialogShow($scope.user, templateUrl)
-        .then(function (user) {
-          console.log('You said the information was: ', user);
-          userService.registration(user)
-            .then(function (response) {
-              $scope.loginSuccess = response.success;
-
-            })
-            .catch(function (err) {
-              var message = err.status + " " + err.data.message,
-                title = "Error!";
-              dialogWindow.alertShow(title, message);
-            });
-
-        });
-    };
-
-    //Modal Window for log In
-    $scope.showLogIn = function (ev) {
-      var templateUrl = 'template/logIn.html';
-      dialogWindow.dialogShow($scope.user, templateUrl)
-        .then(function (user) {
-          console.log('You said the information was:', user);
-          userService.logIn(user)
-            .then(function (response) {
-              $scope.loginSuccess = response.success;
-            }).catch(function (err) {
-              var message = err.status + " " + err.data.message,
-                title = "Error!";
-              dialogWindow.alertShow(title, message);
-            });
-        });
-
-    };
-
-
-    $scope.logOut = function (user) {
-      userService.logOut(user)
-        .then(function (response) {
-          $scope.loginSuccess = !response.success;
-          $scope.user = {};
-        });
-    };
-
-
-  }]);
-;angular.module('embroidery-pattern')
-    .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', '$mdMedia', '$mdDialog', 'saveImageService', 'dialogWindow',
-        function ($scope, Upload, $timeout, baseURL, $mdMedia, $mdDialog, saveImageService, dialogWindow) {
-        'use strict';
-
-        $scope.$mdMedia = $mdMedia;
-        $scope.numberOfColor = 20;
-        $scope.formShow = false;
+      $scope.imageLoaded = function (result) {
+        $scope.formShow = true;
         $scope.doNotLike = false;
+        $scope.imageParams = result;
+        $scope.$apply();
+      };
+
+      $scope.widthChange = function (newWidth) {
+        $scope.imageParams.heightImage = parseInt($scope.imageParams.proportion * newWidth);
+      };
+
+      $scope.notLike = function () {
         $scope.imageResult = false;
+        $scope.doNotLike = true;
+      };
 
-        $scope.imageLoaded = function(result){
-            $scope.formShow = true;
-            $scope.doNotLike = false;
-            $scope.imageParams = result;
-            $scope.$apply();
-        };
+      $scope.uploadPic = function (file) {
+        var data = angular.extend({
+          file: file,
+          numberOfColor: $scope.numberOfColor
+        }, $scope.imageParams);
+        console.log(data);
+        file.upload = Upload.upload({
+          url: baseURL + '/upload',
+          data: data
+        });
 
-        $scope.widthChange = function (newWidth) {
-            $scope.imageParams.heightImage = parseInt($scope.imageParams.proportion * newWidth);
-        };
+        file.upload.then(function (response) {
+          $scope.listOfColors = response.data.color;
+          $scope.imageResult = true;
+          $scope.imageResultUrl = response.data.fileName;
+        }, function (response) {
+          if (response.status > 0) {
+            $scope.errorMsg = response.status + ': ' + response.data;
+          }
+        }, function (evt) {
+          // Math.min is to fix IE which reports 200% sometimes
+          file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+        });
+      };
 
-        $scope.notLike = function() {
-            $scope.imageResult = false;
-            $scope.doNotLike = true;
-            $scope.picFile.progress = 0;
-        };
-
-        $scope.uploadPic = function (file) {
-            var data = angular.extend({
-                file: file,
-                numberOfColor: $scope.numberOfColor
-            }, $scope.imageParams);
-            console.log(data);
-            file.upload = Upload.upload({
-                url: baseURL + '/upload',
-                data: data
-            });
-
-            file.upload.then(function (response) {
-                $scope.color = response.data.color;
-                $scope.imageResult = true;
-                $scope.imageResultUrl = response.data.fileName;
-            }, function (response) {
-                if (response.status > 0) {
-                    $scope.errorMsg = response.status + ': ' + response.data;
-                }
-            }, function (evt) {
-                // Math.min is to fix IE which reports 200% sometimes
-                file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-            });
-        };
-
-        $scope.save = function() {
-            console.log("save", $scope.imageResultUrl);
-            saveImageService.saveImage($scope.imageResultUrl)
-            .then(function () {
-                    dialogWindow.alertShow("Save", "Pattern saved");
-                })
-                .catch(function (err) {
-                    var message = err.status + " " + err.data.message,
-                        title = "Error!";
-                    dialogWindow.alertShow(title, message);
-                });
+      $scope.save = function () {
+        console.log("save", $scope.imageResultUrl);
+        saveImageService.saveImage($scope.imageResultUrl)
+          .then(function () {
+            messageService.showAlert("Save", "Pattern saved");
+          })
+          .catch(function (err) {
+            var message = err.status + " log in, please",
+              title = "Error!";
+            console.log(title, message);
+            messageService.showAlert(title, message);
+          });
 
 
-        };
+      };
+
+      $ionicModal.fromTemplateUrl('templates/colorList.html', {
+        scope: $scope
+      }).then(function (modal) {
+        $scope.modalColor = modal;
+      });
+      //Modal Window with list of color
+      $scope.showConfirm = function () {
+        console.log("color ", $scope.listOfColors);
+        $scope.modalColor.show();
+      };
+
+      $scope.closeColor = function () {
+        $scope.modalColor.hide();
+      };
 
 
-        //Modal Window with list of color
-        $scope.customFullscreen = $mdMedia('xs');
-        $scope.showConfirm = function(ev) {
-            var useFullScreen = $mdMedia('xs');
-            console.log('$scope.color', $scope.color);
-            $mdDialog.show({
-                controller: DialogController,
-                controllerAs: 'ctrl',
-                templateUrl: 'template/colorList.html',
-                locals: {
-                    color: $scope.color
-                },
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose:true,
-                fullscreen: useFullScreen
-            })
-                .then(function(answer) {
-                    $scope.status = 'You said the information was "' + answer + '".';
-                    console.log('You said the information was "' + answer + '".');
-                }, function() {
-                    $scope.status = 'You cancelled the dialog.';
-                    console.log('You cancelled the dialog.');
-                });
-            $scope.$watch(function() {
-                return $mdMedia('xs');
-            }, function(wantsFullScreen) {
-                $scope.customFullscreen = (wantsFullScreen === true);
-            });
-        };
+    }])
 
-        function DialogController($scope, $mdDialog, color) {
-            $scope.listOfColors = color;
-            $scope.testColor = $scope.listOfColors[0].name;
-            console.log("color in controller", $scope.listOfColors);
-            $scope.hide = function() {
-                $mdDialog.hide();
-            };
-            $scope.cancel = function() {
-                $mdDialog.cancel();
-            };
-            $scope.save = function(answer) {
-                console.log('save');
-                $mdDialog.hide(answer);
-            };
-        }
-
-
-
-
-
-    }]);
+  ;
 ;angular.module('embroidery-pattern')
     .directive('fit', function () {
         return {
@@ -513,8 +409,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
                     console.log("load image");
                     // success, "onload" catched
                     // now we can do specific stuff:
-                    imageParams.heightImage = parseInt(this.naturalHeight*0.9);
-                    imageParams.widthImage = parseInt(this.naturalWidth*0.9);
+                    imageParams.heightImage = parseInt(this.naturalHeight*0.9, 10);
+                    imageParams.widthImage = parseInt(this.naturalWidth*0.9, 10);
                     imageParams.maxWidth = this.naturalWidth;
                     imageParams.maxHeigth = this.naturalHeight;
                     imageParams.proportion = this.naturalHeight / this.naturalWidth;
@@ -536,6 +432,22 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
 
 
     }]);;angular.module('embroidery-pattern')
+  .directive('ngMax', function() {
+  return {
+    restrict : 'A',
+    require : ['ngModel'],
+    compile: function($element, $attr) {
+      return function linkDateTimeSelect(scope, element, attrs, controllers) {
+        var ngModelController = controllers[0];
+        scope.$watch($attr.ngMax, function watchNgMax(value) {
+          element.attr('max', value);
+          ngModelController.$render();
+        });
+      };
+    }
+  };
+});
+;angular.module('embroidery-pattern')
     .directive('zoomIn', function() {
     return {
         restrict: 'A',
@@ -567,11 +479,25 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
                     console.log(element);
                     console.log("startHeight", startHeight);
                     console.log("height", height);
-                    element.attr('style','height: '+ height + 'px;');
+                    element.attr('style','width: auto; height: '+ height + 'px;');
                 };
             }
         };
-    });;angular.module('embroidery-pattern')
+    });
+;angular.module('embroidery-pattern')
+
+  .service('messageService', ['$ionicModal', '$ionicPopup', function ($ionicModal, $ionicPopup) {
+
+    this.showAlert = function (title, message) {
+      return  $ionicPopup.alert({
+        title: title,
+        template: message
+      });
+    };
+
+
+  }]);
+;angular.module('embroidery-pattern')
 
     .service('patternService', ['baseURL', '$http', function (baseURL, $http) {
 

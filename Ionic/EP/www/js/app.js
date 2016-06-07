@@ -47,7 +47,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         url: '/uploadImage',
         views: {
           'mainContent': {
-            templateUrl: 'templates/upload.html'
+            templateUrl: 'templates/upload.html',
+            controller: 'UploadController'
           }
         }
       })

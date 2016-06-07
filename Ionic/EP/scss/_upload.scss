@@ -1,0 +1,52 @@
+
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: $primaryColor;
+  margin-top: -4px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+
+.full-screen {
+  width: 100%;
+  background-color: $lightPurple;
+}
+
+.third-button {
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  padding: 5px;
+}
+
+.imagePreview {
+  image-rendering:  pixelated;
+}
+
+.progress {
+  display: inline-block;
+  width: 100%;
+  border: 3px groove #CCC;
+}
+
+.progress div {
+  font-size: smaller;
+  background: $accentColor;
+  width: 0;
+}
+
+.preview-container {
+  overflow: auto;
+}

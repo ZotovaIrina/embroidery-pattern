@@ -1,7 +1,8 @@
 angular.module('embroidery-pattern')
 
 
-  .controller('AppCtrl', ['$scope', '$ionicModal', 'userService', function ($scope, $ionicModal, userService) {
+  .controller('AppCtrl', ['$scope', '$ionicModal', 'userService', 'messageService',
+    function ($scope, $ionicModal, userService, messageService) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -55,6 +56,7 @@ angular.module('embroidery-pattern')
           var message = err.status + " " + err.data.message,
             title = "Error!";
           console.log(title, message);
+          messageService.showAlert(title, message);
         });
 
 
@@ -78,6 +80,7 @@ angular.module('embroidery-pattern')
           var message = err.status + " " + err.data.message,
             title = "Error!";
           console.log(title, message);
+          messageService.showAlert(title, message);
         });
       $scope.modalRegister.hide();
     };
@@ -95,6 +98,7 @@ angular.module('embroidery-pattern')
           $scope.user = {};
         });
     };
+
 
 
   }]);

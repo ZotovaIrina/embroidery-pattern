@@ -1,182 +1,148 @@
-<div layout="column"
-     flex="100">
-    <h1 class="header"
-        flex="100">
+<ion-view view-title="Upload Image">
+  <ion-content padding="true">
+    <div>
+      <h1 class="header">
         Upload page
-    </h1>
+      </h1>
 
-    <p flex="100">Let's start. In order to get color schema for your image, upload file and select options: how many
+      <p>Let's start. In order to get color schema for your image, upload file and select options: how many
         color do you want to have and image which do you prefer</p>
 
-    <p flex="100">I'm strongly recommend you do not very big resize in program and don't take very big images on start.
+      <p>I'm strongly recommend you do not very big resize in program and don't take very big images on start.
         This can lead to you don't like result. Do picture more simple. It helps improve the result and you will
         immediately see what you can expect after convert photo. </p>
-</div>
+    </div>
 
-<div layout="row"
-     layout-wrap
-     flex="100">
-    <form name="uploadForm"
-          flex="100"
-          ng-class="{border: imageResult}">
+    <div>
+      <form name="uploadForm"
+            ng-class="{border: imageResult}">
 
         <div ng-class="{'invalid': uploadForm.file.$error.maxSize}"
              ng-show="!formShow || doNotLike">
-            <md-button class="md-button md-raised"
-                       ngf-select
-                       ng-model="picFile"
-                       name="file"
-                       ngf-accept="'image/*'"
-                       ngf-max-size="2MB"
-                       required="">
-                Choose photo
-            </md-button>
+          <button class="button button-block accent"
+                  ngf-select
+                  ng-model="picFile"
+                  name="file"
+                  ngf-accept="'image/*'"
+                  ngf-max-size="2MB"
+                  required="">
+            Choose photo
+          </button>
             <span ng-show="uploadForm.file.$error.maxSize">
                 More then 2 MB. Please select other file
             </span>
         </div>
 
 
-        <md-toolbar layout-gt-sm="row"
-                    layout-sm="column"
-                    class="md-primary md-hue-2"
-                    flex="100"
-                    ng-show="formShow">
-            <div layout-align="start center"
-                 layout="row"
-                 flex>
-                <md-button ng-click="fit()"
-                           ng-show="imageResult">
-                    FIT
-                </md-button>
-                <md-button ng-click="zoomIn()"
-                           ng-show="imageResult">
-                    <i class="material-icons button-icon">zoom_in</i>
-                </md-button>
-                <md-button ng-click="zoomOut()"
-                           ng-show="imageResult">
-                    <i class="material-icons button-icon">zoom_out</i>
-                </md-button>
+        <div ng-show="formShow">
+          <div class="full-screen">
+            <div class="third-button"
+                 ng-click="fit() "
+                 ng-show="imageResult">
+              FIT
             </div>
-            <div layout-align="center center"
-                 layout="row"
-                 flex>
-                    <span class="progress"
-                          ng-show="picFile.progress > 0 && !imageResult">
-                        <div style="width:{{picFile.progress}}%"
-                             ng-bind="picFile.progress + '%'"
-                             class="ng-binding">
-                        </div>
-                    </span>
-                <!--span show when upload hove been starting and response don't get yet-->
+            <div class="third-button"
+                 ng-click="zoomIn()"
+                 ng-show="imageResult">
+              <i class="fa fa-search-plus" aria-hidden="true"></i>
             </div>
-            <div layout-align-gt-sm="end center"
-                 layout="row"
-                 flex>
-                <md-button class="md-raised md-primary convert-button"
-                           ng-click="uploadPic(picFile)"
-                           ng-show="!imageResult">
-                    Convert
-                </md-button>
-                <md-button class="md-raised md-primary"
-                           ng-click="showConfirm($event)"
-                           ng-show="imageResult"
-                           flex-sm="33"
-                           flex-xs="100">
-                    Color
-                </md-button>
-                <md-button class="md-raised md-primary"
-                           ng-show="imageResult"
-                           flex-sm="33"
-                           flex-xs="50"
-                           ng-click="save()">
-                    SAVE
-                </md-button>
-                <md-button class="md-raised md-primary"
-                           ng-click="notLike()"
-                           ng-show="imageResult"
-                           flex-sm="33"
-                           flex-xs="50">
-                    Don't like
-                </md-button>
+            <div class="third-button"
+                 ng-click="zoomOut()"
+                 ng-show="imageResult">
+              <i class="fa fa-search-minus" aria-hidden="true"></i>
             </div>
-        </md-toolbar>
-
-        <md-input-container ng-if="formShow"
-                            layout="column"
-                            layout-margin
-                            class="input-container"
-                            ng-show="!imageResult">
-            <label></label>
-
-            <div flex="100">
-                <p>Width x Height: {{imageParams.widthImage}} x {{imageParams.heightImage}} pixels</p>
+          </div>
+          <div>
+            <span class="progress"
+                  ng-show="picFile.progress > 0 && !imageResult && !doNotLike">
+              <div style="width:{{picFile.progress}}%"
+                   ng-bind="picFile.progress + '%'"
+                   class="ng-binding">
+              </div>
+            </span>
+            <!--span show when upload hove been starting and response don't get yet-->
+          </div>
+          <div class="full-screen">
+            <button class="button button-block button-royal"
+                    ng-click="uploadPic(picFile)"
+                    ng-show="!imageResult">
+              Convert
+            </button>
+            <div class="third-button primary"
+                 ng-click="showConfirm($event)"
+                 ng-show="imageResult">
+              Color
             </div>
-            <md-slider flex-gt-sm="80"
-                       flex-sm="100"
-                       min="5"
-                       max="{{imageParams.maxWidth}}"
-                       ng-model="imageParams.widthImage"
-                       step="5"
-                       id="width-slider"
-                       class="md-primary"
-                       aria-label="5"
-                       ng-change="widthChange(imageParams.widthImage)">
-            </md-slider>
-        </md-input-container>
-
-        <md-input-container ng-if="formShow"
-                            ng-show="!imageResult"
-                            layout="column"
-                            layout-margin
-                            class="input-container">
-            <div flex="100">
-                <p>Number of color: {{imageParams.numberOfColor}}</p>
+            <div class="third-button primary"
+                 ng-show="imageResult"
+                 ng-click="save()">
+              SAVE
             </div>
-            <label></label>
-            <md-slider min="5"
-                       flex-gt-sm="80"
-                       flex-sm="100"
-                       max="200"
-                       ng-model="imageParams.numberOfColor"
-                       step="5"
-                       id="color-slider"
-                       class="md-primary"
-                       aria-label="5">
-            </md-slider>
-        </md-input-container>
-
-        <div class="image-container"
-             layout-gt-xs="row"
-             layout-xs="column"
-             layout-align="center center">
-            <div class="preview-container"
-                 flex-gt-xs="50"
-                 flex-xs="100"
-                 flex-order="1"
-                 flex-order-xs="2"
-                 layout-align="center center">
-                <img ngf-src="picFile"
-                     class="thumb imagePreview"
-                     id="picFile"
-                     image-processing
-                     image-on-load="imageLoaded(result)">
+            <div class="third-button primary"
+                 ng-click="notLike()"
+                 ng-show="imageResult">
+              Don't like
             </div>
-            <div class="preview-container"
-                 flex-gt-xs="50"
-                 flex-xs="100"
-                 flex-order="2"
-                 flex-order-xs="1">
-                <img ng-show="imageResult"
-                     id="imageResult"
-                     ng-src="/public/images/temp_convert/{{imageResultUrl}}"
-                     class="thumb imagePreview"
-                     zoom-in
-                     zoom-out
-                     fit>
-            </div>
+          </div>
         </div>
-    </form>
+
+        <div ng-if="formShow"
+             ng-show="!imageResult">
+          <label></label>
+
+          <div>
+            <p>Width x Height: {{imageParams.widthImage}} x {{imageParams.heightImage}} pixels</p>
+          </div>
+          <div class="item range">
+            <input type="range"
+                   ng-model="imageParams.widthImage"
+                   min="5"
+                   ng-max="imageParams.maxWidth"
+                   step="5"
+                   id="width-slider"
+                   ng-change="widthChange(imageParams.widthImage)">
+          </div>
+        </div>
+
+        <div ng-if="formShow"
+             ng-show="!imageResult">
+          <div>
+            <p>Number of color: {{imageParams.numberOfColor}}</p>
+          </div>
+          <label></label>
+
+          <div class="item range">
+            <input type="range"
+                   min="5"
+                   max="200"
+                   ng-model="imageParams.numberOfColor"
+                   step="5"
+                   id="color-slider">
+          </div>
+        </div>
+
+        <div class="item item-image">
+          <div class="preview-container">
+            <img ng-show="imageResult"
+                 id="imageResult"
+                 ng-src="{{baseURL}}/public/images/temp_convert/{{imageResultUrl}}"
+                 class="thumb imagePreview"
+                 zoom-in
+                 zoom-out
+                 fit>
+          </div>
+          <div class="preview-container">
+            <img ngf-src="picFile"
+                 class="thumb imagePreview"
+                 id="picFile"
+                 image-processing
+                 image-on-load="imageLoaded(result)">
+          </div>
+
+        </div>
+      </form>
 
 
-</div>
+    </div>
+  </ion-content>
+</ion-view>
