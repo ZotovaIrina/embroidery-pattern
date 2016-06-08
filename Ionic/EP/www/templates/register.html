@@ -1,5 +1,5 @@
 <ion-modal-view>
-  <form>
+  <form name="registrationForm">
     <ion-header-bar class="bar-royal">
       <h2 class="title">Registration New User</h2>
     </ion-header-bar>
@@ -18,7 +18,8 @@
       </div>
       <div class="item item-divider">
         <div class="button primary"
-                ng-click="doRegistration(user)">
+                ng-click="doRegistration(user)"
+             ng-disabled="registrationForm.$invalid">
           Registration
         </div>
         <div class="button primary"

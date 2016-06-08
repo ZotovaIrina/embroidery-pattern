@@ -9,7 +9,9 @@ var express = require('express'),
 
 module.exports = function getColors(req, res, next) {
     console.log("convert color");
-    var srcPath = req.imageConvert.srcPath;
+    var srcPath = req.imageConvert.srcPath,
+        widthSrc = req.body.widthImage,
+        heightSrc = req.body.heightImage;
 
     var colorString = req.imageConvert.colorMap,
         expr = /rgb\((\d{1,3}),(\d{1,3}),(\d{1,3})\)/g;
@@ -69,13 +71,41 @@ module.exports = function getColors(req, res, next) {
         });
         req.imageConvert.listOfColor = closestColor;
 
-        jsonfile.writeFile(srcPath+'.json', closestColor, function (err) {
+        jsonfile.writeFile(srcPath + '.json', closestColor, function (err) {
             console.error(err)
         });
+
+        //create grid. We should draw line
+        var grid = [];
+
 
         var args = [
             srcPath,
             ...imPointsArray,
+            '-scale',
+            '500x500',
+            '-stroke',
+            'black',
+            '-draw',
+            'line 100,0 100,500',
+            '-draw',
+            'line 200,0 200,500',
+            '-draw',
+            'line 300,0 300,500',
+            '-draw',
+            'line 400,0 400,500',
+            '-draw',
+            'line 500,0 500,500',
+            '-draw',
+            'line 0,100 500,100',
+            '-draw',
+            'line 0,200 500,200',
+            '-draw',
+            'line 0,300 500,300',
+            '-draw',
+            'line 0,400 500,400',
+            '-draw',
+            'line 0,500 500,500',
             srcPath
         ];
         var p = new Promise(function (resolve, reject) {
@@ -88,8 +118,8 @@ module.exports = function getColors(req, res, next) {
             });
 
         });
-        p
-            .then(next)
+
+        p.then(next)
             .catch(err => console.error(err));
 
 

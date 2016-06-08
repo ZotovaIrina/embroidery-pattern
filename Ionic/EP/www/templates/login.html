@@ -1,5 +1,5 @@
 <ion-modal-view>
-  <form>
+  <form name="loginForm">
     <ion-header-bar class="bar-royal">
       <h2 class="title">Log In</h2>
     </ion-header-bar>
@@ -14,11 +14,12 @@
       </div>
       <div class="item item-divider">
         <div class="button primary"
-                ng-click="doLogin(user)">
+             ng-click="doLogin(user)"
+             ng-disabled="loginForm.$invalid">
           Log In
         </div>
         <div class="button primary"
-                ng-click="closeLogin()">
+             ng-click="closeLogin()">
           Close
         </div>
       </div>

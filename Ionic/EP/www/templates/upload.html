@@ -19,7 +19,7 @@
 
         <div ng-class="{'invalid': uploadForm.file.$error.maxSize}"
              ng-show="!formShow || doNotLike">
-          <button class="button button-block accent"
+          <div class="button button-block accent"
                   ngf-select
                   ng-model="picFile"
                   name="file"
@@ -27,7 +27,7 @@
                   ngf-max-size="2MB"
                   required="">
             Choose photo
-          </button>
+          </div>
             <span ng-show="uploadForm.file.$error.maxSize">
                 More then 2 MB. Please select other file
             </span>
