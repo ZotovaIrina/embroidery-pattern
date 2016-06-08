@@ -1,4 +1,4 @@
-<ion-view view-title="EP">
+<ion-view view-title="Free Pattern">
   <ion-content>
     <h1 class="header">
       Free pattern
@@ -9,14 +9,13 @@
       <div class="card"
            ng-repeat="pattern in listOfPatterns">
           <div class="item item-image">
-            <img class="patternImage"
-                 ng-src="{{baseURL}}/public/freePattern/!{{pattern}}.jpg">
+            <img ng-src="{{baseURL}}/public/freePattern/!{{pattern}}.jpg">
           </div>
           <div class="item item-divider">
-            <button class="button button-full primary"
+            <div class="button button-full primary"
               ui-sref="app.patternForFree({id: pattern})">
               Preview
-            </button>
+            </div>
           </div>
 
       </div>

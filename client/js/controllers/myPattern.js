@@ -33,6 +33,10 @@ angular.module('embroidery-pattern')
 
         }
 
+            $scope.colorToggle = function () {
+                $scope.showColor = !$scope.showColor;
+            };
+
 
         $scope.deleteImage = function (image) {
             console.log("delete image: ", image);

@@ -4,7 +4,8 @@ angular.module('embroidery-pattern')
       'use strict';
 
       $scope.id = $stateParams.id;
-      $scope.address = baseURL + "/public/freePattern/";
+      $scope.address = baseURL + "/public/freePattern/" + $scope.id;
+      $scope.srcImage = $scope.address + '.gif';
       $scope.baseURL = baseURL;
       $scope.showColor = false;
       //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
@@ -16,7 +17,7 @@ angular.module('embroidery-pattern')
           });
       } else {
         $scope.listOfColors = "";
-        var URL = $scope.address + $scope.id + '.json';
+        var URL = $scope.address + '.json';
         patternService.getListOfColor(URL)
           .then(function (response) {
             $scope.listOfColors = response;

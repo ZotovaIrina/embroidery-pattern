@@ -66,7 +66,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         url: '/myPattern',
         views: {
           'mainContent': {
-            templateUrl: 'templates/myPattern.html'
+            templateUrl: 'templates/myPattern.html',
+            controller: 'MyPattern'
           }
         }
       })
@@ -75,7 +76,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         url: '/myPattern/:id',
         views: {
           'mainContent': {
-            templateUrl: 'templates/pattern.html'
+            templateUrl: 'templates/pattern.html',
+            controller: 'MyPattern'
           }
         }
       })
@@ -202,7 +204,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
       'use strict';
 
       $scope.id = $stateParams.id;
-      $scope.address = baseURL + "/public/freePattern/";
+      $scope.address = baseURL + "/public/freePattern/" + $scope.id;
+      $scope.srcImage = $scope.address + '.gif';
       $scope.baseURL = baseURL;
       $scope.showColor = false;
       //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
@@ -214,7 +217,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
           });
       } else {
         $scope.listOfColors = "";
-        var URL = $scope.address + $scope.id + '.json';
+        var URL = $scope.address + '.json';
         patternService.getListOfColor(URL)
           .then(function (response) {
             $scope.listOfColors = response;
@@ -229,64 +232,60 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
 
     }]);
 ;angular.module('embroidery-pattern')
-    .controller('MyPattern', ['$scope', 'saveImageService', '$stateParams', '$mdMedia', 'dialogWindow', '$state', 'baseURL', 'patternService',
-        function ($scope, saveImageService, $stateParams, $mdMedia, dialogWindow, $state, baseURL, patternService) {
-        'use strict';
+  .controller('MyPattern', ['$scope', 'saveImageService', '$stateParams', '$state', 'baseURL', 'patternService', 'messageService',
+    function ($scope, saveImageService, $stateParams, $state, baseURL, patternService, messageService) {
+      'use strict';
 
-        $scope.id = $stateParams.id;
-        $scope.$mdMedia = $mdMedia;
-        $scope.images = {};
-        //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
-        if ($scope.id === undefined) {
-            saveImageService.getImage()
-            .then(function(response) {
-                    console.log("get images");
-                    $scope.images = response;
-                    angular.forEach($scope.images, function(image, index) {
-                        if (image === null) {
-                            $scope.images.splice(index, 1);
-                        }
-                    });
-                })
-            .catch(function() {
-                    dialogWindow.alertShow("Error!", "You must log in");
-                    $state.go('app');
-                });
-        } else {
-            $scope.address = "/public/images/temp_convert/";
-            $scope.extension = "";
-            var URL = baseURL + '/public/images/temp_convert/' + $scope.id +'.json';
-            patternService.getListOfColor(URL)
-                .then(function (response) {
-                    $scope.listOfColors = response;
-                });
+      $scope.id = $stateParams.id;
+      $scope.address = baseURL + "/public/images/temp_convert/";
+      $scope.srcImage = $scope.address + $scope.id;
+      $scope.images = {};
+      //this part contron app.freePattern page. For aa.freePattern/id we shouldn't get list of pattern we do else
+      if ($scope.id === undefined) {
+        saveImageService.getImage()
+          .then(function (response) {
+            console.log("get images");
+            $scope.images = response;
+            angular.forEach($scope.images, function (image, index) {
+              if (image === null) {
+                $scope.images.splice(index, 1);
+              }
+            });
+          })
+          .catch(function () {
+            messageService.showAlert("Error!", "You must log in");
+            $state.go('app.home');
+          });
+      } else {
+        $scope.extension = "";
+        var URL = $scope.address + $scope.id + '.json';
+        patternService.getListOfColor(URL)
+          .then(function (response) {
+            $scope.listOfColors = response;
+          });
 
-        }
-
-
-        $scope.deleteImage = function (image) {
-            console.log("delete image: ", image);
-            saveImageService.deleteImage(image)
-            .then(function(response) {
-                 console.log("delete");
-                    $scope.images = response;
-                    angular.forEach($scope.images, function(image, index) {
-                        if (image === null) {
-                            $scope.images.splice(index, 1);
-                        }
-                    });
-                });
+      }
 
 
-        };
+      $scope.colorToggle = function () {
+        $scope.showColor = !$scope.showColor;
+      };
+
+      $scope.deleteImage = function (image) {
+        console.log("delete image: ", image);
+        saveImageService.deleteImage(image)
+          .then(function (response) {
+            console.log("delete");
+            $scope.images = response;
+            angular.forEach($scope.images, function (image, index) {
+              if (image === null) {
+                $scope.images.splice(index, 1);
+              }
+            });
+          });
 
 
-
-
-
-
-
-
+      };
 
 
     }]);

@@ -1,34 +1,21 @@
-<h1 class="header"
-    flex="100">
-    My pattern
-</h1>
+<ion-view view-title="My Pattern">
+  <ion-content>
 
-<div layout="row"
-     layout-margin
-     layout-wrap
-     ng-cloak>
-
-    <md-whiteframe class="md-whiteframe-9dp"
-                   flex-gt-sm="30"
-                   flex-sm="45"
-                   flex-xs="100"
-                   layout="column"
-                   layout-padding
-                   layout-align="center center"
-                   ng-repeat="image in images">
-        <md-whiteframe class="md-whiteframe-2dp patternContainer heightAuto">
-            <img class="patternImage"
-                 ng-src="/public/images/temp_convert/{{image}}">
-        </md-whiteframe>
-            <md-button class="md-raised md-primary full-button"
+      <div class="card"
+           ng-repeat="image in images">
+        <div class="item item-image">
+          <img ng-src="{{address}}{{image}}">
+        </div>
+        <div class="button button-block full-button primary"
                    ui-sref="app.viewPattern({id: image})">
-            Preview
-        </md-button>
-        <md-button class="md-raised md-primary md-hue-3 full-button"
-                ng-click="deleteImage(image)">
-            Delete
-        </md-button>
-    </md-whiteframe>
+          Preview
+        </div>
+        <div class="button button-block full-button primary"
+                   ng-click="deleteImage(image)">
+          Delete
+        </div>
+      </div>
 
-</div>
+  </ion-content>
+</ion-view>
 

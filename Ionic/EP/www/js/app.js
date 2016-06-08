@@ -66,7 +66,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         url: '/myPattern',
         views: {
           'mainContent': {
-            templateUrl: 'templates/myPattern.html'
+            templateUrl: 'templates/myPattern.html',
+            controller: 'MyPattern'
           }
         }
       })
@@ -75,7 +76,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         url: '/myPattern/:id',
         views: {
           'mainContent': {
-            templateUrl: 'templates/pattern.html'
+            templateUrl: 'templates/pattern.html',
+            controller: 'MyPattern'
           }
         }
       })

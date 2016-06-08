@@ -27,8 +27,9 @@
         <ion-item menu-close href="#/app/freePattern">
           Free pattern
         </ion-item>
-        <ion-item menu-close href="#/app/myPattern">
-          My patter
+        <ion-item menu-close href="#/app/myPattern"
+                  ng-show="loginSuccess">
+          My pattern
         </ion-item>
         <ion-item class="item-divider"
                   ng-show="loginSuccess">
