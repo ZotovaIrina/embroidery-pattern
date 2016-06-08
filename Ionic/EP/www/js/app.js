@@ -83,7 +83,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         url: '/freePattern/:id',
         views: {
           'mainContent': {
-            templateUrl: 'templates/pattern.html'
+            templateUrl: 'templates/pattern.html',
+            controller: 'FreePattern'
           }
         }
       });

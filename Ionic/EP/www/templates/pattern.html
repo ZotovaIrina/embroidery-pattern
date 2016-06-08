@@ -1,58 +1,47 @@
-<h1 class="header"
-    flex="100">
-    Pattern
-</h1>
-
-<div layout-gt-sm="row"
-     layout-sm="column">
-    <div layout="column"
-         flex-gt-sm="30"
-         flex-sm="100">
-        <md-toolbar class="md-toolbar-tools md-primary"
-                    layout="column" layout-padding>
-            <div>DMC string</div>
-            <md-button ng-show="$mdMedia('sm')||$mdMedia('xs')"
-                       flex="100"
-                       ng-click="colorToggle()">
-                <i class="material-icons open-button"
-                   ng-show="!showColor">
-                    expand_more
-                </i>
-                <i class="material-icons open-button"
-                   ng-show="showColor">
-                    expand_less
-                </i>
-            </md-button>
-        </md-toolbar>
-        <div class="border content-box"
-             ng-hide="$mdMedia('sm')||$mdMedia('xs')">
-            <list-of-color></list-of-color>
+<ion-view view-title="Pattern">
+  <ion-content>
+    <div>
+      <div>
+        <div class="full-screen string-button">
+          <div>DMC string</div>
+          <div ng-click="colorToggle()">
+            <i class="fa fa-sort-desc"
+               aria-hidden="true"
+               ng-show="!showColor"></i>
+            <i class="fa fa-sort-asc"
+               aria-hidden="true"
+               ng-show="showColor"></i>
+          </div>
         </div>
+        <div class="border content-box"
+             ng-show="showColor">
+          <list-of-color></list-of-color>
+        </div>
+      </div>
+
+
+      <div>
+        <div class="full-screen">
+          <div class="button third-button ligthPurple"
+               ng-click="fit()">
+            FIT
+          </div>
+          <div class="button third-button ligthPurple" ng-click="zoomIn()">
+            <i class="fa fa-search-plus" aria-hidden="true"></i>
+          </div>
+          <div class="button third-button ligthPurple" ng-click="zoomOut()">
+            <i class="fa fa-search-minus" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="preview-container">
+          <img ng-src="{{address}}{{id}}.gif"
+               class="thumb imagePreview"
+               zoom-in
+               zoom-out
+               fit>
+        </div>
+      </div>
+
     </div>
-
-
-    <div layout="column"
-         flex-gt-sm="70"
-         flex-sm="100">
-        <md-toolbar class="md-toolbar-tools md-primary"
-                    layout="row">
-            <md-button ng-click="fit()">
-                FIT
-            </md-button>
-            <md-button ng-click="zoomIn()">
-                <i class="material-icons button-icon">zoom_in</i>
-            </md-button>
-            <md-button ng-click="zoomOut()">
-                <i class="material-icons button-icon">zoom_out</i>
-            </md-button>
-        </md-toolbar>
-        <md-content style="max-height: 70vh;">
-            <img ng-src="{{address}}{{id}}{{extension}}"
-                 class="thumb imagePreview"
-                 zoom-in
-                 zoom-out
-                 fit>
-        </md-content>
-    </div>
-
-</div>
+  </ion-content>
+</ion-view>

@@ -1,5 +1,5 @@
 angular.module('embroidery-pattern')
-  .directive('ngMax', function() {
+  .directive('inputNgMax', function() {
   return {
     restrict : 'A',
     require : ['ngModel'],
