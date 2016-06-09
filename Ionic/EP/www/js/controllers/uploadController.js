@@ -1,6 +1,6 @@
 angular.module('embroidery-pattern')
-  .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', 'saveImageService', '$ionicModal', 'messageService',
-    function ($scope, Upload, $timeout, baseURL, saveImageService, $ionicModal, messageService) {
+  .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', 'saveImageService', '$ionicModal', 'messageService', '$ionicPlatform', '$cordovaCamera',
+    function ($scope, Upload, $timeout, baseURL, saveImageService, $ionicModal, messageService, $ionicPlatform, $cordovaCamera) {
       'use strict';
 
       $scope.baseURL = baseURL;
@@ -80,6 +80,34 @@ angular.module('embroidery-pattern')
       $scope.closeColor = function () {
         $scope.modalColor.hide();
       };
+
+
+      $ionicPlatform.ready(function() {
+        var options = {
+          quality: 50,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 100,
+          targetHeight: 100,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false
+        };
+        $scope.takePicture = function() {
+          $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.cameraImageSrc = "data:image/jpeg;base64," + imageData;
+          }, function(err) {
+            console.log(err);
+          });
+
+        };
+      });
+
+
+
+
+
 
 
     }])

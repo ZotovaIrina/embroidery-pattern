@@ -1,10 +1,6 @@
 <ion-view view-title="Upload Image">
   <ion-content padding="true">
     <div>
-      <h1 class="header">
-        Upload page
-      </h1>
-
       <p>Let's start. In order to get color schema for your image, upload file and select options: how many
         color do you want to have and image which do you prefer</p>
 
@@ -14,6 +10,8 @@
     </div>
 
     <div>
+      <div class="button">Take Photo</div>
+      <img ng-src="{{cameraImageSrc}}">
       <form name="uploadForm"
             ng-class="{border: imageResult}">
 
