@@ -75,37 +75,25 @@ module.exports = function getColors(req, res, next) {
             console.error(err)
         });
 
-        //create grid. We should draw line
-        var grid = [];
+        //create grid. We should draw line every 10 pixels. In this goal we scale image in 6 times and draw black line each 80th pixel
 
+        var grid = [],
+            scaleWidth = widthSrc*6,
+            scaleHeight = heightSrc*6,
+            numberOfHorizontalLine = scaleHeight/60,
+            numberOfVerticalLine = scaleWidth/60;
+        grid = ['-scale', scaleWidth + 'x' + scaleHeight, '-stroke','black'];
+        for (var i = 1; i < numberOfVerticalLine; i++) {
+            grid.push('-draw','line ' + 60*i+',0 ' + 60*i + ',' + scaleHeight);
+        }
+        for (var j = 1; j < numberOfHorizontalLine; j++) {
+            grid.push('-draw','line '+'0,' + 60*j + ' ' + scaleWidth + ',' + 60*j);
+        }
 
         var args = [
             srcPath,
             ...imPointsArray,
-            '-scale',
-            '500x500',
-            '-stroke',
-            'black',
-            '-draw',
-            'line 100,0 100,500',
-            '-draw',
-            'line 200,0 200,500',
-            '-draw',
-            'line 300,0 300,500',
-            '-draw',
-            'line 400,0 400,500',
-            '-draw',
-            'line 500,0 500,500',
-            '-draw',
-            'line 0,100 500,100',
-            '-draw',
-            'line 0,200 500,200',
-            '-draw',
-            'line 0,300 500,300',
-            '-draw',
-            'line 0,400 500,400',
-            '-draw',
-            'line 0,500 500,500',
+            ...grid,
             srcPath
         ];
         var p = new Promise(function (resolve, reject) {
