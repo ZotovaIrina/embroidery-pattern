@@ -5,10 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in appCtrl.js
 
-angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
+angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
 
   .constant("baseURL", "http://localhost:3000")
-  .run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $rootScope, $ionicLoading, $cordovaSplashscreen, $timeout) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -21,6 +21,9 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
+      $timeout(function(){
+        $cordovaSplashscreen.hide();
+      },20000);
     });
   })
 

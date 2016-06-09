@@ -15,3 +15,5 @@ Ionic/EP/plugins
 Ionic/EP/hooks
 Ionic/EP/.gitignore
 Ionic/EP/node_modules
+Ionic/EP/platforms/android
+Ionic/EP/platforms/ios
