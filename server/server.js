@@ -19,6 +19,17 @@ var app = express();
 
 app.use(cors());
 
+// Secure traffic only
+//app.all('*', function(req, res, next){
+//    console.log('req start: ',req.secure, req.hostname, req.url, app.get('port'));
+//  if (req.secure) {
+//      console.log('secure port');
+//    return next();
+//  }
+//    console.log('port has been changed');
+// res.redirect('https://'+req.hostname+':'+app.get('secPort')+req.url);
+//});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

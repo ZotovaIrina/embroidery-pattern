@@ -27,12 +27,12 @@
                        ng-model="picFile"
                        name="file"
                        ngf-accept="'image/*'"
-                       ngf-max-size="2MB"
+                       ngf-max-size="10MB"
                        required="">
                 Choose photo
             </md-button>
             <span ng-show="uploadForm.file.$error.maxSize">
-                More then 2 MB. Please select other file
+                More then 10 MB. Please select other file
             </span>
         </div>
 

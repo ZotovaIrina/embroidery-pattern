@@ -7,7 +7,7 @@
 
 angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
 
-  .constant("baseURL", "http://localhost:3000")
+  .constant("baseURL", "http://192.168.0.102:3000")
   .run(function ($ionicPlatform, $rootScope, $ionicLoading, $cordovaSplashscreen, $timeout) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -23,8 +23,30 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
       }
       $timeout(function(){
         $cordovaSplashscreen.hide();
-      },20000);
+      },4000);
     });
+
+    $rootScope.$on('loading:show', function () {
+      $ionicLoading.show({
+        template: '<ion-spinner></ion-spinner> Loading ...'
+      });
+    });
+
+    $rootScope.$on('loading:hide', function () {
+      $ionicLoading.hide();
+    });
+
+    $rootScope.$on('$stateChangeStart', function () {
+      console.log('Loading ...');
+      $rootScope.$broadcast('loading:show');
+    });
+
+    $rootScope.$on('$stateChangeSuccess', function () {
+      console.log('done');
+      $rootScope.$broadcast('loading:hide');
+    });
+
+
   })
 
   .config(function ($stateProvider, $urlRouterProvider) {

@@ -1,6 +1,6 @@
 
 angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
-    .constant("baseURL", "http://localhost:3000")
+    .constant("baseURL", "http://192.168.0.102:3000")
     .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider',
     function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
         $mdThemingProvider
@@ -152,6 +152,10 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 });
 
         }
+
+            $scope.colorToggle = function () {
+                $scope.showColor = !$scope.showColor;
+            };
 
 
         $scope.deleteImage = function (image) {

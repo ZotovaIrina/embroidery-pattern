@@ -17,3 +17,7 @@ Ionic/EP/.gitignore
 Ionic/EP/node_modules
 Ionic/EP/platforms/android
 Ionic/EP/platforms/ios
+server/bin/private.key
+server/bin/sessions
+server/bin/cert.csr
+server/bin/certificate.pem

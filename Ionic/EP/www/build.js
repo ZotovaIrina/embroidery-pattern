@@ -5,10 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in appCtrl.js
 
-angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
+angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
 
-  .constant("baseURL", "http://localhost:3000")
-  .run(function ($ionicPlatform) {
+  .constant("baseURL", "http://192.168.0.102:3000")
+  .run(function ($ionicPlatform, $rootScope, $ionicLoading, $cordovaSplashscreen, $timeout) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -21,7 +21,32 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
+      $timeout(function(){
+        $cordovaSplashscreen.hide();
+      },20000);
     });
+
+    $rootScope.$on('loading:show', function () {
+      $ionicLoading.show({
+        template: '<ion-spinner></ion-spinner> Loading ...'
+      });
+    });
+
+    $rootScope.$on('loading:hide', function () {
+      $ionicLoading.hide();
+    });
+
+    $rootScope.$on('$stateChangeStart', function () {
+      console.log('Loading ...');
+      $rootScope.$broadcast('loading:show');
+    });
+
+    $rootScope.$on('$stateChangeSuccess', function () {
+      console.log('done');
+      $rootScope.$broadcast('loading:hide');
+    });
+
+
   })
 
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -290,8 +315,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
 
     }]);
 ;angular.module('embroidery-pattern')
-  .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', 'saveImageService', '$ionicModal', 'messageService',
-    function ($scope, Upload, $timeout, baseURL, saveImageService, $ionicModal, messageService) {
+  .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', 'saveImageService', '$ionicModal', 'messageService', '$ionicPlatform', '$cordovaCamera',
+    function ($scope, Upload, $timeout, baseURL, saveImageService, $ionicModal, messageService, $ionicPlatform, $cordovaCamera) {
       'use strict';
 
       $scope.baseURL = baseURL;
@@ -371,6 +396,34 @@ angular.module('embroidery-pattern', ['ionic', 'ngResource', 'ngAnimate', 'ngFil
       $scope.closeColor = function () {
         $scope.modalColor.hide();
       };
+
+
+      $ionicPlatform.ready(function() {
+        var options = {
+          quality: 50,
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          allowEdit: true,
+          encodingType: Camera.EncodingType.JPEG,
+          targetWidth: 100,
+          targetHeight: 100,
+          popoverOptions: CameraPopoverOptions,
+          saveToPhotoAlbum: false
+        };
+        $scope.takePicture = function() {
+          $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.cameraImageSrc = "data:image/jpeg;base64," + imageData;
+          }, function(err) {
+            console.log(err);
+          });
+
+        };
+      });
+
+
+
+
+
 
 
     }])
