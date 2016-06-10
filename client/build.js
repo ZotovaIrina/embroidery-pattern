@@ -52,7 +52,7 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                 url: 'myPattern',
                 views: {
                     'content@': {
-                        templateUrl: 'template/myPattern.html',
+                        templateUrl: 'template/_myPattern.html',
                         controller: 'MyPattern'
                     }
                 }

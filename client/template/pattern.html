@@ -11,7 +11,7 @@
         <md-toolbar class="md-toolbar-tools md-primary"
                     layout="column" layout-padding>
             <div>DMC string</div>
-            <md-button ng-show="$mdMedia('sm')||$mdMedia('xs')"
+            <div ng-show="$mdMedia('sm')||$mdMedia('xs')"
                        flex="100"
                        ng-click="colorToggle()">
                 <i class="material-icons open-button"
@@ -22,10 +22,11 @@
                    ng-show="showColor">
                     expand_less
                 </i>
-            </md-button>
+            </div>
         </md-toolbar>
         <div class="border content-box"
-             ng-hide="$mdMedia('sm')||$mdMedia('xs')">
+             ng-hide="$mdMedia('sm')||$mdMedia('xs')"
+             ng-show="showColor">
             <list-of-color></list-of-color>
         </div>
     </div>

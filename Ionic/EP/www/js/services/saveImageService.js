@@ -1,10 +1,10 @@
 angular.module('embroidery-pattern')
 
-    .service('saveImageService', ['baseURL', '$http', '$cookies', '$q', function (baseURL, $http, $cookies, $q) {
+    .service('saveImageService', ['baseURL', '$http', '$localStorage', '$q', function (baseURL, $http, $localStorage, $q) {
 
         this.getImage = function () {
             var URL = baseURL + '/images/';
-            var token = $cookies.get('x-access-token');
+            var token = $localStorage.get('x-access-token');
             if (!token){
                 return $q.reject();
             } else {
@@ -18,7 +18,7 @@ angular.module('embroidery-pattern')
 
         this.saveImage = function (image) {
             var URL = baseURL + '/images/';
-            var token = $cookies.get('x-access-token');
+            var token = $localStorage.get('x-access-token');
             return $http.post(URL, {_id: image}, {headers: {"x-access-token": token}})
                 .then(function (response) {
                     console.log(response);
@@ -28,7 +28,7 @@ angular.module('embroidery-pattern')
 
         this.deleteImage = function (image) {
             var URL = baseURL + '/images/' + image;
-            var token = $cookies.get('x-access-token');
+            var token = $localStorage.get('x-access-token');
             return $http.delete(URL, {headers: {"x-access-token": token}})
                 .then(function (response) {
                     console.log(response);

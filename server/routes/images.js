@@ -14,6 +14,7 @@ router.route('/')
     .all(Verify.verifyOrdinaryUser)
 
     .get(function (req, res, next) {
+        console.log("postedBy: ", req.decoded._doc._id);
         var postedBy = req.decoded._doc._id;
         console.log("Get images for user id: ", postedBy);
         Images.find({"postedBy": postedBy})

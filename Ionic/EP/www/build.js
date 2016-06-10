@@ -23,7 +23,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
       }
       $timeout(function(){
         $cordovaSplashscreen.hide();
-      },20000);
+      },8000);
     });
 
     $rootScope.$on('loading:show', function () {
@@ -91,7 +91,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
         url: '/myPattern',
         views: {
           'mainContent': {
-            templateUrl: 'templates/myPattern.html',
+            templateUrl: 'templates/_myPattern.html',
             controller: 'MyPattern'
           }
         }
@@ -315,8 +315,8 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
 
     }]);
 ;angular.module('embroidery-pattern')
-  .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', 'saveImageService', '$ionicModal', 'messageService', '$ionicPlatform', '$cordovaCamera',
-    function ($scope, Upload, $timeout, baseURL, saveImageService, $ionicModal, messageService, $ionicPlatform, $cordovaCamera) {
+  .controller('UploadController', ['$scope', 'Upload', '$timeout', 'baseURL', 'saveImageService', '$ionicModal', 'messageService',
+    function ($scope, Upload, $timeout, baseURL, saveImageService, $ionicModal, messageService) {
       'use strict';
 
       $scope.baseURL = baseURL;
@@ -397,28 +397,6 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
         $scope.modalColor.hide();
       };
 
-
-      $ionicPlatform.ready(function() {
-        var options = {
-          quality: 50,
-          destinationType: Camera.DestinationType.DATA_URL,
-          sourceType: Camera.PictureSourceType.CAMERA,
-          allowEdit: true,
-          encodingType: Camera.EncodingType.JPEG,
-          targetWidth: 100,
-          targetHeight: 100,
-          popoverOptions: CameraPopoverOptions,
-          saveToPhotoAlbum: false
-        };
-        $scope.takePicture = function() {
-          $cordovaCamera.getPicture(options).then(function(imageData) {
-            $scope.cameraImageSrc = "data:image/jpeg;base64," + imageData;
-          }, function(err) {
-            console.log(err);
-          });
-
-        };
-      });
 
 
 
@@ -531,6 +509,30 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
     });
 ;angular.module('embroidery-pattern')
 
+  .factory('$localStorage', ['$window', function ($window) {
+    return {
+      store: function (key, value) {
+        $window.localStorage[key] = value;
+      },
+      get: function (key) {
+        return $window.localStorage[key];
+      },
+      put: function (key, value) {
+        return $window.localStorage.setItem(key, value);
+      },
+      storeObject: function (key, value) {
+        $window.localStorage[key] = JSON.stringify(value);
+      },
+      getObject: function (key, defaultValue) {
+        return JSON.parse($window.localStorage[key] || defaultValue);
+      },
+      destroy: function (key) {
+        return localStorage.removeItem(key);
+      }
+    };
+  }]);
+;angular.module('embroidery-pattern')
+
   .service('messageService', ['$ionicModal', '$ionicPopup', function ($ionicModal, $ionicPopup) {
 
     this.showAlert = function (title, message) {
@@ -577,11 +579,11 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
     }]);
 ;angular.module('embroidery-pattern')
 
-    .service('saveImageService', ['baseURL', '$http', '$cookies', '$q', function (baseURL, $http, $cookies, $q) {
+    .service('saveImageService', ['baseURL', '$http', '$localStorage', '$q', function (baseURL, $http, $localStorage, $q) {
 
         this.getImage = function () {
             var URL = baseURL + '/images/';
-            var token = $cookies.get('x-access-token');
+            var token = $localStorage.get('x-access-token');
             if (!token){
                 return $q.reject();
             } else {
@@ -595,7 +597,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
 
         this.saveImage = function (image) {
             var URL = baseURL + '/images/';
-            var token = $cookies.get('x-access-token');
+            var token = $localStorage.get('x-access-token');
             return $http.post(URL, {_id: image}, {headers: {"x-access-token": token}})
                 .then(function (response) {
                     console.log(response);
@@ -605,7 +607,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
 
         this.deleteImage = function (image) {
             var URL = baseURL + '/images/' + image;
-            var token = $cookies.get('x-access-token');
+            var token = $localStorage.get('x-access-token');
             return $http.delete(URL, {headers: {"x-access-token": token}})
                 .then(function (response) {
                     console.log(response);
@@ -616,13 +618,13 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
     }]);
 ;angular.module('embroidery-pattern')
 
-    .service('userService', ['baseURL', '$http', '$q', '$cookies', function (baseURL, $http, $q, $cookies) {
+    .service('userService', ['baseURL', '$http', '$q', '$localStorage', function (baseURL, $http, $q, $localStorage) {
         this.registration = function (newUser) {
             var URL = baseURL + '/users/register';
             console.log("service", newUser);
             return $http.post(URL, newUser)
                 .then(function (response) {
-                    $cookies.put('x-access-token', response.data.token);
+                $localStorage.put('x-access-token', response.data.token);
                     return response.data;
                 }, function (err) {
                     return $q.reject(err);
@@ -634,7 +636,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
             console.log("service", user);
             return $http.post(URL, user)
                 .then(function (response) {
-                    $cookies.put('x-access-token', response.data.token);
+                $localStorage.put('x-access-token', response.data.token);
                     user = response.data;
                     return response.data;
                 }, function (err) {
@@ -643,7 +645,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
         };
         this.logOut = function (user) {
             var URL = baseURL + '/users/logout';
-            $cookies.remove('x-access-token');
+          $localStorage.destroy('x-access-token');
             return $http.post(URL, user)
                 .then(function (response) {
                     return response.data;
@@ -653,8 +655,9 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
         };
 
         this.getCurrentUser = function () {
-            var token = $cookies.get('x-access-token'),
+            var token = $localStorage.get('x-access-token'),
                 URL = baseURL + '/users/login';
+          console.log("token: ", token);
             if (token === undefined) {
                 return  $q.reject("No token passed");
             } else {

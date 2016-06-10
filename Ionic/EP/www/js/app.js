@@ -23,7 +23,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
       }
       $timeout(function(){
         $cordovaSplashscreen.hide();
-      },4000);
+      },8000);
     });
 
     $rootScope.$on('loading:show', function () {
@@ -91,7 +91,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
         url: '/myPattern',
         views: {
           'mainContent': {
-            templateUrl: 'templates/myPattern.html',
+            templateUrl: 'templates/_myPattern.html',
             controller: 'MyPattern'
           }
         }
