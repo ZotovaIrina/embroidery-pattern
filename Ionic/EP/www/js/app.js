@@ -91,7 +91,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
         url: '/myPattern',
         views: {
           'mainContent': {
-            templateUrl: 'templates/_myPattern.html',
+            templateUrl: 'templates/myPattern.html',
             controller: 'MyPattern'
           }
         }
