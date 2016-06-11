@@ -24,7 +24,7 @@ Application for create schema of  embroidery. When you want to create embroidery
 
 * AngularJS
 * Angular Material
-* SCSS
+* SASS
 
 #### Mobile App
 
@@ -82,3 +82,36 @@ http://sass-lang.com/install
 ```
 
 It is recommended to restart your computer
+
+##Start work
+
+Start database. Go into mongo folder and in command line input:
+
+
+```
+mongod --dbpath=data
+```
+
+Start server. Go into project folder and in command line input:
+
+```
+npm start
+```
+
+Start client developer task runner. Go into project folder and in command line input:
+
+```
+grunt dev
+```
+
+Build dependencies file builder. Go into project folder and in command line input:
+
+```
+grunt devDependencies
+```
+
+Build distribution client version. Go into project folder and in command line input:
+
+```
+grunt dist
+```
