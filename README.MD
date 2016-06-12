@@ -57,6 +57,12 @@ Install bower
 npm install -g bower
 ```
 
+Install Ionic
+
+```
+npm install -g cordova ionic
+```
+
 Open terminal in project folder an install all dependencies plugin. Input this into command line:
 
 ```
@@ -68,6 +74,7 @@ In order to install all bower component in command line:
 ```
 bower install
 ```
+
 
 Install ImageMagick following the instructions here:
 
@@ -115,3 +122,33 @@ Build distribution client version. Go into project folder and in command line in
 ```
 grunt dist
 ```
+
+Install ionic dependencies. Go into Ionic/EP folder and in command line input:
+
+```
+npm install
+
+bower install
+```
+
+
+Before start app go into embroidery-pattern\Ionic\EP\www\js\app.js file and change baseURL constant and input your computer IP address
+
+Start ionic and ionic developer task runner. Go into Ionic/EP folder and in command line input:
+
+```
+ionic serve
+
+grunt dev
+```
+
+In order to add platform and build ionic app for your device. Go into Ionic/EP folder and in command line input:
+
+```
+ionic platform add android
+
+ionic build android
+```
+
+In order install ionic app on your device go in folder embroidery-pattern\Ionic\EP\platforms\android\build\outputs\apk
+and copy android-debug.apk on your device/ Don't forgot disable protection on your devise settings.
