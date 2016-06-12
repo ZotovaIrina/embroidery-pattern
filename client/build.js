@@ -532,15 +532,6 @@ angular.module('embroidery-pattern', ['ui.router', 'ngResource', 'ngAnimate', 'n
                     return err.data;
                 });
         };
-        this.getPattern = function (name) {
-            var pattern = baseURL + '/public/freePattern/' + name +'.git';
-            return $http.get(pattern)
-                .then(function (response) {
-                    return response.data;
-                }, function (err) {
-                    return err.data;
-                });
-        };
 
     }]);;angular.module('embroidery-pattern')
 

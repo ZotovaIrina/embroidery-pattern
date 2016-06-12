@@ -8,7 +8,6 @@ server/public/images/color
 server/public/images/changeColor
 server/public/images/convert
 server/public/images/temp_convert
-server/public/lib
 .sass-cache
 Ionic/EP/www/lib
 Ionic/EP/plugins

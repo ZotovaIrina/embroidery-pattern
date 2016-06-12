@@ -20,14 +20,5 @@ angular.module('embroidery-pattern')
                     return err.data;
                 });
         };
-        this.getPattern = function (name) {
-            var pattern = baseURL + '/public/freePattern/' + name +'.git';
-            return $http.get(pattern)
-                .then(function (response) {
-                    return response.data;
-                }, function (err) {
-                    return err.data;
-                });
-        };
 
     }]);
