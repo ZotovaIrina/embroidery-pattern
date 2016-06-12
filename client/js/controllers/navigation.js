@@ -45,7 +45,7 @@ angular.module('embroidery-pattern')
 
         //Modal Window for log In
         $scope.showLogIn = function (ev) {
-            var templateUrl = 'template/logIn.html';
+            var templateUrl = 'template/login.html';
             dialogWindow.dialogShow($scope.user, templateUrl)
                 .then(function (user) {
                     console.log('You said the information was:', user);
