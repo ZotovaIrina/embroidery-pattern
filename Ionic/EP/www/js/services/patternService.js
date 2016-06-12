@@ -3,7 +3,7 @@ angular.module('embroidery-pattern')
     .service('patternService', ['baseURL', '$http', function (baseURL, $http) {
 
         this.getFreePattern = function () {
-            var patternJson = baseURL + '/public/freePattern/freePattern.json';
+            var patternJson = baseURL + '/public/freePattern/freePattern_.json';
             return $http.get(patternJson)
                 .then(function (response) {
                     return response.data;
