@@ -549,7 +549,7 @@ angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAni
     .service('patternService', ['baseURL', '$http', function (baseURL, $http) {
 
         this.getFreePattern = function () {
-            var patternJson = baseURL + '/public/freePattern/freePattern_.json';
+            var patternJson = baseURL + '/public/freePattern/freePattern.json';
             return $http.get(patternJson)
                 .then(function (response) {
                     return response.data;
