@@ -35,7 +35,7 @@ Application for create schema of  embroidery. When you want to create embroidery
 
 On server side using ImageMagick command line plugin. ImageMagick is a software suite to create, edit, compose, or convert bitmap images.
 It can read and write images in a variety of formats (over 200). Use ImageMagick to resize, flip, mirror, rotate, distort, shear and transform images, adjust image colors,
-apply various special effects, or draw text, lines, polygons, ellipses and B?zier curves. You can reed more here: https://www.imagemagick.org
+apply various special effects, or draw text, lines, polygons, ellipses and Bezier curves. You can reed more here: https://www.imagemagick.org
 
 In order to this program work correct do this step:
 
