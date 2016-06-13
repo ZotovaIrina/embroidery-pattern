@@ -7,7 +7,7 @@
 
 angular.module('embroidery-pattern', ['ionic', 'ngCordova', 'ngResource', 'ngAnimate', 'ngFileUpload', 'ngMaterial', 'ngCookies'])
 
-  .constant("baseURL", "http://192.168.0.102:3000")
+  .constant("baseURL", "https://embroidery-pattern.herokuapp.com")
   .run(function ($ionicPlatform, $rootScope, $ionicLoading, $cordovaSplashscreen, $timeout) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
