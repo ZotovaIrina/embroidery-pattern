@@ -20,7 +20,7 @@ angular.module('embroidery-pattern')
                     imageParams.numberOfColor = 20;
                      if(imageParams.maxWidth > 600) {
                          imageParams.maxWidth = 600;
-                         imageParams.maxHeigth = imageParams.proportion * imageParams.maxWidt;
+                         imageParams.maxHeigth = imageParams.proportion * imageParams.maxWidth;
                          imageParams.widthImage = imageParams.maxWidth * 0.9;
                          imageParams.heightImage = imageParams.maxHeigth * 0.9;
 
